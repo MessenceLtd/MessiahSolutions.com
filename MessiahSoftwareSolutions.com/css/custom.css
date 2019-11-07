@@ -4,3 +4,9 @@
 {
     margin: 0 auto;
 }
+
+
+/* Primary buttons with black text! */
+.button-primary, .button-primary:hover {
+    color: #000;
+}
