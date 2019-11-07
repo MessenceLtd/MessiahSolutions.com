@@ -1,0 +1,2164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Projects\Messiah - Software Solutions\MessiahSoftwareSolutions.com\IISPUBLISH-dev.MessiahSolutions.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/10/2013 17:29:20</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>09/10/2013 17:29:20</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>11/07/2019 22:20:15</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>11/07/2019 22:20:15</publishTime>
+    </File>
+    <File Include="bin/MessiahSoftwareSolutions.com.dll">
+      <publishTime>11/07/2019 22:06:38</publishTime>
+    </File>
+    <File Include="bin/MessiahSoftwareSolutions.com.pdb">
+      <publishTime>11/07/2019 22:06:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 12:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/18/2018 09:44:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>05/24/2018 14:38:22</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.AccessControl.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Pipes.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.AccessControl.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Claims.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Principal.Windows.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>05/24/2018 14:38:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/28/2018 13:01:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/28/2018 13:02:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/28/2018 12:59:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/28/2018 13:00:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>01/23/2014 13:57:34</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/07/2019 15:36:31</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="css/custom.css">
+      <publishTime>11/07/2019 21:51:37</publishTime>
+    </File>
+    <File Include="css/fl-bigmug-line.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="css/fonts.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="css/mdi.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="fonts/bootstrap/glyphicons-halflings-regular.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/bootstrap/glyphicons-halflings-regular.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/bootstrap/glyphicons-halflings-regular.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/bootstrap/glyphicons-halflings-regular.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/bootstrap/glyphicons-halflings-regular.woff2">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/fl-bigmug-line.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/fl-bigmug-line.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/fl-bigmug-line.svg___jb_tmp___">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/fl-bigmug-line.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/fl-bigmug-line.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="fonts/lg.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/lg.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/lg.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/lg.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/materialdesignicons-webfont.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/materialdesignicons-webfont.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/materialdesignicons-webfont.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/materialdesignicons-webfont.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="fonts/materialdesignicons-webfont.woff2">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/about-01-709x667.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/about-us-1-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/about-us-2-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/about-us-3-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/about-us-4-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/accordions-1-570x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/accordions-1-640x472.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/ajax-loader.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-02.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-03.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-04.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-05.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-06.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-07.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-08.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-09.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-10.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-11.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-blog-1.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-breadcrumbs-1920x544.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-image-8.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-image-default.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-image-fixed.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-pattern-dark.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bg-photo-modal-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/bgr.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blick-01.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blick-content-01.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blick-content-02.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blick-content-03.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/block-video-870x500.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-01-868x640.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-02-868x640.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-03-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-post-1-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-post-2-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-post-3-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-post-4-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/blog-post-video-01-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/brave-ipad-718x519.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/brave-iphone-510x874.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/brave-mac-709x667.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/breadcrumbs.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/buffer.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/carousel-image-1-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/carousel-image-2-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/carousel-image-3-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/carousel-image-4-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/controls.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/cta-avatar-01-491x571.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/event-01-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/event-02-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/event-03-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/favicon.ico">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-01-570x366.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-01-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-02-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-03-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-04-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-05-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-06-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-cobbles-01-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-cobbles-02-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-cobbles-03-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-cobbles-04-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-01-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-02-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-03-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-04-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-05-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-fullwidth-06-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-01-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-02-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-03-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-04-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-05-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-grid-06-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-1-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-2-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-3-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-4-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-5-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery-original-6-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-01-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-01-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-02-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-02-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-03-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-03-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-04-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-04-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-05-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-05-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-06-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-06-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-07-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-07-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-08-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gallery/gallery-08-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gmap_marker.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/gmap_marker_active.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/grid-blog-1-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/grid-blog-2-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/handle.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/header-background-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/ie8-panel/warning_bar_0000_us.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-1-987x1221.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-2-570x621.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-3-945x770.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-4-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-5-720x520.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-6-646x724.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-7-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-8-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/image-9-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/inline-gallery-1-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/inline-gallery-2-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/inline-gallery-3-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/inline-gallery-4-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/ipad-01-1360x1233.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/ipad-02-718x519.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/isotope-loader.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-1-1920x970.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-1-1920x970.jpeg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-1-1920x970.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-1-1920x970.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-2-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-3-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-360x460.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-4-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-5-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-6-942x1250.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-7-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-8-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/landing-it-company-9-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/loading.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-default-198x42.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-1-174x113.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-2-173x135.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-3-172x113.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-4-185x110.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-5-173x114.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-image-6-143x110.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/logo-inverse-198x42.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/masonry-title-inside-gallery-01-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/masonry-title-inside-gallery-03-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/masonry-title-inside-gallery-04-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/megamenu-banner-301x510.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/parallax-bg-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/parallax-image-1-1920x1010.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/parallax-image-2-1920x1010.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/post-author-1-108x108.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/post-light-1-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/post-light-2-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/post-light-3-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/post-light-4-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/preloader.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/preloader.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/product-modal-01-318x416.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/progress.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/progress_sprite.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-1-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-1-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-2-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-2-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-3-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-3-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-4-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-4-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-5-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-5-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-6-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/project-6-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-taxi-1-103x107.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-taxi-2-107x111.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-taxi-3-109x112.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-1-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-2-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-3-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-4-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-5-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-6-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/quote-user-7-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/registration-modal-01-510x807.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/ronald-chen-1-420x420.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/roy-henry-150x150.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/sale-modal-01-1170x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/scrim-370x260.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/services-1-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/services-2-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/services-3-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/services-4-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/services-5-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-job-01-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-job-02-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-project-1-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-project-2-652x361.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-project-2-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-project-3-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/single-project-4-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/slider-1-slide-1-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/slider-1-slide-2-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/slider-1-slide-3-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/sprite.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-01-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-02-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-03-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-04-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-05-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-06-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-07-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-08-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-09-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-10-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-11-380x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-12-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-13-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-14-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-15-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/team-vadimrasin-270x270.jpg">
+      <publishTime>11/07/2019 21:06:03</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-01-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-02-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-03-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-04-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-05-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/title-inside-gallery-06-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/tm-logo.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/twitter-blank.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/typography-1-770x480.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/user-1-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/user-2-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/user-3-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/video-bg-lg.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/video-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/video-poster.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/vimeo-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/volume.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/youtube-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="images/_blank.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="js/core.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="js/html5shiv.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="js/pointer-events.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/07/2019 22:20:10</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/404-page.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/503-page.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/about-me.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/about-us.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/accordions.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/audio-post.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/audio/sound-1.mp3">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/audio/sound-2.mp3">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/audio/sound-3.mp3">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/phpmailer/class.phpmailer.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/phpmailer/class.pop3.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/phpmailer/class.smtp.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/phpmailer/PHPMailerAutoload.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/rd-mailform.config.json">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/rd-mailform.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/rd-mailform.tpl">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/rd-search.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/reCaptcha.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/autoload.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/ReCaptcha.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod/Curl.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod/CurlPost.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod/Post.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod/Socket.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestMethod/SocketPost.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/RequestParameters.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/ReCaptcha/Response.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/twitter_api/config.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/twitter_api/tweet.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/twitter_api/twitteroauth/OAuth.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/bat/twitter_api/twitteroauth/twitteroauth.php">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/careers.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/classic-blog.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/coming-soon.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/contacts.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/countdown.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/css/bootstrap.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/css/fl-bigmug-line.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/css/fonts.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/css/mdi.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/css/style.css">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/bootstrap/glyphicons-halflings-regular.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/bootstrap/glyphicons-halflings-regular.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/bootstrap/glyphicons-halflings-regular.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/bootstrap/glyphicons-halflings-regular.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/bootstrap/glyphicons-halflings-regular.woff2">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/fl-bigmug-line.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/fl-bigmug-line.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/fl-bigmug-line.svg___jb_tmp___">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/fl-bigmug-line.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/fl-bigmug-line.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/lg.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/lg.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/lg.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/lg.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/materialdesignicons-webfont.eot">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/materialdesignicons-webfont.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/materialdesignicons-webfont.ttf">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/materialdesignicons-webfont.woff">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fonts/materialdesignicons-webfont.woff2">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/forms.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/fullwidth-gallery.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/grid-album-gallery.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/grid-blog.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/grid-gallery.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/grid-system.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/image-post.html">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/about-01-709x667.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/about-us-1-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/about-us-2-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/about-us-3-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/about-us-4-420x280.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/accordions-1-570x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/accordions-1-640x472.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/ajax-loader.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-02.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-03.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-04.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-05.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-06.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-07.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-08.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-09.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-10.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-11.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-blog-1.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-breadcrumbs-1920x544.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-image-8.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-image-default.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-image-fixed.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-pattern-dark.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bg-photo-modal-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/bgr.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blick-01.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blick-content-01.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blick-content-02.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blick-content-03.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/block-video-870x500.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-01-868x640.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-02-868x640.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-03-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-post-1-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-post-2-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-post-3-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-post-4-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/blog-post-video-01-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/brave-ipad-718x519.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/brave-iphone-510x874.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/brave-mac-709x667.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/breadcrumbs.svg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/buffer.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/carousel-image-1-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/carousel-image-2-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/carousel-image-3-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/carousel-image-4-480x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/controls.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/cta-avatar-01-491x571.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/event-01-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/event-02-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/event-03-570x370.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/favicon.ico">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-01-570x366.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-01-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-02-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-03-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-04-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-05-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-06-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-cobbles-01-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-cobbles-02-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-cobbles-03-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-cobbles-04-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-01-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-02-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-03-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-04-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-05-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-fullwidth-06-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-01-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-02-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-03-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-04-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-05-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-grid-06-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-1-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-2-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-3-965x599.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-4-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-5-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery-original-6-965x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-01-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-01-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-02-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-02-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-03-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-03-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-04-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-04-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-05-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-05-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-06-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-06-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-07-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-07-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-08-1200x800.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gallery/gallery-08-320x320.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gmap_marker.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/gmap_marker_active.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/grid-blog-1-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/grid-blog-2-420x305.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/handle.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/header-background-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/ie8-panel/warning_bar_0000_us.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-1-987x1221.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-2-570x621.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-3-945x770.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-4-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-5-720x520.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-6-646x724.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-7-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-8-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/image-9-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/inline-gallery-1-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/inline-gallery-2-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/inline-gallery-3-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/inline-gallery-4-480x308.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/ipad-01-1360x1233.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/ipad-02-718x519.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/isotope-loader.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-1-1920x970.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-1-1920x970.jpeg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-1-1920x970.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-1-1920x970.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-2-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-3-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-360x460.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-4-800x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-5-1120x650.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-6-942x1250.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-7-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-8-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/landing-it-company-9-570x415.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/loading.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-default-198x42.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-1-174x113.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-2-173x135.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-3-172x113.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-4-185x110.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-5-173x114.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-image-6-143x110.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/logo-inverse-198x42.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/masonry-title-inside-gallery-01-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/masonry-title-inside-gallery-03-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/masonry-title-inside-gallery-04-570x790.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/megamenu-banner-301x510.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/parallax-bg-01.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/parallax-image-1-1920x1010.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/parallax-image-2-1920x1010.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/post-author-1-108x108.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/post-light-1-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/post-light-2-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/post-light-3-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/post-light-4-120x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/preloader.gif">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/preloader.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/product-modal-01-318x416.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/progress.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/progress_sprite.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-1-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-1-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-2-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-2-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-3-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-3-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-4-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-4-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-5-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-5-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-6-1200x800-original.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/project-6-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-taxi-1-103x107.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-taxi-2-107x111.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-taxi-3-109x112.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-1-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-2-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-3-210x210.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-4-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-5-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-6-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/quote-user-7-80x80.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/registration-modal-01-510x807.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/ronald-chen-1-420x420.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/roy-henry-150x150.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/sale-modal-01-1170x600.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/scrim-370x260.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/services-1-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/services-2-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/services-3-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/services-4-960x660.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/services-5-720x459.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-job-01-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-job-02-570x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-project-1-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-project-2-652x361.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-project-2-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-project-3-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/single-project-4-870x580.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/slider-1-slide-1-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/slider-1-slide-2-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/slider-1-slide-3-1920x910.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/sprite.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-01-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-02-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-03-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-04-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-05-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-06-270x270.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-07-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-08-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-09-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-10-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-11-380x380.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-12-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-13-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-14-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/team-15-300x300.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-01-640x430.jpg">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-02-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-03-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-04-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-05-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/title-inside-gallery-06-640x430.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/tm-logo.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/twitter-blank.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/typography-1-770x480.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/user-1-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/user-2-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/user-3-80x80.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/video-bg-lg.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/video-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/video-poster.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/vimeo-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/volume.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/youtube-play.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/images/_blank.png">
+      <publishTime>09/24/2018 15:34:47</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/index.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/js/core.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/js/html5shiv.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/js/pointer-events.min.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/js/script.js">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/login-page.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/masonry-blog.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/masonry-gallery.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/modern-blog.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/our-history.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/pricing-page.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/pricing.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/privacy-policy.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/radials.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/registration-page.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/search-results.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/services.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/single-job.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/single-post.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/single-project.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/single-service.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/tables.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/tabs.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/tooltips.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/typography.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/under-construction.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video-post.html">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/office-day.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/office-day.mp4">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.gif">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.jpeg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.jpg">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.mp4">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.ogv">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.png">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg-lg.webm">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video-bg.mp4">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="PurchasedWebTemplate/video/video.mp4">
+      <publishTime>09/24/2018 15:34:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.min.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.js">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.3.1.slim.min.map">
+      <publishTime>11/06/2019 20:25:39</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>11/06/2019 20:25:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>11/06/2019 20:25:43</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>11/06/2019 20:25:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>11/06/2019 20:25:43</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>11/06/2019 20:25:42</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/07/2019 21:36:30</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/07/2019 22:00:23</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/06/2019 20:25:37</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/07/2019 22:06:39</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
