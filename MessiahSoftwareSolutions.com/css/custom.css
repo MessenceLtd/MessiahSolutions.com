@@ -7,6 +7,29 @@
 
 
 /* Primary buttons with black text! */
-.button-primary, .button-primary:hover {
+.button-primary, .button-primary:hover
+{
     color: #000;
+}
+
+
+/* Change white text hover to black on the homepage 4 components - Our Advantages */
+.OurAdvantages .box-minimal-border:hover .box-minimal-text,
+.OurAdvantages .box-minimal-border:hover .box-minimal-title
+{
+    color: #000;
+    font-weight: bold;
+}
+.OurAdvantages .box-minimal-border:hover hr 
+{
+    border-color: #000;
+}
+.OurAdvantages .box-minimal-border:hover .box-minimal-icon
+{
+    color:#000;
+}
+.OurAdvantages .divider 
+{
+    max-width: 100%;
+    /* #ToDo add animation when cursor hovers the our advantages then the teal seperator turns from 100px to 100% width in animation*/
 }
