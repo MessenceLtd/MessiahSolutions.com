@@ -419,6 +419,8 @@
     <Content Include="fonts\materialdesignicons-webfont.ttf" />
     <Content Include="fonts\materialdesignicons-webfont.woff" />
     <Content Include="fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="PrivateAppSettings.config" />
+    <Content Include="PrivateConnectionStrings.config" />
     <None Include="Properties\PublishProfiles\LocalFolderPublishPlan.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -431,6 +433,11 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="video\office-day.jpg" />
+    <Content Include="video\video-bg-lg.gif" />
+    <Content Include="video\video-bg-lg.jpeg" />
+    <Content Include="video\video-bg-lg.jpg" />
+    <Content Include="video\video-bg-lg.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
