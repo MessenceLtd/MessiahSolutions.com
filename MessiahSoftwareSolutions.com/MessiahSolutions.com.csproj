@@ -398,6 +398,7 @@
     <Content Include="images\volume.png" />
     <Content Include="images\youtube-play.png" />
     <Content Include="images\_blank.png" />
+    <Content Include="_app_offline.htm" />
     <Content Include="js\core.min.js" />
     <Content Include="js\html5shiv.min.js" />
     <Content Include="js\pointer-events.min.js" />
@@ -452,6 +453,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\UnderConstruction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

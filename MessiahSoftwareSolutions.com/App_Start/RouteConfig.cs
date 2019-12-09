@@ -16,7 +16,9 @@ namespace MessiahSoftwareSolutions.com
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                //defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                // 03.12.19 new temp under construction settigns for root/default application routes
+                defaults: new { controller = "Home", action = "UnderConstruction", id = UrlParameter.Optional }
             );
         }
     }
