@@ -63,7 +63,7 @@
         <!-- Page Header-->
         <header class="section page-header">
             <!-- RD Navbar-->
-            <div class="rd-navbar-wrap rd-navbar-centered rd-navbar--is-stuck">
+            <div class="rd-navbar-wrap rd-navbar-centered" style="box-shadow:0 6px 8px rgba(41, 41, 58, 0.17);">
                 @*11.12.19 removed alot of wierd properties from the nav bar of the purchased template + added "rd-navbar--is-stuck" hack / cheat.
                 data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
                 data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
@@ -71,8 +71,9 @@
                 data-md-device-layout="rd-navbar-fixed"
                 data-lg-device-layout="rd-navbar-static"
                 data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
-                data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"*@
-                <nav class="rd-navbar rd-navbar--is-stuck">
+                data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"
+                    + removing manuall usage of css clas: rd-navbar--is-stuck (from wrapper top div as well)  *@
+                <nav class="rd-navbar">
                     <div class="rd-navbar-inner">
                         <div class="rd-navbar-aside-left">
                             <div class="rd-navbar-nav-wrap">
