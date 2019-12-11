@@ -12422,7 +12422,7 @@ html:not(.lt-ie10) .not-animated {
 * RD Navbar
 * --------------------------------------------------
 */
-@keyframes rd-navbar-slide-down {
+/*@keyframes rd-navbar-slide-down {
   0% {
     transform: translateY(-100%); }
   100% {
@@ -12432,7 +12432,7 @@ html:not(.lt-ie10) .not-animated {
   0% {
     transform: translateY(0); }
   100% {
-    transform: translateY(-100%); } }
+    transform: translateY(-100%); } }*/
 
 .breadcrumbs-custom-wrap .rd-navbar-wrap {
   position: absolute;
@@ -13521,8 +13521,11 @@ html:not(.lt-ie10) .not-animated {
     margin-left: 45px; }
   .rd-navbar-static .rd-navbar-search .rd-navbar-search-toggle span {
     font-size: 30px; }
-  .rd-navbar-static.rd-navbar--is-stuck, .rd-navbar-static.rd-navbar--is-clone {
-    will-change: transform; }
+  /*.rd-navbar-static.rd-navbar--is-stuck, .rd-navbar-static.rd-navbar--is-clone 
+  {
+    will-change: transform; 
+
+  }*/
     .rd-navbar-static.rd-navbar--is-stuck .rd-navbar-nav > li > a, .rd-navbar-static.rd-navbar--is-clone .rd-navbar-nav > li > a {
       padding: 28px 0; }
   .breadcrumbs-custom-wrap .rd-navbar-static .rd-navbar-nav > li > a:before {
