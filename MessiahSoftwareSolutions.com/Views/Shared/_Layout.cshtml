@@ -6,10 +6,10 @@
     <title>@ViewBag.Title - Messiah Software Solutions</title>
 
     <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="robots" content="noindex">
+
+    @*<link rel="icon" href="images/favicon.ico" type="image/x-icon">*@
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -67,22 +67,16 @@
                         <div class="rd-navbar-aside-left">
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="/">Home</a></li>
                                     <li><a href="about-us.html">About Us</a></li>
                                     <li>
                                         <a href="#">Blog</a>
                                         <ul class="rd-navbar-dropdown">
-                                            <li><a href="classic-blog.html">Classic Blog</a></li>
-                                            <li><a href="grid-blog.html">Grid Blog</a></li>
-                                            <li><a href="masonry-blog.html">Masonry Blog</a></li>
-                                            <li><a href="modern-blog.html">Modern Blog</a></li>
-                                            <li><a href="audio-post.html">Audio Post</a></li>
-                                            <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="image-post.html">Image Post</a></li>
-                                            <li><a href="video-post.html">Video Post</a></li>
+                                            <li><a href="#">Under Construction!</a></li>
                                         </ul>
                                     </li>
-                                    <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                    @* 09.12.19 disabled pages from the template menu with style="display:none;" *@ 
+                                    <li class="rd-navbar--has-megamenu rd-navbar-submenu" style="display:none;">
                                         <a href="#">Pages</a>
                                         <!-- RD Navbar Megamenu -->
                                         <ul class="rd-navbar-megamenu">
