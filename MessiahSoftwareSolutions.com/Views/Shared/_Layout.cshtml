@@ -29,7 +29,9 @@
     <!-- Page preloader-->
     <div class="preloader">
         <div class="preloader-body">
-            <img src="images/logo-default-198x42.png" alt="" width="198" height="42" />
+            @*<img src="images/logo-default-198x42.png" alt="" width="198" height="42" />*@
+            @* 11.12.19 new temp logo! made manually to request a new sane logo from decent underconstruction page *@
+            <img src="Images/MessiahLogo-TopWebsite-121119.png" alt="" width="198" height="42" border="0" />
             <div class="cssload-container">
                 <div class="cssload-speeding-wheel"></div>
             </div>
@@ -61,21 +63,29 @@
         <!-- Page Header-->
         <header class="section page-header">
             <!-- RD Navbar-->
-            <div class="rd-navbar-wrap rd-navbar-centered">
-                <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+            <div class="rd-navbar-wrap rd-navbar-centered rd-navbar--is-stuck">
+                @*11.12.19 removed alot of wierd properties from the nav bar of the purchased template + added "rd-navbar--is-stuck" hack / cheat.
+                data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
+                data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+                data-md-device-layout="rd-navbar-fixed"
+                data-lg-device-layout="rd-navbar-static"
+                data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
+                data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"*@
+                <nav class="rd-navbar rd-navbar--is-stuck">
                     <div class="rd-navbar-inner">
                         <div class="rd-navbar-aside-left">
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
                                     <li class="active"><a href="/">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="#" title="Under construction!">About Us</a></li>
                                     <li>
                                         <a href="#">Blog</a>
                                         <ul class="rd-navbar-dropdown">
                                             <li><a href="#">Under Construction!</a></li>
                                         </ul>
                                     </li>
-                                    @* 09.12.19 disabled pages from the template menu with style="display:none;" *@ 
+                                    @* 09.12.19 disabled pages from the template menu with style="display:none;" *@
                                     <li class="rd-navbar--has-megamenu rd-navbar-submenu" style="display:none;">
                                         <a href="#">Pages</a>
                                         <!-- RD Navbar Megamenu -->
@@ -136,25 +146,33 @@
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             <!-- RD Navbar Brand-->
-                            <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo-default-198x42.png" alt="" width="198" height="42" /><img class="logo-inverse" src="images/logo-inverse-198x42.png" alt="" width="198" height="42" /></a></div>
+                            <div class="rd-navbar-brand">
+                                <a class="brand-name" href="/">
+                                    @*<img class="logo-default" src="images/logo-default-198x42.png" alt="" width="198" height="42" />*@
+                                    <img class="logo-default" src="Images/MessiahLogo-TopWebsite-121119.png" alt="" border="0" width="256" height="42" />
+                                    <img class="logo-inverse" src="images/logo-inverse-198x42.png" alt="" width="256" height="42" />
+                                </a>
+                            </div>
                         </div>
                         <div class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
                         <div class="rd-navbar-aside-right rd-navbar-collapse">
                             <!-- RD Navbar Search-->
-                            <div class="rd-navbar-search">
-                                <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                                <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
-                                    <div class="form-wrap">
-                                        <label class="form-label form-label" for="rd-navbar-search-form-input">Search...</label>
-                                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-                                        <div class="rd-search-results-live"></div>
-                                    </div>
-                                    <button class="rd-search-form-submit mdi mdi-magnify"></button>
-                                </form>
-                            </div><a class="button button-sm button-default-outline" href="contacts.html">request a quote</a>
+                            <div class="rd-navbar-search" style="display:none">
+                                @*11.12.19 made the search hidden for now*@
+                            <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
+                            <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                                <div class="form-wrap">
+                                    <label class="form-label form-label" for="rd-navbar-search-form-input">Search...</label>
+                                    <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                                    <div class="rd-search-results-live"></div>
+                                </div>
+                                <button class="rd-search-form-submit mdi mdi-magnify"></button>
+                            </form>
                         </div>
+                        <a class="button button-sm button-default-outline" href="contacts.html">request a quote</a>
                     </div>
-                </nav>
+                </div>
+            </nav>
             </div>
         </header>
 
