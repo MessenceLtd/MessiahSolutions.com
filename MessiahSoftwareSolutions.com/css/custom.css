@@ -42,3 +42,44 @@
     top: 0;
     box-shadow: 0 6px 8px rgba(41, 41, 58, 0.17);
 }
+
+
+
+/***    UnderConstructionWrapper     ****/
+.UnderConstructionWrapper {
+    padding-top: 1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.UnderConstructionWrapper h2 
+{
+    text-transform: uppercase;
+}
+
+.HeavyText
+{
+    font-weight:bold;
+}
+
+@media only screen and (max-width: 600px) {
+    .UnderConstructionWrapper
+    {
+        font-size:18px;
+    }
+
+    .MobileBGPlaceHolder
+    {
+        display: block;
+        min-height: 265px;
+        background-image: url(/Images/ComingSoon/Mobile-BG.jpg);
+        height: 265px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+}
+
+
+
