@@ -425,7 +425,7 @@
     <Content Include="fonts\materialdesignicons-webfont.woff2" />
     <Content Include="PrivateAppSettings.config" />
     <Content Include="PrivateConnectionStrings.config" />
-    <None Include="Properties\PublishProfiles\LocalFolderPublishPlan.pubxml" />
+    <None Include="Properties\PublishProfiles\PublishPlan-MessiahSolutions.com.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
