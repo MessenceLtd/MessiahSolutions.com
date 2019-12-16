@@ -328,18 +328,18 @@ $document.ready(function () {
 				.addClass("not-animated");
 		}
 
-
-		var tempFunction = function (nextSlideItem, duration) {
-			return function () {
-				nextSlideItem
-					.removeClass("not-animated")
-					.addClass(nextSlideItem.attr("data-caption-animate"))
-					.addClass("animated");
-				if (duration) {
-					nextSlideItem.css('animation-duration', duration + 'ms');
-				}
-			};
-		};
+        // 13.12.19 Removed to try disable animations for accessibility purposes.. 
+		//var tempFunction = function (nextSlideItem, duration) {
+		//	return function () {
+		//		nextSlideItem
+		//			.removeClass("not-animated")
+		//			.addClass(nextSlideItem.attr("data-caption-animate"))
+		//			.addClass("animated");
+		//		if (duration) {
+		//			nextSlideItem.css('animation-duration', duration + 'ms');
+		//		}
+		//	};
+		//};
 
 		for (var i = 0; i < nextSlide.length; i++) {
 			nextSlideItem = $(nextSlide[i]);
@@ -353,7 +353,7 @@ $document.ready(function () {
 				}
 
 			} else {
-				nextSlideItem.removeClass("not-animated")
+                nextSlideItem.removeClass("not-animated");
 			}
 		}
 	}
