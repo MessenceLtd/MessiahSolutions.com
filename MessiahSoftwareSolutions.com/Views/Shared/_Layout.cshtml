@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Messiah Software Solutions</title>
+    <title>@ViewBag.Title @*- Messiah Software Solutions*@</title>
 
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -86,13 +86,13 @@
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
                                     <li class="active"><a href="/">Home</a></li>
-                                    <li><a href="#" title="Under construction!">About Us</a></li>
+                                    @*<li><a href="#" title="Under construction!">About Us</a></li>
                                     <li>
                                         <a href="#">Blog</a>
                                         <ul class="rd-navbar-dropdown">
                                             <li><a href="#">Under Construction!</a></li>
                                         </ul>
-                                    </li>
+                                    </li>*@
                                     @* 09.12.19 disabled pages from the template menu with style="display:none;" *@
                                     <li class="rd-navbar--has-megamenu rd-navbar-submenu" style="display:none;">
                                         <a href="#">Pages</a>
@@ -157,8 +157,8 @@
                             <div class="rd-navbar-brand">
                                 <a class="brand-name" href="/">
                                     @*<img class="logo-default" src="images/logo-default-198x42.png" alt="" width="198" height="42" />*@
-                                    <img class="logo-default" src="Images/MessiahLogo-TopWebsite-121119.png" alt="" border="0" width="256" height="42" />
-                                    <img class="logo-inverse" src="images/logo-inverse-198x42.png" alt="" width="256" height="42" />
+                                    <img class="logo-default" title="temporary logo !!!" src="Images/MessiahLogo-TopWebsite-121119.png" alt="" border="0" width="256" height="42" />
+                                    @*<img class="logo-inverse" src="images/logo-inverse-198x42.png" alt="" width="256" height="42" />*@
                                 </a>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                 <button class="rd-search-form-submit mdi mdi-magnify"></button>
                             </form>
                         </div>
-                        <a class="button button-sm button-default-outline" href="mailto:info@messiahsolutions.com">request a quote</a>
+                        <a class="button button-sm button-default-outline" href="mailto:info@messiahsolutions.com">request a quote by email</a>
                     </div>
                 </div>
             </nav>
@@ -191,24 +191,34 @@
         <footer class="section page-footer page-footer-default text-left bg-gray-darker">
             <div class="container-wide">
                 <div class="row row-50 justify-content-sm-center">
-                    <div class="col-md-6 col-xl-3">
+                    <div class="col-md-6 col-xl-12">
                         <div class="inset-xxl">
                             <h6>About Us</h6>
-                            <p class="text-spacing-sm">We at Messiah Software Solutions know how to design and develop a website or app of any complexity. Regardless of what you are looking for, our experts can deliver a solution, which will elevate your business to unbelievable heights.</p>
+                            <p class="text-spacing-sm">
+                                Messiah Software Solutions was created to help companies and people to become a better version of themselfs and create software solutions!
+                                <br />
+                                We love to create! We love to write scrolls and daily tasks and audit our lifes! 
+                                <br />
+                                Daily tasks that will be saved as scrolls and might turn into personal special memories.
+                                <br />
+                                The most important thing for us is integrity, care and creation! We love our clients!
+                                <br />
+                                Let's meet and build solutions together and create a better world with the help of God, Bible, Our skills and care for others.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-2">
+                    @*<div class="col-md-6 col-xl-2">
                         <h6>Quick Links</h6>
                         <ul class="list-marked list-marked-primary">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="classic-blog.html">Blog</a></li>
-                            <li><a href="grid-gallery.html">Portfolio</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/">About Us</a></li>
+                            <li><a href="/">Blog</a></li>
+                            <li><a href="#">Clients</a></li>
                         </ul>
-                    </div>
-                    <div class="col-md-6 col-xl-4">
-                        <h6>Instagram Feed</h6>
+                    </div>*@
+                    @* 13.12.19 Removing the template pictures with display:none *@
+                    <div class="col-md-6 col-xl-4" style="display:none !important;">
+                        <h6>Template nice pictures instead of almost empty leggal catalog to show:</h6>
                         <div class="instafeed text-center" data-lightgallery="group">
                             <div class="row row-10 row-narrow">
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
@@ -302,13 +312,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-3">
-                        <h6>Contact Us</h6>
-                        <!-- RD Mailform-->
-                        
-                    </div>
+
+                    @*<div class="col-md-6 col-xl-3">
+        <h6>Contact Us</h6>*@
+                    <!-- RD Mailform-->
+                    @*</div>*@
                 </div>
-                <p class="right">&#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved&nbsp;<a href="#">Terms of Use</a>&nbsp;and&nbsp;<a href="privacy-policy.html">Privacy Policy</a></p>
+                <p class="right">
+                    &#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved 
+                    @*<a href="#">Terms of Use</a>&nbsp;and&nbsp;<a href="privacy-policy.html">Privacy Policy</a>*@
+                </p>
             </div>
         </footer>
     </div>

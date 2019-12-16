@@ -328,7 +328,7 @@ $document.ready(function () {
 				.addClass("not-animated");
 		}
 
-
+        // 13.12.19 Removed to try disable animations for accessibility purposes.. 
 		//var tempFunction = function (nextSlideItem, duration) {
 		//	return function () {
 		//		nextSlideItem
