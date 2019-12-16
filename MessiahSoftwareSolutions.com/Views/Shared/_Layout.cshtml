@@ -26,17 +26,20 @@
 </head>
 <body>
 
-    <!-- Page preloader-->
-    <div class="preloader">
+
+    @*<img src="images/logo-default-198x42.png" alt="" width="198" height="42" />*@
+    @* 11.12.19 new temp logo! made manually to request a new sane logo from decent underconstruction page *@
+
+    @* 16.12.19 removed Page preloader settings <!-- Page preloader settings --> *@
+    @*<div class="preloader">
         <div class="preloader-body">
-            @*<img src="images/logo-default-198x42.png" alt="" width="198" height="42" />*@
-            @* 11.12.19 new temp logo! made manually to request a new sane logo from decent underconstruction page *@
+
             <img src="Images/MessiahLogo-TopWebsite-121119.png" alt="" width="198" height="42" border="0" />
             <div class="cssload-container">
                 <div class="cssload-speeding-wheel"></div>
             </div>
         </div>
-    </div>
+    </div>*@
 
     @*<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -65,34 +68,34 @@
             <!-- RD Navbar-->
             <div class="rd-navbar-wrap rd-navbar-centered" style="box-shadow: 0 6px 8px rgba(41, 41, 58, 0.17);">
                 @*11.12.19 removed alot of wierd properties from the nav bar of the purchased template + added "rd-navbar--is-stuck" hack / cheat.
-                data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-                data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
-                data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-                data-md-device-layout="rd-navbar-fixed"
-                data-lg-device-layout="rd-navbar-static"
-                data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
-                data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"
-                    + removing manuall usage of css clas: rd-navbar--is-stuck (from wrapper top div as well)  *@
-                <nav class="rd-navbar" 
+                    data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
+                    data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
+                    data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+                    data-md-device-layout="rd-navbar-fixed"
+                    data-lg-device-layout="rd-navbar-static"
+                    data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
+                    data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true"
+                        + removing manuall usage of css clas: rd-navbar--is-stuck (from wrapper top div as well)  *@
+                <nav class="rd-navbar"
                      data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
-                data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
-                data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
-                data-md-device-layout="rd-navbar-fixed"
-                data-lg-device-layout="rd-navbar-static"
-                data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
-                data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
+                     data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth"
+                     data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static"
+                     data-md-device-layout="rd-navbar-fixed"
+                     data-lg-device-layout="rd-navbar-static"
+                     data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true"
+                     data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
                     <div class="rd-navbar-inner">
                         <div class="rd-navbar-aside-left">
                             <div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
                                     <li class="active"><a href="/">Home</a></li>
                                     @*<li><a href="#" title="Under construction!">About Us</a></li>
-                                    <li>
-                                        <a href="#">Blog</a>
-                                        <ul class="rd-navbar-dropdown">
-                                            <li><a href="#">Under Construction!</a></li>
-                                        </ul>
-                                    </li>*@
+                                        <li>
+                                            <a href="#">Blog</a>
+                                            <ul class="rd-navbar-dropdown">
+                                                <li><a href="#">Under Construction!</a></li>
+                                            </ul>
+                                        </li>*@
                                     @* 09.12.19 disabled pages from the template menu with style="display:none;" *@
                                     <li class="rd-navbar--has-megamenu rd-navbar-submenu" style="display:none;">
                                         <a href="#">Pages</a>
@@ -167,20 +170,20 @@
                             <!-- RD Navbar Search-->
                             <div class="rd-navbar-search" style="display:none">
                                 @*11.12.19 made the search hidden for now*@
-                            <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
-                            <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
-                                <div class="form-wrap">
-                                    <label class="form-label form-label" for="rd-navbar-search-form-input">Search...</label>
-                                    <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
-                                    <div class="rd-search-results-live"></div>
-                                </div>
-                                <button class="rd-search-form-submit mdi mdi-magnify"></button>
-                            </form>
+                                <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
+                                <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
+                                    <div class="form-wrap">
+                                        <label class="form-label form-label" for="rd-navbar-search-form-input">Search...</label>
+                                        <input class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off">
+                                        <div class="rd-search-results-live"></div>
+                                    </div>
+                                    <button class="rd-search-form-submit mdi mdi-magnify"></button>
+                                </form>
+                            </div>
+                            <a class="button button-sm button-default-outline" href="mailto:info@messiahsolutions.com">request a quote by email</a>
                         </div>
-                        <a class="button button-sm button-default-outline" href="mailto:info@messiahsolutions.com">request a quote by email</a>
                     </div>
-                </div>
-            </nav>
+                </nav>
             </div>
         </header>
 
@@ -197,7 +200,7 @@
                             <p class="text-spacing-sm">
                                 Messiah Software Solutions was created to help companies and people to become a better version of themselfs and create software solutions!
                                 <br />
-                                We love to create! We love to write scrolls and daily tasks and audit our lifes! 
+                                We love to create! We love to write scrolls and daily tasks and audit our lifes!
                                 <br />
                                 Daily tasks that will be saved as scrolls and might turn into personal special memories.
                                 <br />
@@ -208,14 +211,14 @@
                         </div>
                     </div>
                     @*<div class="col-md-6 col-xl-2">
-                        <h6>Quick Links</h6>
-                        <ul class="list-marked list-marked-primary">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/">About Us</a></li>
-                            <li><a href="/">Blog</a></li>
-                            <li><a href="#">Clients</a></li>
-                        </ul>
-                    </div>*@
+                            <h6>Quick Links</h6>
+                            <ul class="list-marked list-marked-primary">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">About Us</a></li>
+                                <li><a href="/">Blog</a></li>
+                                <li><a href="#">Clients</a></li>
+                            </ul>
+                        </div>*@
                     @* 13.12.19 Removing the template pictures with display:none *@
                     <div class="col-md-6 col-xl-4" style="display:none !important;">
                         <h6>Template nice pictures instead of almost empty leggal catalog to show:</h6>
@@ -314,12 +317,12 @@
                     </div>
 
                     @*<div class="col-md-6 col-xl-3">
-        <h6>Contact Us</h6>*@
+                        <h6>Contact Us</h6>*@
                     <!-- RD Mailform-->
                     @*</div>*@
                 </div>
                 <p class="right">
-                    &#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved 
+                    &#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved
                     @*<a href="#">Terms of Use</a>&nbsp;and&nbsp;<a href="privacy-policy.html">Privacy Policy</a>*@
                 </p>
             </div>
