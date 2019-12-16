@@ -209,6 +209,18 @@
     <Content Include="images\carousel-image-2-480x320.jpg" />
     <Content Include="images\carousel-image-3-480x320.jpg" />
     <Content Include="images\carousel-image-4-480x320.jpg" />
+    <Content Include="images\ComingSoon\16-12-19-new-logo-process\LogoSketchRequestForMessiahSoftwareSolutionsLtd.jpg" />
+    <Content Include="images\ComingSoon\16-12-19-new-logo-process\MenoraRememberMosesBible.jpg" />
+    <Content Include="images\ComingSoon\16-12-19-new-logo-process\MessiahLogo-TopWebsite-121119.png" />
+    <Content Include="images\ComingSoon\16-12-19-new-logo-process\MessiahLogoTemp.10.12.19.png" />
+    <Content Include="images\ComingSoon\16-12-19-new-logo-process\MessiahSignatureTemp101219.png" />
+    <Content Include="images\ComingSoon\bricks.png" />
+    <Content Include="images\ComingSoon\crown.png" />
+    <Content Include="images\ComingSoon\email.png" />
+    <Content Include="images\ComingSoon\facebook.png" />
+    <Content Include="images\ComingSoon\linkedin.png" />
+    <Content Include="images\ComingSoon\mobile-bg.jpg" />
+    <Content Include="images\ComingSoon\twitter.png" />
     <Content Include="images\controls.jpg" />
     <Content Include="images\cta-avatar-01-491x571.png" />
     <Content Include="images\event-01-570x370.jpg" />
@@ -309,6 +321,7 @@
     <Content Include="images\masonry-title-inside-gallery-03-570x790.jpg" />
     <Content Include="images\masonry-title-inside-gallery-04-570x790.jpg" />
     <Content Include="images\megamenu-banner-301x510.jpg" />
+    <Content Include="images\MessiahLogo-TopWebsite-121119.png" />
     <Content Include="images\parallax-bg-01.jpg" />
     <Content Include="images\parallax-image-1-1920x1010.jpg" />
     <Content Include="images\parallax-image-2-1920x1010.jpg" />
