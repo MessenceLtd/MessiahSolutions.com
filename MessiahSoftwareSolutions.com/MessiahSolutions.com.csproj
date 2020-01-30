@@ -2577,6 +2577,7 @@
     <Content Include="Umbraco\Views\Default.cshtml" />
     <Content Include="Umbraco\Views\Preview\Index.cshtml" />
     <Content Include="Umbraco\Views\web.config" />
+    <Content Include="Views\HomeUmbracoBackUp20012020.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
