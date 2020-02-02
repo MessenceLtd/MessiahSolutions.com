@@ -9,11 +9,11 @@ namespace MessiahSoftwareSolutions.com
         {
             filters.Add(new HandleErrorAttribute());
 
-            #if (!DEBUG)
+            //#if (!DEBUG)
 
             filters.Add(new RequireHttpsAttribute());
 
-            #endif
+            //#endif
 
         }
     }
