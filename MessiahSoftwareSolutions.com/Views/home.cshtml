@@ -1,6 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
+    ViewBag.Title = "MESSIAH - SOFTWARE SOLUTIONS LTD - Homepage";
     Layout = "master.cshtml";
     var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
 }
@@ -52,7 +53,7 @@
     </h2>
 
     <br />
-    "Messiah Software Solutions LTD" is a small business, private software company  from israel owned by <a href="https://about.me/vadimrasin" target="_blank">Vadim Rasin</a>.
+    "Messiah - Software Solutions LTD" is a small business, private software company  from israel owned by <a href="https://about.me/vadimrasin" target="_blank" title="Annoying old ClickBait..">Vadim Rasin</a>.
     <br />
     <br />
     We are looking for cool projects! <br />
