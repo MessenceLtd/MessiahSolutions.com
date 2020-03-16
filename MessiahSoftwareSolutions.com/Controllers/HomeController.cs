@@ -11,6 +11,7 @@ namespace MessiahSoftwareSolutions.com.Controllers
         public ActionResult Index()
         {
             return View();
+            //return UnderConstruction();
         }
 
         public ActionResult UnderConstruction()
