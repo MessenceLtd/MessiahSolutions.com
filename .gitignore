@@ -1,9 +1,11 @@
-/MessiahSoftwareSolutions.com/bin/
-/MessiahSoftwareSolutions.com/obj/
+/MessiahSolutions.com/bin/
+/MessiahSolutions.com/obj/
+/MessiahSolutions.com/App_Data/
 /.vs/
 /IISPUBLISH-dev.MessiahSolutions.com/
 /packages/
-/MessiahSoftwareSolutions.com/PrivateAppSettings.config
-/MessiahSoftwareSolutions.com/PrivateConnectionStrings.config
-/MessiahSoftwareSolutions.com/MessiahSolutions.com.csproj.user
-/MessiahSoftwareSolutions.com/Properties/PublishProfiles/PublishPlan-MessiahSolutions.com.pubxml.user
+/MessiahSolutions.com/PrivateAppSettings.config
+/MessiahSolutions.com/PrivateConnectionStrings.config
+/MessiahSolutions.com/MessiahSolutions.com.csproj.user
+/MessiahSolutions.com/Properties/PublishProfiles/PublishPlan-MessiahSolutions.com.pubxml.user
+
