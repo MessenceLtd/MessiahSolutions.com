@@ -1,0 +1,15 @@
+﻿
+@media (min-width: 1600px)
+{
+    .bg-gray-darker div.section-xl {
+        background-size: cover !important;
+    }
+}
+
+.page .icon-primary 
+{
+    color: #ffffff; /* instead of current #0F4B7F */
+}
+
+
+
