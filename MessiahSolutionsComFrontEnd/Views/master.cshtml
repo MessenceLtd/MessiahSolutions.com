@@ -3,9 +3,15 @@
 @{
     Layout = null;
     // Get basic design settings from the homepage
-    var home = (Home)Model.Root();
-    var font = home.Font;
-    var colorTheme = home.ColorTheme;
+    //var home = (Home)Model.Root();
+    //var font = home.Font;
+    //var colorTheme = home.ColorTheme;
+
+    var home = Model.Root();
+    var font = home.GetProperty("Font").Value().ToString();
+    var colorTheme = home.GetProperty("ColorTheme").Value().ToString();
+    var siteName = home.GetProperty("Sitename").Value().ToString();
+
 }
 
 <!doctype html>
@@ -14,21 +20,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>@Model.Name - @home.Sitename</title>
+    <title>@Model.Name - @siteName</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     @*<link rel="stylesheet" href="@Url.Content("~/css/umbraco-starterkit-style.css")" />*@
     @RenderSection("Header", required: false)
 
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <!-- Stylesheets-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:200,400%7CLato:300,400,300italic,700%7CMontserrat:900">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/custom-new.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/custom-new.css">
 
 </head>
 
@@ -37,7 +43,7 @@
     <!-- Page preloader-->
     <div class="preloader">
         <div class="preloader-body">
-            <img src="Images/logo/company-logo.png" alt="" width="100" height="75" />
+            <img src="/images/logo/company-logo.png" alt="" width="100" height="75" />
             <div class="cssload-container">
                 <div class="cssload-speeding-wheel"></div>
             </div>
@@ -48,37 +54,37 @@
     <div class="page">
 
         @*<div class="mobile-nav">
-            <nav class="nav-bar">
-                @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
-            </nav>
-        </div>*@
+                <nav class="nav-bar">
+                    @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
+                </nav>
+            </div>*@
 
         @*<header class="header">
 
-            <div class="logo">
-                @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
-                {
-                <div class="nav-link--home">
-                    <img class="logo-image" src="@home.SiteLogo.Url" alt="@home.Sitename">
+                <div class="logo">
+                    @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
+                    {
+                    <div class="nav-link--home">
+                        <img class="logo-image" src="@home.SiteLogo.Url" alt="@home.Sitename">
+                    </div>
+                    }
+                    else
+                    {
+                    <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
+                    }
                 </div>
-                }
-                else
-                {
-                <a class="nav-link nav-link--home nav-link--home__text logo-text" href="/">@home.Sitename</a>
-                }
-            </div>
 
-            <nav class="nav-bar top-nav">
-                @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
-            </nav>
+                <nav class="nav-bar top-nav">
+                    @Html.Partial("~/Views/Partials/Navigation/TopNavigation.cshtml")
+                </nav>
 
-            <div class="mobile-nav-handler">
-                <div class="hamburger lines" id="toggle-nav">
-                    <span></span>
+                <div class="mobile-nav-handler">
+                    <div class="hamburger lines" id="toggle-nav">
+                        <span></span>
+                    </div>
                 </div>
-            </div>
 
-        </header>*@
+            </header>*@
 
         <!-- Page Header-->
         <header class="section page-header">
@@ -87,7 +93,9 @@
                 <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fullwidth" data-xl-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-md-stick-up-offset="1px" data-lg-stick-up-offset="1px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true">
                     <div class="rd-navbar-inner">
                         <div class="rd-navbar-aside-left">
-                            <div class="rd-navbar-nav-wrap">
+                            @Html.Partial("~/views/partials/navigation/TopNavigation.cshtml")
+
+                            <!--<div class="rd-navbar-nav-wrap">
                                 <ul class="rd-navbar-nav">
                                     <li class="active"><a href="index.html">Home</a></li>
                                     <li><a href="about-us.html">About Us</a></li>
@@ -105,9 +113,9 @@
                                         </ul>
                                     </li>
                                     <li class="rd-navbar--has-megamenu rd-navbar-submenu">
-                                        <a href="#">Pages</a>
-                                        <!-- RD Navbar Megamenu -->
-                                        <ul class="rd-navbar-megamenu">
+                                        <a href="#">Pages</a>-->
+                            <!-- RD Navbar Megamenu -->
+                            <!--<ul class="rd-navbar-megamenu">
                                             <li>
                                                 <ul class="rd-megamenu-list">
                                                     <li><a href="about-me.html">About Me</a></li>
@@ -157,14 +165,14 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>-->
                         </div>
                         <!-- RD Navbar Panel-->
                         <div class="rd-navbar-panel">
                             <!-- RD Navbar Toggle-->
                             <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                             <!-- RD Navbar Brand-->
-                            <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo/company-logo.png" alt="" width="80" height="60" /><img class="logo-inverse" src="images/logo-inverse-198x42.png" alt="" width="198" height="42" /></a></div>
+                            @*<div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img class="logo-default" src="/images/logo/company-logo.png" alt="" width="80" height="60" /><img class="logo-inverse" src="/images/logo-inverse-198x42.png" alt="" width="198" height="42" /></a></div>*@
                         </div>
                         <div class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
                         <div class="rd-navbar-aside-right rd-navbar-collapse">
@@ -192,14 +200,14 @@
         </main>
 
         @*<footer class="section--themed">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 ta-center">
-                        @home.FooterAddress
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 ta-center">
+                            @home.FooterAddress
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>*@
+            </footer>*@
 
 
 
@@ -251,14 +259,14 @@
                     </div>
                 </div>
                 <div class="section-wrap-aside section-wrap-image">
-                    <img src="images/landing-it-company-6-942x1250.jpg" alt="" width="942" height="1250" />
+                    <img src="/images/landing-it-company-6-942x1250.jpg" alt="" width="942" height="1250" />
                 </div>
             </div>
         </section>
 
         <!-- Counters-->
         <section class="section parallax-container bg-image">
-            <div class="material-parallax"><img src="images/parallax-image-1-1920x1010.jpg" alt="" /></div>
+            <div class="material-parallax"><img src="/images/parallax-image-1-1920x1010.jpg" alt="" /></div>
             <div class="parallax-content">
                 <div class="section-md text-center">
                     <div class="container">
@@ -308,7 +316,7 @@
                         <!-- Owl Carousel-->
                         <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
                             <article class="post-blog">
-                                <a class="post-blog-image" href="single-post.html"><img src="images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
+                                <a class="post-blog-image" href="single-post.html"><img src="/images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
                                 <div class="post-blog-caption">
                                     <div class="post-blog-caption-header">
                                         <ul class="post-blog-tags">
@@ -327,7 +335,7 @@
                                 </div>
                             </article>
                             <article class="post-blog">
-                                <a class="post-blog-image" href="image-post.html"><img src="images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
+                                <a class="post-blog-image" href="image-post.html"><img src="/images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
                                 <div class="post-blog-caption">
                                     <div class="post-blog-caption-header">
                                         <ul class="post-blog-tags">
@@ -346,7 +354,7 @@
                                 </div>
                             </article>
                             <article class="post-blog">
-                                <a class="post-blog-audio" href="audio-post.html"><img src="images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
+                                <a class="post-blog-audio" href="audio-post.html"><img src="/images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
                                 <div class="post-blog-caption">
                                     <div class="post-blog-caption-header">
                                         <ul class="post-blog-tags">
@@ -372,7 +380,7 @@
 
         <!-- Testimonials-->
         <section class="section parallax-container bg-image">
-            <div class="material-parallax"><img src="images/parallax-image-2-1920x1010.jpg" alt="" /></div>
+            <div class="material-parallax"><img src="/images/parallax-image-2-1920x1010.jpg" alt="" /></div>
             <div class="parallax-content">
                 <div class="section-md text-center">
                     <div class="container container-wide">
@@ -385,7 +393,7 @@
                                     <p>Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I am so glad I found Effective to help me!</p>
                                 </div>
                                 <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
+                                    <img class="quote-modern-image" src="/images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
                                     <div class="quote-modern-meta">
                                         <p class="quote-modern-cite">Philip Lawrence</p>
                                         <p class="quote-modern-small">Regular Customer</p>
@@ -397,7 +405,7 @@
                                     <p>Working with your company on our 3rd Solar project was a great success and I must say that you have a good team of people who helped us when the initial consultation started.</p>
                                 </div>
                                 <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
+                                    <img class="quote-modern-image" src="/images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
                                     <div class="quote-modern-meta">
                                         <p class="quote-modern-cite">Debra Ortega</p>
                                         <p class="quote-modern-small">Regular Customer</p>
@@ -409,7 +417,7 @@
                                     <p>Effective worked hard before the project to come up with a strategic  IT planning solution that met our requirements. We hope to cooperate with them in the future.</p>
                                 </div>
                                 <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
+                                    <img class="quote-modern-image" src="/images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
                                     <div class="quote-modern-meta">
                                         <p class="quote-modern-cite">Jose Gutierrez</p>
                                         <p class="quote-modern-small">Regular Customer</p>
@@ -421,7 +429,7 @@
                                     <p>Our company became your client in 2010 and we’ve been very happy with IT services you provide. Your consultants do an excellent job with ongoing IT maintenance and support.</p>
                                 </div>
                                 <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
+                                    <img class="quote-modern-image" src="/images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
                                     <div class="quote-modern-meta">
                                         <p class="quote-modern-cite">Jane Greer</p>
                                         <p class="quote-modern-small">Regular Customer</p>
@@ -439,7 +447,16 @@
         <section class="section section-md bg-default text-center">
             <div class="container container-wide">
                 <!-- Owl Carousel-->
-                <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true" data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false"><a class="link-image" href="#"><img src="images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a><a class="link-image" href="#"><img src="images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a><a class="link-image" href="#"><img src="images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a><a class="link-image" href="#"><img src="images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a><a class="link-image" href="#"><img src="images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a><a class="link-image" href="#"><img src="images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a></div>
+                <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true" 
+                     data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6" 
+                     data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                    <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
+                    <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
+                    <a class="link-image" href="#"><img src="/images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a>
+                    <a class="link-image" href="#"><img src="/images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a>
+                    <a class="link-image" href="#"><img src="/images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a>
+                    <a class="link-image" href="#"><img src="/images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a>
+                </div>
             </div>
         </section>
 
@@ -470,7 +487,7 @@
                             <div class="row row-10 row-narrow">
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-01-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-01-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-01-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-01-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -481,7 +498,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-02-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-02-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-02-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-02-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -492,7 +509,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-03-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-03-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-03-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-03-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -503,7 +520,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-04-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-04-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-04-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-04-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -514,7 +531,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-05-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-05-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-05-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-05-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -525,7 +542,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-06-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-06-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-06-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-06-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -536,7 +553,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-07-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-07-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-07-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-07-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -547,7 +564,7 @@
                                 </div>
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="thumbnail-instafeed thumbnail-instafeed-minimal">
-                                        <a class="instagram-link" href="images/gallery/gallery-08-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="images/gallery/gallery-08-320x320.jpg" width="320" height="320" alt="" /></a>
+                                        <a class="instagram-link" href="/images/gallery/gallery-08-1200x800.jpg" data-lightgallery="item"><img class="instagram-image" src="/images/gallery/gallery-08-320x320.jpg" width="320" height="320" alt="" /></a>
                                         <div class="caption">
                                             <ul class="list-inline">
                                                 <li><span class="icon mdi mdi-heart"></span><span data-likes-count="text"></span></li>
@@ -563,22 +580,22 @@
                         <h6>Contact Us</h6>
                         <!-- RD Mailform-->
                         @*<form class="rd-mailform rd-mailform-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                            <div class="form-wrap form-wrap-validation">
-                                <input class="form-input" id="form-footer-name" type="text" name="name" data-constraints="@Required" />
-                                <label class="form-label" for="form-footer-name">Name</label>
-                            </div>
-                            <div class="form-wrap form-wrap-validation">
-                                <input class="form-input" id="form-footer-email" type="email" name="email" data-constraints="@Email @Required" />
-                                <label class="form-label" for="form-footer-email">E-mail</label>
-                            </div>
-                            <div class="form-wrap form-wrap-validation">
-                                <label class="form-label" for="form-footer-message">Message</label>
-                                <textarea class="form-input" id="form-footer-message" name="message" data-constraints="@Required"></textarea>
-                            </div>
-                            <div class="form-button">
-                                <button class="button button-sm button-primary" type="submit">Send message</button>
-                            </div>
-                        </form>*@
+                                <div class="form-wrap form-wrap-validation">
+                                    <input class="form-input" id="form-footer-name" type="text" name="name" data-constraints="@Required" />
+                                    <label class="form-label" for="form-footer-name">Name</label>
+                                </div>
+                                <div class="form-wrap form-wrap-validation">
+                                    <input class="form-input" id="form-footer-email" type="email" name="email" data-constraints="@Email @Required" />
+                                    <label class="form-label" for="form-footer-email">E-mail</label>
+                                </div>
+                                <div class="form-wrap form-wrap-validation">
+                                    <label class="form-label" for="form-footer-message">Message</label>
+                                    <textarea class="form-input" id="form-footer-message" name="message" data-constraints="@Required"></textarea>
+                                </div>
+                                <div class="form-button">
+                                    <button class="button button-sm button-primary" type="submit">Send message</button>
+                                </div>
+                            </form>*@
                     </div>
                 </div>
                 <p class="right">&#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved&nbsp;<a href="#">Terms of Use</a>&nbsp;and&nbsp;<a href="privacy-policy.html">Privacy Policy</a></p>
@@ -591,11 +608,11 @@
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
     @*<script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>*@
 
-    <!-- Global Mailform Output-->
+    @*Global Mailform Output*@
     <div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->
-    <script src="js/core.min.js"></script>
-    <script src="js/script.js"></script>
+    @*Javascript*@
+    <script src="/js/core.min.js"></script>
+    <script src="/js/script.js"></script>
 
 </body>
 

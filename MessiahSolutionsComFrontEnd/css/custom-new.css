@@ -11,5 +11,20 @@
     color: #ffffff; /* instead of current #0F4B7F */
 }
 
+@media (min-width: 1024px) 
+{
+    .rd-navbar-brand 
+    {
+        float: left;
+        padding-top:8px;
+        padding-right:10px;
+    }
+
+    .rd-navbar-inner
+    {
+        padding-left:40px !important;
+    }
+}
 
 
+    
