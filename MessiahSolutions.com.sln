@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessiahSolutions.com", "MessiahSolutions.com\MessiahSolutions.com.csproj", "{1CBCE82D-0E1C-42D2-9B9E-208066A14774}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessiahSolutionsComFrontEnd", "MessiahSolutionsComFrontEnd\MessiahSolutionsComFrontEnd.csproj", "{7414076C-BF68-4E2C-A3F9-5DD18149B9A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1CBCE82D-0E1C-42D2-9B9E-208066A14774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CBCE82D-0E1C-42D2-9B9E-208066A14774}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CBCE82D-0E1C-42D2-9B9E-208066A14774}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CBCE82D-0E1C-42D2-9B9E-208066A14774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7414076C-BF68-4E2C-A3F9-5DD18149B9A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7414076C-BF68-4E2C-A3F9-5DD18149B9A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7414076C-BF68-4E2C-A3F9-5DD18149B9A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7414076C-BF68-4E2C-A3F9-5DD18149B9A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2A753EB4-7866-43E6-B540-2D3ECB9F38FD}
+		SolutionGuid = {C2E05E74-9AC2-49E0-87F7-7BFCB6E85CE9}
 	EndGlobalSection
 EndGlobal
