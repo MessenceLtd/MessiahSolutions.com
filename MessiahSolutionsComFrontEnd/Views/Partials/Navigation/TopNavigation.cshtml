@@ -11,9 +11,8 @@
     <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
 }*@
 
-
 <div class="rd-navbar-brand">
-    <a class="brand-name" href="/">
+    <a class="brand-name" href="@site.Url()">
         <img class="logo-default" src="/images/logo/company-logo.png" alt="" width="80" height="60" />
         @*<img class="logo-inverse" src="/images/logo-inverse-198x42.png" alt="" width="198" height="42" />*@
     </a>

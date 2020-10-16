@@ -338,8 +338,10 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\custom-new.css" />
     <Content Include="css\custom.css" />
+    <Content Include="css\en\LanguageSpecs-en.css" />
     <Content Include="css\fl-bigmug-line.css" />
     <Content Include="css\fonts.css" />
+    <Content Include="css\he\LanguageSpecs-he.css" />
     <Content Include="css\mdi.css" />
     <Content Include="css\style.css" />
     <Content Include="css\umbraco-starterkit-style.css" />

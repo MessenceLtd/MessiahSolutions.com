@@ -12,6 +12,7 @@
     var colorTheme = home.GetProperty("ColorTheme").Value().ToString();
     var siteName = home.GetProperty("Sitename").Value().ToString();
 
+    var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-"+ home.Url().Replace("/", string.Empty) + ".css";
 }
 
 <!doctype html>
@@ -35,6 +36,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/custom-new.css">
+    <!-- Lang Specific -->
+    <link rel="stylesheet" href="@languageSpecificCssExtension" />
 
 </head>
 
@@ -178,7 +181,7 @@
                         <div class="rd-navbar-aside-right rd-navbar-collapse">
                             <!-- RD Navbar Search-->
                             <div class="rd-navbar-search">
-                                <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#"><span></span></a>
+                                <a class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search" href="#Search"><span></span></a>
                                 <form class="rd-search" action="search-results.html" data-search-live="rd-search-results-live" method="GET">
                                     <div class="form-wrap">
                                         <label class="form-label form-label" for="rd-navbar-search-form-input">Search...</label>
@@ -447,8 +450,8 @@
         <section class="section section-md bg-default text-center">
             <div class="container container-wide">
                 <!-- Owl Carousel-->
-                <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true" 
-                     data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6" 
+                <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true"
+                     data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6"
                      data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
                     <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
                     <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
@@ -603,9 +606,15 @@
         </footer>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>*@
+
+    <script src="/js/jquery-3.1.0.min.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/jquery.validate.unobtrusive.min.js"></script>
+
+
     @*<script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>*@
 
     @*Global Mailform Output*@
