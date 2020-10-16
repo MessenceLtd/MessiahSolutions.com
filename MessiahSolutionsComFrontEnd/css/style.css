@@ -2271,7 +2271,7 @@ h6.box-info-title,
   cursor: pointer;
   user-select: none;
   transition: .25s all ease;
-  white-space: pre-wrap; }
+  white-space: nowrap; }
   .button:focus, .button:active, .button:active:focus {
     outline: none; }
   .button.disabled {
@@ -8634,8 +8634,10 @@ p + .list-marked {
 p + p + .list-marked {
   margin-top: 20px; }
 
-p + .button {
-  margin-top: 25px; }
+p + .button 
+{
+  margin-top: 25px; 
+}
 
 h3 + .parallax-container {
   margin-top: 40px; }

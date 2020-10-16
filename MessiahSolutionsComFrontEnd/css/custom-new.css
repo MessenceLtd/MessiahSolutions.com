@@ -85,7 +85,6 @@ a.animated-title-divider {
 .animated a.animated-title-divider:hover .divider,
 .animated a.animated-title-divider:focus .divider {
     max-width: 40%;
-    
 }
 
 .animated a.animated-title-divider:focus 
@@ -109,6 +108,7 @@ a.animated-title-divider {
 
 /* Mobile Rules */
 @media (max-width: 1024px) {
+
     .rd-navbar-aside-left {
         position: relative;
     }
@@ -141,12 +141,37 @@ a.animated-title-divider {
         background-size: cover;
     }
 
-    a.homepage-services hr.divider:after {
+
+
+
+    .animated a.thumbnail-classic hr.divider:after,
+    .animated a.thumbnail-classic:hover hr.divider:after,
+    .animated a.thumbnail-classic:focus hr.divider:after {
         top: 45px;
     }
+
+
 
     .animated h3:hover + .divider {
         max-width: 100%;
         transition: .4s;
+    }
+
+    .animated a.animated-title-divider:hover .divider,
+    .animated a.animated-title-divider:focus .divider {
+        max-width: 90%;
+    }
+
+    p + .button {
+        margin-top: 10px;
+    }
+
+    html .row-50 > * {
+        margin-top: 30px;
+    }
+
+    .section-lg 
+    {
+        padding:40px 0px;
     }
 }
