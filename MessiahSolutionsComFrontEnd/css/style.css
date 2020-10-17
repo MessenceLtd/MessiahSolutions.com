@@ -6940,7 +6940,9 @@ textarea.form-input {
   border-radius: 0 0 8px 8px; }
 
 .team-classic-caption {
-  margin-top: 22px; }
+  margin-top: 22px; 
+  text-align:center;
+}
   .team-classic-caption * + .button {
     margin-top: 20px; }
   .team-classic-caption * + .list-inline {
@@ -8868,8 +8870,10 @@ h3 + .swiper-slider {
     margin-top: 18px; }
   .container + .bg-gradient {
     margin-top: 90px; }
-  .owl-carousel + .button {
-    margin-top: 50px; }
+  .owl-carousel + .button 
+  {
+    margin-top: 30px; 
+  }
   .row + .button {
     margin-top: 50px; }
   .typed-text-wrap + .button {
@@ -8907,10 +8911,14 @@ h3 + .swiper-slider {
     margin-top: 85px; }
   .row + .row.row-xxl {
     margin-top: 90px; }
-  .owl-carousel + .button {
-    margin-top: 90px; }
-  .row + .button {
-    margin-top: 80px; }
+  .owl-carousel + .button 
+  {
+    margin-top: 30px; 
+  }
+  .row + .button 
+  {
+    margin-top: 80px; 
+  }
   .big + .button {
     margin-top: 50px; }
   .page * + .offset-custom-2 

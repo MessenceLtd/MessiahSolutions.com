@@ -340,6 +340,7 @@
     <Content Include="css\custom.css" />
     <Content Include="css\en\LanguageSpecs-en.css" />
     <Content Include="css\fl-bigmug-line.css" />
+    <Content Include="css\fonts-googleapis-com-css-family=Raleway200,400%257CLato300,400,300italic,700%257CMontserrat900.css" />
     <Content Include="css\fonts.css" />
     <Content Include="css\he\LanguageSpecs-he.css" />
     <Content Include="css\mdi.css" />
@@ -602,6 +603,9 @@
     <Content Include="images\_blank.png" />
     <Content Include="js\core.min.js" />
     <Content Include="js\html5shiv.min.js" />
+    <Content Include="js\jquery-3.1.0.min.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\jquery.validate.unobtrusive.min.js" />
     <Content Include="js\pointer-events.min.js" />
     <Content Include="js\script.js" />
     <Content Include="Media\Web.config" />

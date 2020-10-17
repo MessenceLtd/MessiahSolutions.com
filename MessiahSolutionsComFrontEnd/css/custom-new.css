@@ -106,9 +106,19 @@ a.animated-title-divider {
     }
 }*/
 
+.team-classic-image
+{
+    text-align:center;
+}
+
+.owl-carousel .team-classic-image figure img {
+    max-height: 180px;
+    width: auto;
+}
+
+
 /* Mobile Rules */
 @media (max-width: 1024px) {
-
     .rd-navbar-aside-left {
         position: relative;
     }
