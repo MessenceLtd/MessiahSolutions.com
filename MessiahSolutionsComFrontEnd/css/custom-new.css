@@ -94,8 +94,14 @@ a.animated-title-divider {
 
 .animated .longer a.animated-title-divider:hover .divider {
     max-width: 60%;
-    transition: .4s;
 }
+
+.animated a.animated-title-divider.longer2:hover .divider,
+.animated a.animated-title-divider.longer2:focus .divider 
+{
+    max-width: 100%;
+}
+
 
 /*
 @media (min-width: 1600px)

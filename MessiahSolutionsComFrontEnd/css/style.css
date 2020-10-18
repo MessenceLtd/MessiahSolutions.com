@@ -8790,8 +8790,10 @@ h3 + .swiper-slider {
     margin-top: 35px; }
   * + .group-md {
     margin-top: 35px; }
-  * + .owl-carousel {
-    margin-top: 70px; }
+  * + .owl-carousel 
+  {
+    margin-top: 30px; 
+  }
   * + .frame-header {
     margin-top: 60px; }
   * + .list-twitter {
@@ -8917,7 +8919,7 @@ h3 + .swiper-slider {
   }
   .row + .button 
   {
-    margin-top: 80px; 
+    margin-top: 30px; 
   }
   .big + .button {
     margin-top: 50px; }

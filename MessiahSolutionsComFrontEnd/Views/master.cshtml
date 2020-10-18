@@ -12,7 +12,12 @@
     var colorTheme = home.GetProperty("ColorTheme").Value().ToString();
     var siteName = home.GetProperty("Sitename").Value().ToString();
 
-    var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-"+ home.Url().Replace("/", string.Empty) + ".css";
+    var ourAdvantagesLink = home.Value<IPublishedContent>("OurAdvantagesLink").Url();
+    var ourAdvantagesLeftSideImage = home.Value<IPublishedContent>("ourAdvantageLeftImage")?.Url ?? "";
+
+    var blogPostsLink = home.Value<IPublishedContent>("mainLayoutBlogPostsLink").Url();
+
+    var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-" + home.Url().Replace("/", string.Empty) + ".css";
 }
 
 <!doctype html>
@@ -212,8 +217,6 @@
                 </div>
             </footer>*@
 
-
-
         <!-- Our Advantages-->
         <section class="section section-wrap section-wrap-lg section-reverse bg-gray-darker">
             <div class="section-wrap-inner">
@@ -221,48 +224,34 @@
                     <div class="row row-50 justify-content-md-center justify-content-xl-end">
                         <div class="col-md-12 col-lg-7 col-xl-7 col-xxl-6">
                             <div class="section-lg">
-                                <h3>Our Advantages</h3>
-                                <div class="divider divider-default"></div>
+                                <a href="@ourAdvantagesLink" class="animated-title-divider longer2">
+                                    <h3>@home.GetProperty("ourAdvantagesTitle").Value()</h3>
+                                    <div class="divider divider-default"></div>
+                                </a>
                                 <div class="row row-30">
-                                    <div class="col-md-6">
-                                        <article class="box-minimal box-minimal-border">
-                                            <div class="box-minimal-icon mdi mdi-thumb-up-outline"></div>
-                                            <p class="big box-minimal-title">Individual Approach</p>
-                                            <hr>
-                                            <div class="box-minimal-text">We use an individual approach to each client and we never offer you a set of standard decisions for your business.</div>
-                                        </article>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <article class="box-minimal box-minimal-border">
-                                            <div class="box-minimal-icon mdi mdi-account-multiple"></div>
-                                            <p class="big box-minimal-title">Qualified Employers</p>
-                                            <hr>
-                                            <div class="box-minimal-text">Effective is a team of designers, developers, marketing experts and managers who are ready to work for a personalized web solution.</div>
-                                        </article>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <article class="box-minimal box-minimal-border">
-                                            <div class="box-minimal-icon mdi mdi-headset"></div>
-                                            <p class="big box-minimal-title">24/7 Online Support</p>
-                                            <hr>
-                                            <div class="box-minimal-text">Our online support is available 24 hours a day to answer your every question and help you solve any issue you may have with our products and services.</div>
-                                        </article>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <article class="box-minimal box-minimal-border">
-                                            <div class="box-minimal-icon mdi mdi-credit-card"></div>
-                                            <p class="big box-minimal-title">Various Payment Methods</p>
-                                            <hr>
-                                            <div class="box-minimal-text">We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.</div>
-                                        </article>
-                                    </div>
+                                    @if (home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout") != null)
+                                    {
+                                        foreach (var advantage in home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout"))
+                                        {
+                                            <div class="col-md-6">
+                                                <article class="box-minimal box-minimal-border">
+                                                    <div class="box-minimal-icon mdi @advantage.Value("thumbnailImageCSSClass")"></div>
+                                                    <p class="big box-minimal-title">@advantage.Value("advantageTitle")</p>
+                                                    <hr>
+                                                    <div class="box-minimal-text">
+                                                        @advantage.Value("advantageDescription")
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        }
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="section-wrap-aside section-wrap-image">
-                    <img src="/images/landing-it-company-6-942x1250.jpg" alt="" width="942" height="1250" />
+                    <img src="@ourAdvantagesLeftSideImage" alt="" width="942" height="1250" />
                 </div>
             </div>
         </section>
@@ -276,30 +265,30 @@
                         <div class="row row-50 justify-content-sm-center">
                             <div class="col-sm-10 col-md-6 col-xl-3">
                                 <div class="counter-wrap">
-                                    <span class="icon icon-primary mdi mdi-television-guide"></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">62000</span></div>
-                                    <p>Projects</p>
+                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsBottomIconCSSClass")'></span>
+                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsProjectsBottomNumbers")</span></div>
+                                    <p>@home.Value("mainLayoutStatsProjectsBottomTitle")</p>
                                 </div>
                             </div>
                             <div class="col-sm-10 col-md-6 col-xl-3">
                                 <div class="counter-wrap">
-                                    <span class="icon icon-primary mdi mdi-account-multiple-outline"></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">246000</span></div>
-                                    <p>Happy Clients</p>
+                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsClientsBottomIconCSSClass")'></span>
+                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsClientsBottomNumber")</span></div>
+                                    <p>@home.Value("mainLayoutStatsClientsBottomTitle")</p>
                                 </div>
                             </div>
                             <div class="col-sm-10 col-md-6 col-xl-3">
                                 <div class="counter-wrap">
-                                    <span class="icon icon-primary mdi mdi-clock"></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">1200</span></div>
-                                    <p>Hours of Coding</p>
+                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingHoursBottomIconCSSClass")'></span>
+                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingHoursBottomNumber")</span></div>
+                                    <p>@home.Value("mainLayoutStatsCodingHoursBottomTitle")</p>
                                 </div>
                             </div>
                             <div class="col-sm-10 col-md-6 col-xl-3">
                                 <div class="counter-wrap">
-                                    <span class="icon icon-primary mdi mdi-code-tags"></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">12000</span></div>
-                                    <p>Lines of Code</p>
+                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingLinesBottomIconCSSClass")'></span>
+                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingLinesBottomNumber")</span></div>
+                                    <p>@home.Value("mainLayoutStatsCodingLinesBottomTitle")</p>
                                 </div>
                             </div>
                         </div>
@@ -314,70 +303,117 @@
             <div class="container-wide">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h3>Latest Blog Posts</h3>
-                        <div class="divider divider-default"></div>
+                        @*<h3>Latest Blog Posts</h3><div class="divider divider-default"></div>*@
+                        <div class="text-center">
+                            <a href="@blogPostsLink" class="animated-title-divider longer">
+                                <h3>@home.GetProperty("mainLayoutLatestBlogPostsTitle").Value()</h3>
+                                <div class="divider divider-default"></div>
+                            </a>
+                        </div>
                         <!-- Owl Carousel-->
                         <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
-                            <article class="post-blog">
-                                <a class="post-blog-image" href="single-post.html"><img src="/images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
-                                <div class="post-blog-caption">
-                                    <div class="post-blog-caption-header">
-                                        <ul class="post-blog-tags">
-                                            <li><a class="button-tags" href="single-post.html">Tips & Tricks</a></li>
-                                        </ul>
-                                        <ul class="post-blog-meta">
-                                            <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                        </ul>
+
+                            @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts") != null)
+                            {
+                                var blogPostImage = "";
+                                var blogDateTime_CulturedString = "";
+                                var blogCategoriesTags = "";
+
+                                foreach (var blogPost in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts"))
+                                {
+                                    blogPostImage = blogPost.Value<IPublishedContent>("blogImage")?.Url ?? "";
+                                    if (blogPost.Value("blogDateTime") != null)
+                                    {
+                                        blogDateTime_CulturedString = ((DateTime)blogPost.Value("blogDateTime")).ToString("MMM dd, yyyy") + " at " + ((DateTime)blogPost.Value("blogDateTime")).ToString("HH:mm") + " UTC";
+                                    }
+
+                                    blogCategoriesTags = string.Join(", ", (string[])blogPost.Value("categories"));
+
+                                    <article class="post-blog">
+                                        <a class="post-blog-image" href="@blogPost.Url()"><img src="@blogPostImage" alt="" width="570" height="415" /></a>
+                                        <div class="post-blog-caption">
+                                            <div class="post-blog-caption-header">
+                                                <ul class="post-blog-tags">
+                                                    <li><a class="button-tags" href="@blogPost.Url()">@blogCategoriesTags</a></li>
+                                                </ul>
+                                                <ul class="post-blog-meta">
+                                                    <li><span>by</span>&nbsp;<a href="@blogPost.Url()">@blogPost.Value("author")</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-blog-caption-body">
+                                                <h5><a class="post-blog-title" href="@blogPost.Url()">@blogPost.Value("pageTitle")</a></h5>
+                                                @blogPost.Value("excerpt")
+                                            </div>
+                                            <div class="post-blog-caption-footer">
+                                                <time datetime="2017">@blogDateTime_CulturedString</time>
+                                                @*<a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>*@
+                                            </div>
+                                        </div>
+                                    </article>
+                                }
+                            }
+
+                            @*<article class="post-blog">
+                                    <a class="post-blog-image" href="single-post.html"><img src="/images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
+                                    <div class="post-blog-caption">
+                                        <div class="post-blog-caption-header">
+                                            <ul class="post-blog-tags">
+                                                <li><a class="button-tags" href="single-post.html">Tips & Tricks</a></li>
+                                            </ul>
+                                            <ul class="post-blog-meta">
+                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-blog-caption-body">
+                                            <h5><a class="post-blog-title" href="single-post.html">Why Outsourcing IT Services for Small Business Owners is Beneficial</a></h5>
+                                        </div>
+                                        <div class="post-blog-caption-footer">
+                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                        </div>
                                     </div>
-                                    <div class="post-blog-caption-body">
-                                        <h5><a class="post-blog-title" href="single-post.html">Why Outsourcing IT Services for Small Business Owners is Beneficial</a></h5>
+                                </article>
+                                <article class="post-blog">
+                                    <a class="post-blog-image" href="image-post.html"><img src="/images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
+                                    <div class="post-blog-caption">
+                                        <div class="post-blog-caption-header">
+                                            <ul class="post-blog-tags">
+                                                <li><a class="button-tags" href="image-post.html">marketing</a></li>
+                                            </ul>
+                                            <ul class="post-blog-meta">
+                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-blog-caption-body">
+                                            <h5><a class="post-blog-title" href="image-post.html">Important Info: Know These Types of Malware and Stay Protected</a></h5>
+                                        </div>
+                                        <div class="post-blog-caption-footer">
+                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="image-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                        </div>
                                     </div>
-                                    <div class="post-blog-caption-footer">
-                                        <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                </article>
+                                <article class="post-blog">
+                                    <a class="post-blog-audio" href="audio-post.html"><img src="/images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
+                                    <div class="post-blog-caption">
+                                        <div class="post-blog-caption-header">
+                                            <ul class="post-blog-tags">
+                                                <li><a class="button-tags" href="audio-post.html">Tips & Tricks</a></li>
+                                            </ul>
+                                            <ul class="post-blog-meta">
+                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="post-blog-caption-body">
+                                            <h5><a class="post-blog-title" href="audio-post.html">Tips and Tricks for Avoiding IoT (Internet of Things) Threats</a></h5>
+                                        </div>
+                                        <div class="post-blog-caption-footer">
+                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="audio-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="post-blog">
-                                <a class="post-blog-image" href="image-post.html"><img src="/images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
-                                <div class="post-blog-caption">
-                                    <div class="post-blog-caption-header">
-                                        <ul class="post-blog-tags">
-                                            <li><a class="button-tags" href="image-post.html">marketing</a></li>
-                                        </ul>
-                                        <ul class="post-blog-meta">
-                                            <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-blog-caption-body">
-                                        <h5><a class="post-blog-title" href="image-post.html">Important Info: Know These Types of Malware and Stay Protected</a></h5>
-                                    </div>
-                                    <div class="post-blog-caption-footer">
-                                        <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="image-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="post-blog">
-                                <a class="post-blog-audio" href="audio-post.html"><img src="/images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
-                                <div class="post-blog-caption">
-                                    <div class="post-blog-caption-header">
-                                        <ul class="post-blog-tags">
-                                            <li><a class="button-tags" href="audio-post.html">Tips & Tricks</a></li>
-                                        </ul>
-                                        <ul class="post-blog-meta">
-                                            <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-blog-caption-body">
-                                        <h5><a class="post-blog-title" href="audio-post.html">Tips and Tricks for Avoiding IoT (Internet of Things) Threats</a></h5>
-                                    </div>
-                                    <div class="post-blog-caption-footer">
-                                        <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="audio-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>*@
                         </div>
                     </div>
-                </div><a class="button button-primary" href="classic-blog.html">view all blog posts</a>
+                </div>
+                <a class="button button-primary" href="@blogPostsLink">@home.Value("mainLayoutViewAllBlogPostsBottomTitle")</a>
             </div>
         </section>
 
@@ -444,7 +480,6 @@
                 </div>
             </div>
         </section>
-
 
         <!-- Brands-->
         <section class="section section-md bg-default text-center">
