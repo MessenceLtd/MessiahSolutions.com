@@ -1,6 +1,13 @@
 /MessiahSolutionsComFrontEnd/bin/
 /MessiahSolutionsComFrontEnd/obj/
-/MessiahSolutionsComFrontEnd/App_Data/
+
+/MessiahSolutionsComFrontEnd/App_Data/cache/
+/MessiahSolutionsComFrontEnd/App_Data/Logs/
+/MessiahSolutionsComFrontEnd/App_Data/temp/
+/MessiahSolutionsComFrontEnd/App_Data/models/models.hash
+/MessiahSolutionsComFrontEnd/App_Data/models/all.dll.path
+
+
 /.vs/
 /IISPUBLISH-dev.MessiahSolutions.com/
 /packages/
