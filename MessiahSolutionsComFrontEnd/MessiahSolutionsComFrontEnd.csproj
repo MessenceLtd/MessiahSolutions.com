@@ -309,6 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\Umbraco.sdf" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -340,7 +341,7 @@
     <Content Include="css\custom.css" />
     <Content Include="css\en\LanguageSpecs-en.css" />
     <Content Include="css\fl-bigmug-line.css" />
-    <Content Include="css\fonts-googleapis-com-css-family=Raleway200,400%257CLato300,400,300italic,700%257CMontserrat900.css" />
+    <Content Include="css\fonts-googleapis-com-css-family=Raleway200400Lato300400300italic700Montserrat900.css" />
     <Content Include="css\fonts.css" />
     <Content Include="css\he\LanguageSpecs-he.css" />
     <Content Include="css\mdi.css" />
@@ -608,6 +609,47 @@
     <Content Include="js\jquery.validate.unobtrusive.min.js" />
     <Content Include="js\pointer-events.min.js" />
     <Content Include="js\script.js" />
+    <Content Include="Media\0alcsw45\18095416144_44a566a5f4_h.jpg" />
+    <Content Include="Media\0y4pgk2s\5852022091_87c5d045ab_b.jpg" />
+    <Content Include="Media\1bsjult5\7377957524_347859faac_b.jpg" />
+    <Content Include="Media\20wnkg3b\14272036539_469ca21d5c_h.jpg" />
+    <Content Include="Media\22khfhyd\title-inside-gallery-03-640x430.jpg" />
+    <Content Include="Media\43jjy4gr\landing-it-company-9-570x415.jpg" />
+    <Content Include="Media\4tbop5aw\title-inside-gallery-06-640x430.jpg" />
+    <Content Include="Media\afha33ut\quote-user-6-80x80.jpg" />
+    <Content Include="Media\c5mlzyc4\quote-user-7-80x80.jpg" />
+    <Content Include="Media\f5tbrv4r\landing-it-company-6-942x1250.jpg" />
+    <Content Include="Media\gbaiwst4\7373036290_5e8420bf36_b.jpg" />
+    <Content Include="Media\gqtcis1k\title-inside-gallery-04-640x430.jpg" />
+    <Content Include="Media\gvlbfpgr\linkedin-profile.jpg" />
+    <Content Include="Media\h2wprrdn\5852022211_9028df67c0_b.jpg" />
+    <Content Include="Media\jltlm2nv\title-inside-gallery-05-640x430.jpg" />
+    <Content Include="Media\kninvmqv\18531852339_981b067419_h.jpg" />
+    <Content Include="Media\l0gll5k0\18531854019_351c579559_h.jpg" />
+    <Content Include="Media\m13p4pxa\4730684907_8a7f8759cb_b.jpg" />
+    <Content Include="Media\o24fxuzb\landing-it-company-8-570x415.jpg" />
+    <Content Include="Media\ouro1xvy\18530280048_459b8b61b2_h.jpg" />
+    <Content Include="Media\pwiputgp\7371127652_e01b6ab56f_b.jpg" />
+    <Content Include="Media\rcfndwzy\7373036208_30257976a0_b.jpg" />
+    <Content Include="Media\SK_Temp\14272036539_469ca21d5c_h.jpg" />
+    <Content Include="Media\SK_Temp\16403439029_f500be349b_o.jpg" />
+    <Content Include="Media\SK_Temp\18095416144_44a566a5f4_h.jpg" />
+    <Content Include="Media\SK_Temp\18530280048_459b8b61b2_h.jpg" />
+    <Content Include="Media\SK_Temp\18531852339_981b067419_h.jpg" />
+    <Content Include="Media\SK_Temp\18531854019_351c579559_h.jpg" />
+    <Content Include="Media\SK_Temp\18720470241_ff77768544_h.jpg" />
+    <Content Include="Media\SK_Temp\4730684907_8a7f8759cb_b.jpg" />
+    <Content Include="Media\SK_Temp\5852022091_87c5d045ab_b.jpg" />
+    <Content Include="Media\SK_Temp\5852022211_9028df67c0_b.jpg" />
+    <Content Include="Media\SK_Temp\7371127652_e01b6ab56f_b.jpg" />
+    <Content Include="Media\SK_Temp\7373036208_30257976a0_b.jpg" />
+    <Content Include="Media\SK_Temp\7373036290_5e8420bf36_b.jpg" />
+    <Content Include="Media\SK_Temp\7377957524_347859faac_b.jpg" />
+    <Content Include="Media\sxufbzcf\quote-user-4-80x80.jpg" />
+    <Content Include="Media\ur5fkn52\18720470241_ff77768544_h.jpg" />
+    <Content Include="Media\vpfbot3y\title-inside-gallery-02-640x430.jpg" />
+    <Content Include="Media\wbvjoba4\quote-user-5-80x80.jpg" />
+    <Content Include="Media\wcxpebmp\landing-it-company-7-570x415.jpg" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\tinyMceConfig.config" />
@@ -616,6 +658,8 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="Media\wuwl0gkt\title-inside-gallery-01-640x430.jpg" />
+    <Content Include="Media\zt1cuzq0\website-background.jpg" />
     <Content Include="PurchasedWebTemplate\bat\rd-mailform.config.json" />
     <Content Include="PurchasedWebTemplate\bat\rd-mailform.tpl" />
     <Content Include="PurchasedWebTemplate\fonts\bootstrap\glyphicons-halflings-regular.eot" />
@@ -633,6 +677,9 @@
     <Content Include="PurchasedWebTemplate\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="PurchasedWebTemplate\fonts\materialdesignicons-webfont.woff" />
     <Content Include="PurchasedWebTemplate\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="App_Data\packages\createdPackages.config" />
+    <Content Include="App_Data\packages\installedPackages.config" />
+    <None Include="Properties\PublishProfiles\LocalFolderPublish-IISPUBLISH-dev.MessiahSolutions.com.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="PurchasedWebTemplate\404-page.html" />
     <Content Include="PurchasedWebTemplate\503-page.html" />
@@ -3470,8 +3517,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Models\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Media\clxbe03j\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -3602,6 +3650,15 @@
     <Content Include="Umbraco\Views\Default.cshtml" />
     <Content Include="Umbraco\Views\Preview\Index.cshtml" />
     <Content Include="Umbraco\Views\web.config" />
+    <Content Include="Views\CompanyAdvantage.cshtml" />
+    <Content Include="Views\OurAdvantages.cshtml" />
+    <Content Include="Views\OurTeam.cshtml" />
+    <Content Include="Views\Project.cshtml" />
+    <Content Include="Views\Projects.cshtml" />
+    <Content Include="Views\Service.cshtml" />
+    <Content Include="Views\Services.cshtml" />
+    <Content Include="Views\TestimonialDetails.cshtml" />
+    <Content Include="Views\Testimonials.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,8 +16,10 @@
     var ourAdvantagesLeftSideImage = home.Value<IPublishedContent>("ourAdvantageLeftImage")?.Url ?? "";
 
     var blogPostsLink = home.Value<IPublishedContent>("mainLayoutBlogPostsLink").Url();
+    var testimonialsLink = home.Value<IPublishedContent>("mainLayoutTestimonialsLink").Url();
 
     var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-" + home.Url().Replace("/", string.Empty) + ".css";
+
 }
 
 <!doctype html>
@@ -104,24 +106,24 @@
                             @Html.Partial("~/views/partials/navigation/TopNavigation.cshtml")
 
                             <!--<div class="rd-navbar-nav-wrap">
-                                <ul class="rd-navbar-nav">
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="about-us.html">About Us</a></li>
-                                    <li>
-                                        <a href="#">Blog</a>
-                                        <ul class="rd-navbar-dropdown">
-                                            <li><a href="classic-blog.html">Classic Blog</a></li>
-                                            <li><a href="grid-blog.html">Grid Blog</a></li>
-                                            <li><a href="masonry-blog.html">Masonry Blog</a></li>
-                                            <li><a href="modern-blog.html">Modern Blog</a></li>
-                                            <li><a href="audio-post.html">Audio Post</a></li>
-                                            <li><a href="single-post.html">Single Post</a></li>
-                                            <li><a href="image-post.html">Image Post</a></li>
-                                            <li><a href="video-post.html">Video Post</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="rd-navbar--has-megamenu rd-navbar-submenu">
-                                        <a href="#">Pages</a>-->
+                            <ul class="rd-navbar-nav">
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                    <ul class="rd-navbar-dropdown">
+                                        <li><a href="classic-blog.html">Classic Blog</a></li>
+                                        <li><a href="grid-blog.html">Grid Blog</a></li>
+                                        <li><a href="masonry-blog.html">Masonry Blog</a></li>
+                                        <li><a href="modern-blog.html">Modern Blog</a></li>
+                                        <li><a href="audio-post.html">Audio Post</a></li>
+                                        <li><a href="single-post.html">Single Post</a></li>
+                                        <li><a href="image-post.html">Image Post</a></li>
+                                        <li><a href="video-post.html">Video Post</a></li>
+                                    </ul>
+                                </li>
+                                <li class="rd-navbar--has-megamenu rd-navbar-submenu">
+                                    <a href="#">Pages</a>-->
                             <!-- RD Navbar Megamenu -->
                             <!--<ul class="rd-navbar-megamenu">
                                             <li>
@@ -423,58 +425,92 @@
             <div class="parallax-content">
                 <div class="section-md text-center">
                     <div class="container container-wide">
-                        <h3>Testimonials</h3>
-                        <hr class="divider divider-default">
+                        <div class="text-center">
+                            <a href="@testimonialsLink" class="animated-title-divider longer">
+                                <h3>@home.GetProperty("mainLayoutTestimonialsTitle").Value()</h3>
+                                <div class="divider divider-default"></div>
+                            </a>
+                        </div>
+
+                        @*<h3>Testimonials</h3>
+                            <hr class="divider divider-default">*@
                         <!-- Owl Carousel-->
                         <div class="owl-carousel" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="4" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
-                            <article class="quote-modern">
-                                <div class="quote-modern-text">
-                                    <p>Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I am so glad I found Effective to help me!</p>
-                                </div>
-                                <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="/images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
-                                    <div class="quote-modern-meta">
-                                        <p class="quote-modern-cite">Philip Lawrence</p>
-                                        <p class="quote-modern-small">Regular Customer</p>
+
+                            @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials") != null)
+                            {
+                                var testimonialImageUrl = "";
+                                var testimonialDateTime_CulturedString = "";
+
+                                foreach (var testimonialDetails in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials"))
+                                {
+                                    testimonialImageUrl = testimonialDetails.Value<IPublishedContent>("personImage")?.Url ?? "";
+
+                                    <article class="quote-modern">
+                                        <div class="quote-modern-text">
+                                            <p>
+                                                @testimonialDetails.Value("description")
+                                            </p>
+                                        </div>
+                                        <div class="quote-modern-footer">
+                                            <img class="quote-modern-image" src="@testimonialImageUrl" alt="" width="80" height="80" />
+                                            <div class="quote-modern-meta">
+                                                <p class="quote-modern-cite">@testimonialDetails.Value("personName")</p>
+                                                <p class="quote-modern-small">@testimonialDetails.Value("personJobTitle")</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                }
+                            }
+
+                            @*<article class="quote-modern">
+                                    <div class="quote-modern-text">
+                                        <p>Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I am so glad I found Effective to help me!</p>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="quote-modern">
-                                <div class="quote-modern-text">
-                                    <p>Working with your company on our 3rd Solar project was a great success and I must say that you have a good team of people who helped us when the initial consultation started.</p>
-                                </div>
-                                <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="/images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
-                                    <div class="quote-modern-meta">
-                                        <p class="quote-modern-cite">Debra Ortega</p>
-                                        <p class="quote-modern-small">Regular Customer</p>
+                                    <div class="quote-modern-footer">
+                                        <img class="quote-modern-image" src="/images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
+                                        <div class="quote-modern-meta">
+                                            <p class="quote-modern-cite">Philip Lawrence</p>
+                                            <p class="quote-modern-small">Regular Customer</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="quote-modern">
-                                <div class="quote-modern-text">
-                                    <p>Effective worked hard before the project to come up with a strategic  IT planning solution that met our requirements. We hope to cooperate with them in the future.</p>
-                                </div>
-                                <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="/images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
-                                    <div class="quote-modern-meta">
-                                        <p class="quote-modern-cite">Jose Gutierrez</p>
-                                        <p class="quote-modern-small">Regular Customer</p>
+                                </article>
+                                <article class="quote-modern">
+                                    <div class="quote-modern-text">
+                                        <p>Working with your company on our 3rd Solar project was a great success and I must say that you have a good team of people who helped us when the initial consultation started.</p>
                                     </div>
-                                </div>
-                            </article>
-                            <article class="quote-modern">
-                                <div class="quote-modern-text">
-                                    <p>Our company became your client in 2010 and we’ve been very happy with IT services you provide. Your consultants do an excellent job with ongoing IT maintenance and support.</p>
-                                </div>
-                                <div class="quote-modern-footer">
-                                    <img class="quote-modern-image" src="/images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
-                                    <div class="quote-modern-meta">
-                                        <p class="quote-modern-cite">Jane Greer</p>
-                                        <p class="quote-modern-small">Regular Customer</p>
+                                    <div class="quote-modern-footer">
+                                        <img class="quote-modern-image" src="/images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
+                                        <div class="quote-modern-meta">
+                                            <p class="quote-modern-cite">Debra Ortega</p>
+                                            <p class="quote-modern-small">Regular Customer</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                                <article class="quote-modern">
+                                    <div class="quote-modern-text">
+                                        <p>Effective worked hard before the project to come up with a strategic  IT planning solution that met our requirements. We hope to cooperate with them in the future.</p>
+                                    </div>
+                                    <div class="quote-modern-footer">
+                                        <img class="quote-modern-image" src="/images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
+                                        <div class="quote-modern-meta">
+                                            <p class="quote-modern-cite">Jose Gutierrez</p>
+                                            <p class="quote-modern-small">Regular Customer</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="quote-modern">
+                                    <div class="quote-modern-text">
+                                        <p>Our company became your client in 2010 and we’ve been very happy with IT services you provide. Your consultants do an excellent job with ongoing IT maintenance and support.</p>
+                                    </div>
+                                    <div class="quote-modern-footer">
+                                        <img class="quote-modern-image" src="/images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
+                                        <div class="quote-modern-meta">
+                                            <p class="quote-modern-cite">Jane Greer</p>
+                                            <p class="quote-modern-small">Regular Customer</p>
+                                        </div>
+                                    </div>
+                                </article>*@
                         </div>
                     </div>
                 </div>
@@ -482,21 +518,39 @@
         </section>
 
         <!-- Brands-->
-        <section class="section section-md bg-default text-center">
-            <div class="container container-wide">
-                <!-- Owl Carousel-->
-                <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true"
-                     data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6"
-                     data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
-                    <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
-                    <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
-                    <a class="link-image" href="#"><img src="/images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a>
-                    <a class="link-image" href="#"><img src="/images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a>
-                    <a class="link-image" href="#"><img src="/images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a>
-                    <a class="link-image" href="#"><img src="/images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a>
+        @if (home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands") != null)
+        {
+            var featuredBrandImageUrl = "";
+
+            <section class="section section-md bg-default text-center">
+                <div class="container container-wide">
+                    <!-- Owl Carousel-->
+                    <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true"
+                         data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6"
+                         data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+
+                        @foreach (var featuredBrand in home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands"))
+                        {
+                            featuredBrandImageUrl = featuredBrand.Value<IPublishedContent>("brandImage")?.Url ?? "";
+
+                            <a class="link-image" href='@featuredBrand.Value("brandUrl")'><img src="@featuredBrandImageUrl" title='@featuredBrand.Value("brandName")'
+                                alt='@featuredBrand.Value("brandName")' width='@featuredBrand.Value("brandImageSuggestedWidthInPixels")' height='@featuredBrand.Value("brandImageSuggestedHeightInPixels")' /></a>
+
+                        }
+
+                        @*
+                        <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
+                        <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
+                        <a class="link-image" href="#"><img src="/images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a>
+                        <a class="link-image" href="#"><img src="/images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a>
+                        <a class="link-image" href="#"><img src="/images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a>
+                        <a class="link-image" href="#"><img src="/images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a>
+                        *@
+
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        }
 
         <!-- Page Footer-->
         <!-- Footer Default-->

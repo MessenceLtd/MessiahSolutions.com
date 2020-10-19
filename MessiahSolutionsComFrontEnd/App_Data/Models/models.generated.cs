@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "ca96331fab380bbd")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5acc65e7afac4b21")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -644,6 +644,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("mainLayoutFeaturedBlogPosts")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> MainLayoutFeaturedBlogPosts => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("mainLayoutFeaturedBlogPosts");
+
+		///<summary>
+		/// Main Layout - Featured Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutFeaturedBrands")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Brand> MainLayoutFeaturedBrands => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Brand>>("mainLayoutFeaturedBrands");
 
 		///<summary>
 		/// Main Layout - Featured Testimonials
@@ -1752,6 +1759,67 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("testimonialPersonSocialUrlLink")]
 		public string TestimonialPersonSocialUrlLink => this.Value<string>("testimonialPersonSocialUrlLink");
+	}
+
+	/// <summary>Brand</summary>
+	[PublishedModel("brand")]
+	public partial class Brand : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const string ModelTypeAlias = "brand";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Brand, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Brand(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Brand Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("brandImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BrandImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("brandImage");
+
+		///<summary>
+		/// Brand Image Suggested Height In Pixels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("brandImageSuggestedHeightInPixels")]
+		public int BrandImageSuggestedHeightInPixels => this.Value<int>("brandImageSuggestedHeightInPixels");
+
+		///<summary>
+		/// Brand Image Suggested Width In Pixels
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("brandImageSuggestedWidthInPixels")]
+		public int BrandImageSuggestedWidthInPixels => this.Value<int>("brandImageSuggestedWidthInPixels");
+
+		///<summary>
+		/// Brand Name: name of brand for tooltip / image alt text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("brandName")]
+		public string BrandName => this.Value<string>("brandName");
+
+		///<summary>
+		/// Brand Url
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("brandUrl")]
+		public string BrandUrl => this.Value<string>("brandUrl");
 	}
 
 	/// <summary>Folder</summary>
