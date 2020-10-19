@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5acc65e7afac4b21")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "898678db68c2905d")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -583,6 +583,13 @@ namespace Umbraco.Web.PublishedModels
 		public string FooterAddress => this.Value<string>("footerAddress");
 
 		///<summary>
+		/// Footer All Rights Reserved Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerAllRightsReservedText")]
+		public string FooterAllRightsReservedText => this.Value<string>("footerAllRightsReservedText");
+
+		///<summary>
 		/// Call To Action Caption: Caption on the Call To Action Button
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
@@ -609,6 +616,48 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("footerHeader")]
 		public string FooterHeader => this.Value<string>("footerHeader");
+
+		///<summary>
+		/// Footer Link Privacy Policy
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerLinkPrivacyPolicy")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterLinkPrivacyPolicy => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("footerLinkPrivacyPolicy");
+
+		///<summary>
+		/// FooterLinkPrivacyPolicyText
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerLinkPrivacyPolicyText")]
+		public string FooterLinkPrivacyPolicyText => this.Value<string>("footerLinkPrivacyPolicyText");
+
+		///<summary>
+		/// Footer Link Terms of Use
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerLinkTermsOfUse")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterLinkTermsOfUse => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("footerLinkTermsOfUse");
+
+		///<summary>
+		/// Footer Link Terms Of Use Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerLinkTermsOfUseText")]
+		public string FooterLinkTermsOfUseText => this.Value<string>("footerLinkTermsOfUseText");
+
+		///<summary>
+		/// Footer Quick Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerQuickLinks")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> FooterQuickLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("footerQuickLinks");
+
+		///<summary>
+		/// Footer Quick Links Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerQuickLinksTitle")]
+		public string FooterQuickLinksTitle => this.Value<string>("footerQuickLinksTitle");
 
 		///<summary>
 		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business

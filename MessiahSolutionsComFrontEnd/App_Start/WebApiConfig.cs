@@ -13,6 +13,10 @@ namespace MessiahSolutionsComFrontEnd
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.EnsureInitialized();
+
+            GlobalConfiguration.Configuration.MapHttpAttributeRoutes();
+            GlobalConfiguration.Configuration.EnsureInitialized();
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

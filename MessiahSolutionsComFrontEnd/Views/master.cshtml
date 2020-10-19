@@ -18,6 +18,9 @@
     var blogPostsLink = home.Value<IPublishedContent>("mainLayoutBlogPostsLink").Url();
     var testimonialsLink = home.Value<IPublishedContent>("mainLayoutTestimonialsLink").Url();
 
+    var footerLinkTermsOfUse = home.Value<IPublishedContent>("footerLinkTermsOfUse").Url();
+    var footerLinkPrivacyPolicy = home.Value<IPublishedContent>("footerLinkPrivacyPolicy").Url();
+
     var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-" + home.Url().Replace("/", string.Empty) + ".css";
 
 }
@@ -559,22 +562,30 @@
                 <div class="row row-50 justify-content-sm-center">
                     <div class="col-md-6 col-xl-3">
                         <div class="inset-xxl">
-                            <h6>About Us</h6>
-                            <p class="text-spacing-sm">We at Effective know how to design and develop a website or app of any complexity. Regardless of what you are looking for, our experts can deliver a solution, which will elevate your business to unbelievable heights.</p>
+                            <h6>@home.Value("footerHeader")</h6>
+                            <p class="text-spacing-sm">
+                                @home.Value("footerDescription")
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-2">
-                        <h6>Quick Links</h6>
+                        <h6>@home.Value("footerQuickLinksTitle")</h6>
                         <ul class="list-marked list-marked-primary">
-                            <li><a href="about-us.html">About Us</a></li>
+
+                            @foreach (var footerLink in home.Value<IEnumerable<IPublishedContent>>("footerQuickLinks"))
+                            {
+                                <li><a href="@footerLink.Url()">@footerLink.Name</a></li>
+                            }
+
+                            @*<li><a href="about-us.html">About Us</a></li>
                             <li><a href="services.html">Services</a></li>
                             <li><a href="classic-blog.html">Blog</a></li>
                             <li><a href="grid-gallery.html">Portfolio</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>*@
                         </ul>
                     </div>
                     <div class="col-md-6 col-xl-4">
-                        <h6>Instagram Feed</h6>
+                        <h6><u>Demo</u> Instagram Feed</h6>
                         <div class="instafeed text-center" data-lightgallery="group">
                             <div class="row row-10 row-narrow">
                                 <div class="col-6 col-sm-4 col-md-4 col-lg-3">
@@ -671,26 +682,27 @@
                     <div class="col-md-6 col-xl-3">
                         <h6>Contact Us</h6>
                         <!-- RD Mailform-->
-                        @*<form class="rd-mailform rd-mailform-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                                <div class="form-wrap form-wrap-validation">
-                                    <input class="form-input" id="form-footer-name" type="text" name="name" data-constraints="@Required" />
-                                    <label class="form-label" for="form-footer-name">Name</label>
-                                </div>
-                                <div class="form-wrap form-wrap-validation">
-                                    <input class="form-input" id="form-footer-email" type="email" name="email" data-constraints="@Email @Required" />
-                                    <label class="form-label" for="form-footer-email">E-mail</label>
-                                </div>
-                                <div class="form-wrap form-wrap-validation">
-                                    <label class="form-label" for="form-footer-message">Message</label>
-                                    <textarea class="form-input" id="form-footer-message" name="message" data-constraints="@Required"></textarea>
-                                </div>
-                                <div class="form-button">
-                                    <button class="button button-sm button-primary" type="submit">Send message</button>
-                                </div>
-                            </form>*@
+                        @**@
+                        <form class="rd-mailform rd-mailform-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                            <div class="form-wrap form-wrap-validation">
+                                <input class="form-input" id="form-footer-name" type="text" name="name" data-constraints="@@Required" />
+                                <label class="form-label" for="form-footer-name">Name</label>
+                            </div>
+                            <div class="form-wrap form-wrap-validation">
+                                <input class="form-input" id="form-footer-email" type="email" name="email" data-constraints="@@Email @@Required" />
+                                <label class="form-label" for="form-footer-email">E-mail</label>
+                            </div>
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label" for="form-footer-message">Message</label>
+                                <textarea class="form-input" id="form-footer-message" name="message" data-constraints="@@Required"></textarea>
+                            </div>
+                            <div class="form-button">
+                                <button class="button button-sm button-primary" type="submit">Send message</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <p class="right">&#169;&nbsp;<span class="copyright-year"></span> All Rights Reserved&nbsp;<a href="#">Terms of Use</a>&nbsp;and&nbsp;<a href="privacy-policy.html">Privacy Policy</a></p>
+                <p class="right">@home.Value("footerAllRightsReservedText") <a href="@footerLinkTermsOfUse">@home.Value("footerLinkTermsOfUseText")</a>&nbsp;and&nbsp;<a href="@footerLinkPrivacyPolicy">@home.Value("footerLinkPrivacyPolicyText")</a>.</p>
             </div>
         </footer>
 

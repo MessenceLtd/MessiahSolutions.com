@@ -348,6 +348,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EmailTemplates\ContactUs-en.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -679,6 +680,7 @@
     <Content Include="PurchasedWebTemplate\fonts\materialdesignicons-webfont.woff2" />
     <Content Include="App_Data\packages\createdPackages.config" />
     <Content Include="App_Data\packages\installedPackages.config" />
+    <Content Include="PrivateAppSettings.config" />
     <None Include="Properties\PublishProfiles\LocalFolderPublish-IISPUBLISH-dev.MessiahSolutions.com.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="PurchasedWebTemplate\404-page.html" />
@@ -3483,6 +3485,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3515,12 +3518,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="WebsiteOperationsTools.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Models\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Media\clxbe03j\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ContactUsProcessor\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

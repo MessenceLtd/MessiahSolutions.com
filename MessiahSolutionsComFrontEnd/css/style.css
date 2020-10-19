@@ -2952,8 +2952,11 @@ h6.box-info-title,
     text-align: left; }
   [class*='bg-'] + .page-footer-default,
   * + .page-footer-default,
-  .page-footer-default {
-    padding: 90px 0 30px; } }
+  .page-footer-default 
+  {
+    padding: 45px 0 30px; 
+  }
+}
 
 p.right {
   letter-spacing: 0.02em; }
@@ -2976,7 +2979,7 @@ p.right {
 
 @media (min-width: 1600px) {
   * + p.right {
-    margin-top: 90px; } }
+    margin-top: 40px; } }
 
 /*
 *
@@ -8065,9 +8068,11 @@ textarea.form-input {
     padding-bottom: 120px; } }
 
 @media (min-width: 1200px) {
-  .section-md {
-    padding-top: 100px;
-    padding-bottom: 100px; }
+  .section-md 
+  {
+    padding-top: 50px;
+    padding-bottom: 50px; 
+  }
   
   .section-lg,
   .section-custom {
