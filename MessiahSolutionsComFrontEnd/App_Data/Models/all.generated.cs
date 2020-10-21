@@ -6,7 +6,7 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "898678db68c2905d")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "5656b1f5a87cae31")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -101,11 +101,35 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>Navigation Base</summary>
 	public partial interface INavigationBase : IPublishedContent
 	{
-		/// <summary>Keywords</summary>
+		/// <summary>Seo Keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		global::System.Collections.Generic.IEnumerable<string> Keywords { get; }
 
-		/// <summary>Description</summary>
+		/// <summary>Main Layout Show Blogs</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowBlogs { get; }
+
+		/// <summary>Main Layout - Show Brands</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowBrands { get; }
+
+		/// <summary>Main Layout - Show Breadcrumbs And Or With Hero Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowBreadcrumbsAndOrWithHeroImage { get; }
+
+		/// <summary>Main Layout Show Our Advantages</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowOurAdvantages { get; }
+
+		/// <summary>Main Layout Show Statistics Numbers</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowStatisticsNumbers { get; }
+
+		/// <summary>Main Layout Show Testimonials</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		bool MainLayoutShowTestimonials { get; }
+
+		/// <summary>Seo Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		string SeoMetaDescription { get; }
 
@@ -140,24 +164,90 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => GetKeywords(this);
 
-		/// <summary>Static getter for Keywords</summary>
+		/// <summary>Static getter for Seo Keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public static global::System.Collections.Generic.IEnumerable<string> GetKeywords(INavigationBase that) => that.Value<global::System.Collections.Generic.IEnumerable<string>>("keywords");
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => GetMainLayoutShowBlogs(this);
+
+		/// <summary>Static getter for Main Layout Show Blogs</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowBlogs(INavigationBase that) => that.Value<bool>("mainLayoutShowBlogs");
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => GetMainLayoutShowBrands(this);
+
+		/// <summary>Static getter for Main Layout - Show Brands</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowBrands(INavigationBase that) => that.Value<bool>("mainLayoutShowBrands");
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		/// <summary>Static getter for Main Layout - Show Breadcrumbs And Or With Hero Image</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(INavigationBase that) => that.Value<bool>("mainLayoutShowBreadcrumbsAndOrWithHeroImage");
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => GetMainLayoutShowOurAdvantages(this);
+
+		/// <summary>Static getter for Main Layout Show Our Advantages</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowOurAdvantages(INavigationBase that) => that.Value<bool>("mainLayoutShowOurAdvantages");
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => GetMainLayoutShowStatisticsNumbers(this);
+
+		/// <summary>Static getter for Main Layout Show Statistics Numbers</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowStatisticsNumbers(INavigationBase that) => that.Value<bool>("mainLayoutShowStatisticsNumbers");
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => GetMainLayoutShowTestimonials(this);
+
+		/// <summary>Static getter for Main Layout Show Testimonials</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static bool GetMainLayoutShowTestimonials(INavigationBase that) => that.Value<bool>("mainLayoutShowTestimonials");
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
 		public string SeoMetaDescription => GetSeoMetaDescription(this);
 
-		/// <summary>Static getter for Description</summary>
+		/// <summary>Static getter for Seo Description</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		public static string GetSeoMetaDescription(INavigationBase that) => that.Value<string>("seoMetaDescription");
 
@@ -227,14 +317,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -419,14 +551,56 @@ namespace Umbraco.Web.PublishedModels
 		public string TwitterUsername => this.Value<string>("twitterUsername");
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -487,14 +661,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -510,7 +726,7 @@ namespace Umbraco.Web.PublishedModels
 
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, INavigationBase
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -658,6 +874,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("footerQuickLinksTitle")]
 		public string FooterQuickLinksTitle => this.Value<string>("footerQuickLinksTitle");
+
+		///<summary>
+		/// Footer Text By Using This Website You Consent
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("footerTextByUsingThisWebsiteYouConsent")]
+		public string FooterTextByUsingThisWebsiteYouConsent => this.Value<string>("footerTextByUsingThisWebsiteYouConsent");
 
 		///<summary>
 		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
@@ -924,6 +1147,69 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("viewAllTeamBottomLinkText")]
 		public string ViewAllTeamBottomLinkText => this.Value<string>("viewAllTeamBottomLinkText");
+
+		///<summary>
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("keywords")]
+		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
+
+		///<summary>
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
 	}
 
 	/// <summary>Feature</summary>
@@ -1006,14 +1292,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1095,14 +1423,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => this.Value<string>("pageTitle");
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1191,14 +1561,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => this.Value<string>("pageTitle");
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1266,14 +1678,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1313,11 +1767,67 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// A Few Words About Us First Heading Paragraph Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("aFewWordsAboutUsFirstParagraphHeadingRow")]
+		public string AFewWordsAboutUsFirstParagraphHeadingRow => this.Value<string>("aFewWordsAboutUsFirstParagraphHeadingRow");
+
+		///<summary>
+		/// A Few Words About Us Learn More Bottom Link Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("aFewWordsAboutUsLearnMoreBottomLinkText")]
+		public string AFewWordsAboutUsLearnMoreBottomLinkText => this.Value<string>("aFewWordsAboutUsLearnMoreBottomLinkText");
+
+		///<summary>
+		/// A Few Words About Us Second Paragraph Row
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("aFewWordsAboutUsSecondParagraphRow")]
+		public string AFewWordsAboutUsSecondParagraphRow => this.Value<string>("aFewWordsAboutUsSecondParagraphRow");
+
+		///<summary>
+		/// Featured Our Advantages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("featuredOurAdvantages")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> FeaturedOurAdvantages => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("featuredOurAdvantages");
+
+		///<summary>
 		/// Featured Services
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("featuredServices")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent> FeaturedServices => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>>("featuredServices");
+
+		///<summary>
+		/// Our Advantages Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("ourAdvantagesTitle")]
+		public string OurAdvantagesTitle => this.Value<string>("ourAdvantagesTitle");
+
+		///<summary>
+		/// Our Advantages Title Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("ourAdvantagesTitleLink")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent OurAdvantagesTitleLink => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("ourAdvantagesTitleLink");
+
+		///<summary>
+		/// Title A few words About Us
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("titleAFewWordsAboutUs")]
+		public string TitleAfewWordsAboutUs => this.Value<string>("titleAFewWordsAboutUs");
+
+		///<summary>
+		/// Title Link A Few Words About Us
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("titleLinkAFewWordsAboutUs")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent TitleLinkAfewWordsAboutUs => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("titleLinkAFewWordsAboutUs");
 
 		///<summary>
 		/// Content
@@ -1334,14 +1844,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1395,6 +1947,13 @@ namespace Umbraco.Web.PublishedModels
 		public string ServiceImageType => this.Value<string>("serviceImageType");
 
 		///<summary>
+		/// Service Thumbnail Image: The suggested size for the image is 951px width and 382px height
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("serviceThumbnailImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ServiceThumbnailImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("serviceThumbnailImage");
+
+		///<summary>
 		/// ServiceTitle: Service title for h6 tag in repeater and in the website
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
@@ -1416,14 +1975,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1477,14 +2078,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1592,14 +2235,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1674,14 +2359,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1735,14 +2462,56 @@ namespace Umbraco.Web.PublishedModels
 		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
 
 		///<summary>
-		/// Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("keywords")]
 		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
 
 		///<summary>
-		/// Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("seoMetaDescription")]
@@ -1883,6 +2652,240 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
 		[ImplementPropertyType("brandUrl")]
 		public string BrandUrl => this.Value<string>("brandUrl");
+	}
+
+	/// <summary>Error Page 404</summary>
+	[PublishedModel("errorPage404")]
+	public partial class ErrorPage404 : PublishedContentModel, IContentBase, INavigationBase
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const string ModelTypeAlias = "errorPage404";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ErrorPage404, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ErrorPage404(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Back to Home Page Link Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("backToHomePageLinkText")]
+		public string BackToHomePageLinkText => this.Value<string>("backToHomePageLinkText");
+
+		///<summary>
+		/// Error Code Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("errorCodeContent")]
+		public string ErrorCodeContent => this.Value<string>("errorCodeContent");
+
+		///<summary>
+		/// Error content description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("errorContentDescription")]
+		public string ErrorContentDescription => this.Value<string>("errorContentDescription");
+
+		///<summary>
+		/// Error Title Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("errorTitleContent")]
+		public string ErrorTitleContent => this.Value<string>("errorTitleContent");
+
+		///<summary>
+		/// Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("bodyText")]
+		public global::Newtonsoft.Json.Linq.JToken BodyText => global::Umbraco.Web.PublishedModels.ContentBase.GetBodyText(this);
+
+		///<summary>
+		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
+
+		///<summary>
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("keywords")]
+		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
+
+		///<summary>
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
+	}
+
+	/// <summary>Error Page 500</summary>
+	[PublishedModel("errorPage500")]
+	public partial class ErrorPage500 : PublishedContentModel, IContentBase, INavigationBase
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const string ModelTypeAlias = "errorPage500";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ErrorPage500, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ErrorPage500(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("bodyText")]
+		public global::Newtonsoft.Json.Linq.JToken BodyText => global::Umbraco.Web.PublishedModels.ContentBase.GetBodyText(this);
+
+		///<summary>
+		/// Page Title: The title of the page, this is also the first text in a google search result. The ideal length is between 40 and 60 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => global::Umbraco.Web.PublishedModels.ContentBase.GetPageTitle(this);
+
+		///<summary>
+		/// Seo Keywords: Keywords that describe the content of the page. This is considered optional since most modern search engines don't use this anymore
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("keywords")]
+		public global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Web.PublishedModels.NavigationBase.GetKeywords(this);
+
+		///<summary>
+		/// Main Layout Show Blogs
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBlogs")]
+		public bool MainLayoutShowBlogs => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBlogs(this);
+
+		///<summary>
+		/// Main Layout - Show Brands
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBrands")]
+		public bool MainLayoutShowBrands => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBrands(this);
+
+		///<summary>
+		/// Main Layout - Show Breadcrumbs And Or With Hero Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowBreadcrumbsAndOrWithHeroImage")]
+		public bool MainLayoutShowBreadcrumbsAndOrWithHeroImage => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowBreadcrumbsAndOrWithHeroImage(this);
+
+		///<summary>
+		/// Main Layout Show Our Advantages: Show our advantages in main layout
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowOurAdvantages")]
+		public bool MainLayoutShowOurAdvantages => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowOurAdvantages(this);
+
+		///<summary>
+		/// Main Layout Show Statistics Numbers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowStatisticsNumbers")]
+		public bool MainLayoutShowStatisticsNumbers => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowStatisticsNumbers(this);
+
+		///<summary>
+		/// Main Layout Show Testimonials
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("mainLayoutShowTestimonials")]
+		public bool MainLayoutShowTestimonials => global::Umbraco.Web.PublishedModels.NavigationBase.GetMainLayoutShowTestimonials(this);
+
+		///<summary>
+		/// Seo Description: A brief description of the content on your page. This text is shown below the title in a google search result and also used for Social Sharing Cards. The ideal length is between 130 and 155 characters
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("seoMetaDescription")]
+		public string SeoMetaDescription => global::Umbraco.Web.PublishedModels.NavigationBase.GetSeoMetaDescription(this);
+
+		///<summary>
+		/// Hide in Navigation: If you don't want this page to appear in the navigation, check this box
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.8.0")]
+		[ImplementPropertyType("umbracoNavihide")]
+		public bool UmbracoNavihide => global::Umbraco.Web.PublishedModels.NavigationBase.GetUmbracoNavihide(this);
 	}
 
 	/// <summary>Folder</summary>

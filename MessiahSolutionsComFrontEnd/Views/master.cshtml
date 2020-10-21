@@ -23,6 +23,14 @@
 
     var languageSpecificCssExtension = "/CSS" + home.Url() + "LanguageSpecs-" + home.Url().Replace("/", string.Empty) + ".css";
 
+    bool show_MainLayoutShowBreadcrumbsAndOrWithHeroImage = Model.Value<bool>("mainLayoutShowBreadcrumbsAndOrWithHeroImage");
+
+    bool show_MainLayoutShowOurAdvantages = Model.Value<bool>("mainLayoutShowOurAdvantages");
+    bool show_MainLayoutShowStatisticsNumbers = Model.Value<bool>("mainLayoutShowStatisticsNumbers");
+    bool show_MainLayoutShowBlogs = Model.Value<bool>("mainLayoutShowBlogs");
+    bool show_MainLayoutShowTestimonials = Model.Value<bool>("mainLayoutShowTestimonials");
+    bool show_MainLayoutShowBrands = Model.Value<bool>("mainLayoutShowBrands");
+
 }
 
 <!doctype html>
@@ -207,6 +215,31 @@
             </div>
         </header>
 
+        @if (show_MainLayoutShowBreadcrumbsAndOrWithHeroImage)
+        {
+            <!-- Breadcrumbs-->
+            <section class="breadcrumbs-custom bg-image">
+                <div class="container">
+                    <p class="heading-1 breadcrumbs-custom-title">@Model.Name</p>
+
+                    @{
+                        var breadCrumbsNodes = Model.Ancestors().Reverse();
+
+                        <ul class="breadcrumbs-custom-path">
+
+                            @foreach (var node in breadCrumbsNodes)
+                            {
+                                <li><a href="@node.Url()">@node.Name</a></li>
+                            }
+
+                            <li><a href="@Model.Url()">@Model.Name</a></li>
+
+                        </ul>
+                    }
+
+                </div>
+            </section>
+        }
 
         <main>
             @RenderBody()
@@ -222,337 +255,362 @@
                 </div>
             </footer>*@
 
-        <!-- Our Advantages-->
-        <section class="section section-wrap section-wrap-lg section-reverse bg-gray-darker">
-            <div class="section-wrap-inner">
-                <div class="container container-wide">
-                    <div class="row row-50 justify-content-md-center justify-content-xl-end">
-                        <div class="col-md-12 col-lg-7 col-xl-7 col-xxl-6">
-                            <div class="section-lg">
-                                <a href="@ourAdvantagesLink" class="animated-title-divider longer2">
-                                    <h3>@home.GetProperty("ourAdvantagesTitle").Value()</h3>
-                                    <div class="divider divider-default"></div>
-                                </a>
-                                <div class="row row-30">
-                                    @if (home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout") != null)
-                                    {
-                                        foreach (var advantage in home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout"))
-                                        {
-                                            <div class="col-md-6">
-                                                <article class="box-minimal box-minimal-border">
-                                                    <div class="box-minimal-icon mdi @advantage.Value("thumbnailImageCSSClass")"></div>
-                                                    <p class="big box-minimal-title">@advantage.Value("advantageTitle")</p>
-                                                    <hr>
-                                                    <div class="box-minimal-text">
-                                                        @advantage.Value("advantageDescription")
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        }
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="section-wrap-aside section-wrap-image">
-                    <img src="@ourAdvantagesLeftSideImage" alt="" width="942" height="1250" />
-                </div>
-            </div>
-        </section>
-
-        <!-- Counters-->
-        <section class="section parallax-container bg-image">
-            <div class="material-parallax"><img src="/images/parallax-image-1-1920x1010.jpg" alt="" /></div>
-            <div class="parallax-content">
-                <div class="section-md text-center">
-                    <div class="container">
-                        <div class="row row-50 justify-content-sm-center">
-                            <div class="col-sm-10 col-md-6 col-xl-3">
-                                <div class="counter-wrap">
-                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsBottomIconCSSClass")'></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsProjectsBottomNumbers")</span></div>
-                                    <p>@home.Value("mainLayoutStatsProjectsBottomTitle")</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-10 col-md-6 col-xl-3">
-                                <div class="counter-wrap">
-                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsClientsBottomIconCSSClass")'></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsClientsBottomNumber")</span></div>
-                                    <p>@home.Value("mainLayoutStatsClientsBottomTitle")</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-10 col-md-6 col-xl-3">
-                                <div class="counter-wrap">
-                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingHoursBottomIconCSSClass")'></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingHoursBottomNumber")</span></div>
-                                    <p>@home.Value("mainLayoutStatsCodingHoursBottomTitle")</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-10 col-md-6 col-xl-3">
-                                <div class="counter-wrap">
-                                    <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingLinesBottomIconCSSClass")'></span>
-                                    <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingLinesBottomNumber")</span></div>
-                                    <p>@home.Value("mainLayoutStatsCodingLinesBottomTitle")</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Blog posts-->
-        <section class="section section-lg bg-gray-lighter text-center">
-            <div class="container-wide">
-                <div class="row">
-                    <div class="col-sm-12">
-                        @*<h3>Latest Blog Posts</h3><div class="divider divider-default"></div>*@
-                        <div class="text-center">
-                            <a href="@blogPostsLink" class="animated-title-divider longer">
-                                <h3>@home.GetProperty("mainLayoutLatestBlogPostsTitle").Value()</h3>
-                                <div class="divider divider-default"></div>
-                            </a>
-                        </div>
-                        <!-- Owl Carousel-->
-                        <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
-
-                            @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts") != null)
-                            {
-                                var blogPostImage = "";
-                                var blogDateTime_CulturedString = "";
-                                var blogCategoriesTags = "";
-
-                                foreach (var blogPost in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts"))
-                                {
-                                    blogPostImage = blogPost.Value<IPublishedContent>("blogImage")?.Url ?? "";
-                                    if (blogPost.Value("blogDateTime") != null)
-                                    {
-                                        blogDateTime_CulturedString = ((DateTime)blogPost.Value("blogDateTime")).ToString("MMM dd, yyyy") + " at " + ((DateTime)blogPost.Value("blogDateTime")).ToString("HH:mm") + " UTC";
-                                    }
-
-                                    blogCategoriesTags = string.Join(", ", (string[])blogPost.Value("categories"));
-
-                                    <article class="post-blog">
-                                        <a class="post-blog-image" href="@blogPost.Url()"><img src="@blogPostImage" alt="" width="570" height="415" /></a>
-                                        <div class="post-blog-caption">
-                                            <div class="post-blog-caption-header">
-                                                <ul class="post-blog-tags">
-                                                    <li><a class="button-tags" href="@blogPost.Url()">@blogCategoriesTags</a></li>
-                                                </ul>
-                                                <ul class="post-blog-meta">
-                                                    <li><span>by</span>&nbsp;<a href="@blogPost.Url()">@blogPost.Value("author")</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="post-blog-caption-body">
-                                                <h5><a class="post-blog-title" href="@blogPost.Url()">@blogPost.Value("pageTitle")</a></h5>
-                                                @blogPost.Value("excerpt")
-                                            </div>
-                                            <div class="post-blog-caption-footer">
-                                                <time datetime="2017">@blogDateTime_CulturedString</time>
-                                                @*<a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>*@
-                                            </div>
-                                        </div>
-                                    </article>
-                                }
-                            }
-
-                            @*<article class="post-blog">
-                                    <a class="post-blog-image" href="single-post.html"><img src="/images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
-                                    <div class="post-blog-caption">
-                                        <div class="post-blog-caption-header">
-                                            <ul class="post-blog-tags">
-                                                <li><a class="button-tags" href="single-post.html">Tips & Tricks</a></li>
-                                            </ul>
-                                            <ul class="post-blog-meta">
-                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="post-blog-caption-body">
-                                            <h5><a class="post-blog-title" href="single-post.html">Why Outsourcing IT Services for Small Business Owners is Beneficial</a></h5>
-                                        </div>
-                                        <div class="post-blog-caption-footer">
-                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="post-blog">
-                                    <a class="post-blog-image" href="image-post.html"><img src="/images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
-                                    <div class="post-blog-caption">
-                                        <div class="post-blog-caption-header">
-                                            <ul class="post-blog-tags">
-                                                <li><a class="button-tags" href="image-post.html">marketing</a></li>
-                                            </ul>
-                                            <ul class="post-blog-meta">
-                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="post-blog-caption-body">
-                                            <h5><a class="post-blog-title" href="image-post.html">Important Info: Know These Types of Malware and Stay Protected</a></h5>
-                                        </div>
-                                        <div class="post-blog-caption-footer">
-                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="image-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="post-blog">
-                                    <a class="post-blog-audio" href="audio-post.html"><img src="/images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
-                                    <div class="post-blog-caption">
-                                        <div class="post-blog-caption-header">
-                                            <ul class="post-blog-tags">
-                                                <li><a class="button-tags" href="audio-post.html">Tips & Tricks</a></li>
-                                            </ul>
-                                            <ul class="post-blog-meta">
-                                                <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="post-blog-caption-body">
-                                            <h5><a class="post-blog-title" href="audio-post.html">Tips and Tricks for Avoiding IoT (Internet of Things) Threats</a></h5>
-                                        </div>
-                                        <div class="post-blog-caption-footer">
-                                            <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="audio-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
-                                        </div>
-                                    </div>
-                                </article>*@
-                        </div>
-                    </div>
-                </div>
-                <a class="button button-primary" href="@blogPostsLink">@home.Value("mainLayoutViewAllBlogPostsBottomTitle")</a>
-            </div>
-        </section>
-
-        <!-- Testimonials-->
-        <section class="section parallax-container bg-image">
-            <div class="material-parallax"><img src="/images/parallax-image-2-1920x1010.jpg" alt="" /></div>
-            <div class="parallax-content">
-                <div class="section-md text-center">
-                    <div class="container container-wide">
-                        <div class="text-center">
-                            <a href="@testimonialsLink" class="animated-title-divider longer">
-                                <h3>@home.GetProperty("mainLayoutTestimonialsTitle").Value()</h3>
-                                <div class="divider divider-default"></div>
-                            </a>
-                        </div>
-
-                        @*<h3>Testimonials</h3>
-                            <hr class="divider divider-default">*@
-                        <!-- Owl Carousel-->
-                        <div class="owl-carousel" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="4" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
-
-                            @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials") != null)
-                            {
-                                var testimonialImageUrl = "";
-                                var testimonialDateTime_CulturedString = "";
-
-                                foreach (var testimonialDetails in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials"))
-                                {
-                                    testimonialImageUrl = testimonialDetails.Value<IPublishedContent>("personImage")?.Url ?? "";
-
-                                    <article class="quote-modern">
-                                        <div class="quote-modern-text">
-                                            <p>
-                                                @testimonialDetails.Value("description")
-                                            </p>
-                                        </div>
-                                        <div class="quote-modern-footer">
-                                            <img class="quote-modern-image" src="@testimonialImageUrl" alt="" width="80" height="80" />
-                                            <div class="quote-modern-meta">
-                                                <p class="quote-modern-cite">@testimonialDetails.Value("personName")</p>
-                                                <p class="quote-modern-small">@testimonialDetails.Value("personJobTitle")</p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                }
-                            }
-
-                            @*<article class="quote-modern">
-                                    <div class="quote-modern-text">
-                                        <p>Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I am so glad I found Effective to help me!</p>
-                                    </div>
-                                    <div class="quote-modern-footer">
-                                        <img class="quote-modern-image" src="/images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
-                                        <div class="quote-modern-meta">
-                                            <p class="quote-modern-cite">Philip Lawrence</p>
-                                            <p class="quote-modern-small">Regular Customer</p>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="quote-modern">
-                                    <div class="quote-modern-text">
-                                        <p>Working with your company on our 3rd Solar project was a great success and I must say that you have a good team of people who helped us when the initial consultation started.</p>
-                                    </div>
-                                    <div class="quote-modern-footer">
-                                        <img class="quote-modern-image" src="/images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
-                                        <div class="quote-modern-meta">
-                                            <p class="quote-modern-cite">Debra Ortega</p>
-                                            <p class="quote-modern-small">Regular Customer</p>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="quote-modern">
-                                    <div class="quote-modern-text">
-                                        <p>Effective worked hard before the project to come up with a strategic  IT planning solution that met our requirements. We hope to cooperate with them in the future.</p>
-                                    </div>
-                                    <div class="quote-modern-footer">
-                                        <img class="quote-modern-image" src="/images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
-                                        <div class="quote-modern-meta">
-                                            <p class="quote-modern-cite">Jose Gutierrez</p>
-                                            <p class="quote-modern-small">Regular Customer</p>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="quote-modern">
-                                    <div class="quote-modern-text">
-                                        <p>Our company became your client in 2010 and we’ve been very happy with IT services you provide. Your consultants do an excellent job with ongoing IT maintenance and support.</p>
-                                    </div>
-                                    <div class="quote-modern-footer">
-                                        <img class="quote-modern-image" src="/images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
-                                        <div class="quote-modern-meta">
-                                            <p class="quote-modern-cite">Jane Greer</p>
-                                            <p class="quote-modern-small">Regular Customer</p>
-                                        </div>
-                                    </div>
-                                </article>*@
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Brands-->
-        @if (home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands") != null)
+        @if (show_MainLayoutShowOurAdvantages)
         {
-            var featuredBrandImageUrl = "";
-
-            <section class="section section-md bg-default text-center">
-                <div class="container container-wide">
-                    <!-- Owl Carousel-->
-                    <div class="owl-carousel owl-dots-secondary owl-layout-4" data-autoplay="true"
-                         data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6"
-                         data-dots="true" data-nav="false" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
-
-                        @foreach (var featuredBrand in home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands"))
-                        {
-                            featuredBrandImageUrl = featuredBrand.Value<IPublishedContent>("brandImage")?.Url ?? "";
-
-                            <a class="link-image" href='@featuredBrand.Value("brandUrl")'><img src="@featuredBrandImageUrl" title='@featuredBrand.Value("brandName")'
-                                alt='@featuredBrand.Value("brandName")' width='@featuredBrand.Value("brandImageSuggestedWidthInPixels")' height='@featuredBrand.Value("brandImageSuggestedHeightInPixels")' /></a>
-
-                        }
-
-                        @*
-                        <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
-                        <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
-                        <a class="link-image" href="#"><img src="/images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a>
-                        <a class="link-image" href="#"><img src="/images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a>
-                        <a class="link-image" href="#"><img src="/images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a>
-                        <a class="link-image" href="#"><img src="/images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a>
-                        *@
-
+            <!-- Our Advantages-->
+            <section class="section section-wrap section-wrap-lg section-reverse bg-gray-darker">
+                <div class="section-wrap-inner">
+                    <div class="container container-wide">
+                        <div class="row row-50 justify-content-md-center justify-content-xl-end">
+                            <div class="col-md-12 col-lg-7 col-xl-7 col-xxl-6">
+                                <div class="section-lg">
+                                    <a href="@ourAdvantagesLink" class="animated-title-divider longer2">
+                                        <h3>@home.GetProperty("ourAdvantagesTitle").Value()</h3>
+                                        <div class="divider divider-default"></div>
+                                    </a>
+                                    <div class="row row-30">
+                                        @if (home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout") != null)
+                                        {
+                                            foreach (var advantage in home.Value<IEnumerable<IPublishedContent>>("FeaturedAdvantagesFromWebsiteMasterLayout"))
+                                            {
+                                                <div class="col-md-6">
+                                                    <a class="ArticleWrapper" href="@advantage.Url()">
+                                                        <article class="box-minimal box-minimal-border">
+                                                            <div class="box-minimal-icon mdi @advantage.Value("thumbnailImageCSSClass")"></div>
+                                                            <p class="big box-minimal-title">@advantage.Value("advantageTitle")</p>
+                                                            <hr>
+                                                            <div class="box-minimal-text">
+                                                                @advantage.Value("advantageDescription")
+                                                            </div>
+                                                            <div class="read-more">
+                                                                <label>Read more</label>
+                                                            </div>
+                                                        </article>
+                                                    </a>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-wrap-aside section-wrap-image">
+                        <img src="@ourAdvantagesLeftSideImage" alt="" width="942" height="1250" />
                     </div>
                 </div>
             </section>
+        }
+
+        @if (show_MainLayoutShowStatisticsNumbers)
+        {
+            <!-- Counters-->
+            <section class="section parallax-container bg-image">
+                <div class="material-parallax"><img src="/images/parallax-image-1-1920x1010.jpg" alt="" /></div>
+                <div class="parallax-content">
+                    <div class="section-md text-center">
+                        <div class="container">
+                            <div class="row row-50 justify-content-sm-center">
+                                <div class="col-sm-10 col-md-6 col-xl-3">
+                                    <div class="counter-wrap">
+                                        <span class='icon icon-primary mdi @home.Value("mainLayoutStatsBottomIconCSSClass")'></span>
+                                        <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsProjectsBottomNumbers")</span></div>
+                                        <p>@home.Value("mainLayoutStatsProjectsBottomTitle")</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 col-md-6 col-xl-3">
+                                    <div class="counter-wrap">
+                                        <span class='icon icon-primary mdi @home.Value("mainLayoutStatsClientsBottomIconCSSClass")'></span>
+                                        <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsClientsBottomNumber")</span></div>
+                                        <p>@home.Value("mainLayoutStatsClientsBottomTitle")</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 col-md-6 col-xl-3">
+                                    <div class="counter-wrap">
+                                        <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingHoursBottomIconCSSClass")'></span>
+                                        <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingHoursBottomNumber")</span></div>
+                                        <p>@home.Value("mainLayoutStatsCodingHoursBottomTitle")</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 col-md-6 col-xl-3">
+                                    <div class="counter-wrap">
+                                        <span class='icon icon-primary mdi @home.Value("mainLayoutStatsCodingLinesBottomIconCSSClass")'></span>
+                                        <div class="heading-3"><span class="counter" data-step="3000">@home.Value("mainLayoutStatsCodingLinesBottomNumber")</span></div>
+                                        <p>@home.Value("mainLayoutStatsCodingLinesBottomTitle")</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+
+        @if (show_MainLayoutShowBlogs)
+        {
+            <!-- Blog posts-->
+            <section class="section section-lg bg-gray-lighter text-center">
+                <div class="container-wide">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @*<h3>Latest Blog Posts</h3><div class="divider divider-default"></div>*@
+                            <div class="text-center">
+                                <a href="@blogPostsLink" class="animated-title-divider longer">
+                                    <h3>@home.GetProperty("mainLayoutLatestBlogPostsTitle").Value()</h3>
+                                    <div class="divider divider-default"></div>
+                                </a>
+                            </div>
+                            <!-- Owl Carousel-->
+                            <div class="owl-carousel owl-carousel-team owl-carousel-inset" data-autoplay="true" data-items="1" data-md-items="2"
+                                 data-lg-items="3" data-xl-items="3" data-xxl-items="3" data-stage-padding="15" data-loop="false"
+                                 data-margin="30" data-mouse-drag="true" data-dots="true">
+
+                                @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts") != null)
+                                {
+                                    var blogPostImage = "";
+                                    var blogDateTime_CulturedString = "";
+                                    var blogCategoriesTags = "";
+
+                                    foreach (var blogPost in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedBlogPosts"))
+                                    {
+                                        blogPostImage = blogPost.Value<IPublishedContent>("blogImage")?.Url ?? "";
+                                        if (blogPost.Value("blogDateTime") != null)
+                                        {
+                                            blogDateTime_CulturedString = ((DateTime)blogPost.Value("blogDateTime")).ToString("MMM dd, yyyy") + " at " + ((DateTime)blogPost.Value("blogDateTime")).ToString("HH:mm") + " UTC";
+                                        }
+
+                                        blogCategoriesTags = string.Join(", ", (string[])blogPost.Value("categories"));
+
+                                        <article class="post-blog">
+                                            <a class="post-blog-image" href="@blogPost.Url()"><img src="@blogPostImage" alt="" width="570" height="415" /></a>
+                                            <div class="post-blog-caption">
+                                                <div class="post-blog-caption-header">
+                                                    <ul class="post-blog-tags">
+                                                        <li><a class="button-tags" href="@blogPost.Url()" tabindex="-1">@blogCategoriesTags</a></li>
+                                                    </ul>
+                                                    <ul class="post-blog-meta">
+                                                        <li><span>by</span>&nbsp;<a href="@blogPost.Url()" tabindex="-1">@blogPost.Value("author")</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="post-blog-caption-body">
+                                                    <h5><a class="post-blog-title" href="@blogPost.Url()" tabindex="-1">@blogPost.Value("pageTitle")</a></h5>
+                                                    @blogPost.Value("excerpt")
+                                                </div>
+                                                <div class="post-blog-caption-footer">
+                                                    <time datetime="2017">@blogDateTime_CulturedString</time>
+                                                    @*<a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>*@
+                                                </div>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+
+                                @*<article class="post-blog">
+                                        <a class="post-blog-image" href="single-post.html"><img src="/images/landing-it-company-7-570x415.jpg" alt="" width="570" height="415" /></a>
+                                        <div class="post-blog-caption">
+                                            <div class="post-blog-caption-header">
+                                                <ul class="post-blog-tags">
+                                                    <li><a class="button-tags" href="single-post.html">Tips & Tricks</a></li>
+                                                </ul>
+                                                <ul class="post-blog-meta">
+                                                    <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-blog-caption-body">
+                                                <h5><a class="post-blog-title" href="single-post.html">Why Outsourcing IT Services for Small Business Owners is Beneficial</a></h5>
+                                            </div>
+                                            <div class="post-blog-caption-footer">
+                                                <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="single-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="post-blog">
+                                        <a class="post-blog-image" href="image-post.html"><img src="/images/landing-it-company-8-570x415.jpg" alt="" width="570" height="415" /></a>
+                                        <div class="post-blog-caption">
+                                            <div class="post-blog-caption-header">
+                                                <ul class="post-blog-tags">
+                                                    <li><a class="button-tags" href="image-post.html">marketing</a></li>
+                                                </ul>
+                                                <ul class="post-blog-meta">
+                                                    <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-blog-caption-body">
+                                                <h5><a class="post-blog-title" href="image-post.html">Important Info: Know These Types of Malware and Stay Protected</a></h5>
+                                            </div>
+                                            <div class="post-blog-caption-footer">
+                                                <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="image-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="post-blog">
+                                        <a class="post-blog-audio" href="audio-post.html"><img src="/images/landing-it-company-9-570x415.jpg" alt="" width="570" height="415" /></a>
+                                        <div class="post-blog-caption">
+                                            <div class="post-blog-caption-header">
+                                                <ul class="post-blog-tags">
+                                                    <li><a class="button-tags" href="audio-post.html">Tips & Tricks</a></li>
+                                                </ul>
+                                                <ul class="post-blog-meta">
+                                                    <li><span>by</span>&nbsp;<a href="about-me.html">Ronald Chen</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="post-blog-caption-body">
+                                                <h5><a class="post-blog-title" href="audio-post.html">Tips and Tricks for Avoiding IoT (Internet of Things) Threats</a></h5>
+                                            </div>
+                                            <div class="post-blog-caption-footer">
+                                                <time datetime="2017">Feb 27, 2017 at 6:53 pm</time><a class="post-comment" href="audio-post.html"><span class="icon icon-md-middle icon-gray-1 mdi mdi-comment"></span><span>3</span></a>
+                                            </div>
+                                        </div>
+                                    </article>*@
+                            </div>
+                        </div>
+                    </div>
+                    <a class="button button-primary" href="@blogPostsLink">@home.Value("mainLayoutViewAllBlogPostsBottomTitle")</a>
+                </div>
+            </section>
+
+        }
+
+        @if (show_MainLayoutShowTestimonials)
+        {
+            <!-- Testimonials-->
+            <section class="section parallax-container bg-image">
+                <div class="material-parallax"><img src="/images/parallax-image-2-1920x1010.jpg" alt="" /></div>
+                <div class="parallax-content">
+                    <div class="section-md text-center">
+                        <div class="container container-wide">
+                            <div class="text-center">
+                                <a href="@testimonialsLink" class="animated-title-divider longer">
+                                    <h3>@home.GetProperty("mainLayoutTestimonialsTitle").Value()</h3>
+                                    <div class="divider divider-secondary"></div>
+                                </a>
+                            </div>
+
+                            @*<h3>Testimonials</h3>
+                                <hr class="divider divider-default">*@
+                            <!-- Owl Carousel-->
+                            <div class="owl-carousel" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="3" data-xxl-items="4"
+                                 data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="true">
+
+                                @if (home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials") != null)
+                                {
+                                    var testimonialImageUrl = "";
+                                    var testimonialDateTime_CulturedString = "";
+
+                                    foreach (var testimonialDetails in home.Value<IEnumerable<IPublishedContent>>("mainLayoutFeaturedTestimonials"))
+                                    {
+                                        testimonialImageUrl = testimonialDetails.Value<IPublishedContent>("personImage")?.Url ?? "";
+
+                                        <article class="quote-modern">
+                                            <div class="quote-modern-text">
+                                                <p>
+                                                    @testimonialDetails.Value("description")
+                                                </p>
+                                            </div>
+                                            <div class="quote-modern-footer">
+                                                <img class="quote-modern-image" src="@testimonialImageUrl" alt="" width="80" height="80" />
+                                                <div class="quote-modern-meta">
+                                                    <p class="quote-modern-cite">@testimonialDetails.Value("personName")</p>
+                                                    <p class="quote-modern-small">@testimonialDetails.Value("personJobTitle")</p>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    }
+                                }
+
+                                @*<article class="quote-modern">
+                                        <div class="quote-modern-text">
+                                            <p>Every writer needs to refresh the look of his/hers website from time to time, and that’s why I was looking for a new design for my website. I am so glad I found Effective to help me!</p>
+                                        </div>
+                                        <div class="quote-modern-footer">
+                                            <img class="quote-modern-image" src="/images/quote-user-4-80x80.jpg" alt="" width="80" height="80" />
+                                            <div class="quote-modern-meta">
+                                                <p class="quote-modern-cite">Philip Lawrence</p>
+                                                <p class="quote-modern-small">Regular Customer</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="quote-modern">
+                                        <div class="quote-modern-text">
+                                            <p>Working with your company on our 3rd Solar project was a great success and I must say that you have a good team of people who helped us when the initial consultation started.</p>
+                                        </div>
+                                        <div class="quote-modern-footer">
+                                            <img class="quote-modern-image" src="/images/quote-user-5-80x80.jpg" alt="" width="80" height="80" />
+                                            <div class="quote-modern-meta">
+                                                <p class="quote-modern-cite">Debra Ortega</p>
+                                                <p class="quote-modern-small">Regular Customer</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="quote-modern">
+                                        <div class="quote-modern-text">
+                                            <p>Effective worked hard before the project to come up with a strategic  IT planning solution that met our requirements. We hope to cooperate with them in the future.</p>
+                                        </div>
+                                        <div class="quote-modern-footer">
+                                            <img class="quote-modern-image" src="/images/quote-user-6-80x80.jpg" alt="" width="80" height="80" />
+                                            <div class="quote-modern-meta">
+                                                <p class="quote-modern-cite">Jose Gutierrez</p>
+                                                <p class="quote-modern-small">Regular Customer</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="quote-modern">
+                                        <div class="quote-modern-text">
+                                            <p>Our company became your client in 2010 and we’ve been very happy with IT services you provide. Your consultants do an excellent job with ongoing IT maintenance and support.</p>
+                                        </div>
+                                        <div class="quote-modern-footer">
+                                            <img class="quote-modern-image" src="/images/quote-user-7-80x80.jpg" alt="" width="80" height="80" />
+                                            <div class="quote-modern-meta">
+                                                <p class="quote-modern-cite">Jane Greer</p>
+                                                <p class="quote-modern-small">Regular Customer</p>
+                                            </div>
+                                        </div>
+                                    </article>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+
+        @if (show_MainLayoutShowBrands)
+        {
+            <!-- Brands-->
+            if (home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands") != null)
+            {
+                var featuredBrandImageUrl = "";
+
+                <section class="section section-md bg-default text-center bottom-brands">
+                    <div class="container container-wide">
+                        <!-- Owl Carousel-->
+                        <div class="owl-carousel owl-layout-4" data-autoplay="true"
+                             data-items="1" data-sm-items="2" data-md-items="3" data-lg-items="4" data-xl-items="6"
+                             data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="true">
+
+                            @foreach (var featuredBrand in home.Value<IEnumerable<IPublishedElement>>("mainLayoutFeaturedBrands"))
+                            {
+                                featuredBrandImageUrl = featuredBrand.Value<IPublishedContent>("brandImage")?.Url ?? "";
+
+                                <a class="link-image" href='@featuredBrand.Value("brandUrl")'>
+                                    <img src="@featuredBrandImageUrl" title='@featuredBrand.Value("brandName")'
+                                         alt='@featuredBrand.Value("brandName")' width='@featuredBrand.Value("brandImageSuggestedWidthInPixels")' height='@featuredBrand.Value("brandImageSuggestedHeightInPixels")' />
+                                </a>
+                            }
+
+                            @*
+                                <a class="link-image" href="#"><img src="/images/logo-image-1-174x113.png" alt="" width="174" height="113" /></a>
+                                <a class="link-image" href="#"><img src="/images/logo-image-2-173x135.png" alt="" width="173" height="135" /></a>
+                                <a class="link-image" href="#"><img src="/images/logo-image-3-172x113.png" alt="" width="172" height="113" /></a>
+                                <a class="link-image" href="#"><img src="/images/logo-image-4-185x110.png" alt="" width="185" height="110" /></a>
+                                <a class="link-image" href="#"><img src="/images/logo-image-5-173x114.png" alt="" width="173" height="114" /></a>
+                                <a class="link-image" href="#"><img src="/images/logo-image-6-143x110.png" alt="" width="143" height="110" /></a>
+                            *@
+
+                        </div>
+                    </div>
+                </section>
+            }
+
         }
 
         <!-- Page Footer-->
@@ -578,10 +636,10 @@
                             }
 
                             @*<li><a href="about-us.html">About Us</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="classic-blog.html">Blog</a></li>
-                            <li><a href="grid-gallery.html">Portfolio</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>*@
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="classic-blog.html">Blog</a></li>
+                                <li><a href="grid-gallery.html">Portfolio</a></li>
+                                <li><a href="contacts.html">Contacts</a></li>*@
                         </ul>
                     </div>
                     <div class="col-md-6 col-xl-4">
@@ -682,27 +740,35 @@
                     <div class="col-md-6 col-xl-3">
                         <h6>Contact Us</h6>
                         <!-- RD Mailform-->
-                        @**@
-                        <form class="rd-mailform rd-mailform-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                        <form class="rd-mailform rd-mailform-sm" id="MailLayoutContactUsForm" data-form-output="form-output-global" data-form-type="contact"
+                              method="post" action="/umbraco/api/ContactUs/ProcessContactUsEmail" enctype="application/x-www-form-urlencoded">
                             <div class="form-wrap form-wrap-validation">
-                                <input class="form-input" id="form-footer-name" type="text" name="name" data-constraints="@@Required" />
+                                <input class="form-input" id="form-footer-name" type="text" name="FullName" data-constraints="@@Required" />
                                 <label class="form-label" for="form-footer-name">Name</label>
                             </div>
                             <div class="form-wrap form-wrap-validation">
-                                <input class="form-input" id="form-footer-email" type="email" name="email" data-constraints="@@Email @@Required" />
+                                <input class="form-input" id="form-footer-email" type="email" name="Email" data-constraints="@@Email @@Required" />
                                 <label class="form-label" for="form-footer-email">E-mail</label>
                             </div>
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label" for="form-footer-message">Message</label>
-                                <textarea class="form-input" id="form-footer-message" name="message" data-constraints="@@Required"></textarea>
+                                <textarea class="form-input" id="form-footer-message" name="Description" data-constraints="@@Required"></textarea>
                             </div>
                             <div class="form-button">
                                 <button class="button button-sm button-primary" type="submit">Send message</button>
                             </div>
                         </form>
+                        <div class="success-message fade-in">
+                            <div>Thank you for contacting us! </div>
+                            <div>We will get back to you as soon as possible.</div>
+                        </div>
                     </div>
                 </div>
-                <p class="right">@home.Value("footerAllRightsReservedText") <a href="@footerLinkTermsOfUse">@home.Value("footerLinkTermsOfUseText")</a>&nbsp;and&nbsp;<a href="@footerLinkPrivacyPolicy">@home.Value("footerLinkPrivacyPolicyText")</a>.</p>
+                <p class="right">
+                    @home.Value("footerTextByUsingThisWebsiteYouConsent")
+                    <a href="@footerLinkTermsOfUse">@home.Value("footerLinkTermsOfUseText")</a>&nbsp;and&nbsp;<a href="@footerLinkPrivacyPolicy">@home.Value("footerLinkPrivacyPolicyText")</a>. <br />
+                    @home.Value("footerAllRightsReservedText")
+                </p>
             </div>
         </footer>
 
@@ -714,6 +780,29 @@
     <script src="/js/jquery-3.1.0.min.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.validate.unobtrusive.min.js"></script>
+
+    @*<script type="text/javascript">*@
+
+    @*//$(document).ready(function () {
+
+            /*$('.rd-mailform button[type="submit"]').click(function (e)
+            {
+                $('.rd-mailform').validate();
+
+                if ($('.rd-mailform .form-wrap-validation.has-error').length > 0)
+                {
+                    $('.rd-mailform .form-wrap-validation.has-error')[0].focus();
+                    e.preventDefault();
+                    return false;
+                }
+
+                alert('form is valid');
+            });*/
+        //});*@
+
+    @*</script>*@
+
+
 
 
     @*<script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>*@

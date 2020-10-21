@@ -123,6 +123,107 @@ a.animated-title-divider {
 }
 
 
+.fade-in {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .7s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.success-message 
+{
+    display: none;
+    transition: .7s;
+    /*margin-top: 30px;*/
+}
+
+.rd-mailform.success + .success-message 
+{
+    display: block;
+}
+
+.rd-mailform.success
+{
+    display:none;
+}
+
+.post-blog-meta a:hover,
+.post-blog-meta a:focus 
+{
+    text-decoration:underline;
+}
+
+section.bottom-brands .link-image img {
+    max-height: 126px;
+    /*padding-top: 2px;
+    padding-bottom: 2px;*/
+    transition: 400ms ease-in-out;
+}
+
+section.bottom-brands a.link-image:hover img,
+section.bottom-brands a.link-image:focus img {
+    transform: scale3d(1.05, 1.05, 1.05);
+}
+
+section.bottom-brands .owl-stage {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.rd-mailform textarea
+{
+    resize:none;
+}
+
+section .container-wide article
+{
+    position:relative;
+}
+
+section .container-wide article .read-more 
+{
+    position:absolute;
+    bottom: 12px;
+    left:42px;
+}
+
+div.ArticleWrapper.col-xl-3 {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+section .container-wide a.ArticleWrapper {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+section .container-wide a.ArticleWrapper:focus .box-minimal-border,
+section .container-wide a.ArticleWrapper:hover .box-minimal-border {
+    background-color: #0F4B7F;
+}
+
+section .container-wide article .read-more label {
+    color: #fff;
+    cursor:pointer;
+}
+
+section .container-wide article .read-more label:hover {
+    text-decoration: underline;
+}
+
+
 /* Mobile Rules */
 @media (max-width: 1024px) {
     .rd-navbar-aside-left {
@@ -157,16 +258,11 @@ a.animated-title-divider {
         background-size: cover;
     }
 
-
-
-
     .animated a.thumbnail-classic hr.divider:after,
     .animated a.thumbnail-classic:hover hr.divider:after,
     .animated a.thumbnail-classic:focus hr.divider:after {
         top: 45px;
     }
-
-
 
     .animated h3:hover + .divider {
         max-width: 100%;
@@ -174,7 +270,8 @@ a.animated-title-divider {
     }
 
     .animated a.animated-title-divider:hover .divider,
-    .animated a.animated-title-divider:focus .divider {
+    .animated a.animated-title-divider:focus .divider 
+    {
         max-width: 90%;
     }
 
@@ -188,6 +285,35 @@ a.animated-title-divider {
 
     .section-lg 
     {
-        padding:40px 0px;
+        padding:30px 0px;
     }
+
+    section.bottom-brands.section-md 
+    {
+        padding: 30px 0;
+    }
+
+    .form-button 
+    {
+        text-align:center;
+    }
+
+
+    .box-minimal-border 
+    {
+        padding-top: 20px;
+        padding-right: 15px;
+        padding-bottom: 30px;
+        padding-left: 15px;
+    }
+
+    * + .box-minimal-text {
+        margin-top: 12px;
+    }
+
+    section .container-wide article .read-more {
+        bottom: 4px;
+        left: 15px;
+    }
+
 }

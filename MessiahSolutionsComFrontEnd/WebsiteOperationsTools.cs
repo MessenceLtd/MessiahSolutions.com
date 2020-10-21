@@ -2,35 +2,42 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Web;
+using Umbraco.Web.HealthCheck.Checks.Permissions;
 
 namespace MessiahSolutionsComFrontEnd
 {
     public class WebsiteOperationsTools
     {
-        public static void SendContactUsEmailDetails( string fromUrl , string fullName , string emailAddress, string message )
-        {
-            // Get the appropriate html template from email templates folder and send the email to the configured address.
+        public enum LanguageCode { en , he };
 
+        public static void SendContactUsEmailDetails( 
+            string fromUrl , string fullName , string emailAddress, string message )
+        {
+            LanguageCode languageCode = LanguageCode.en;
+            if (fromUrl.IndexOf("/he/") > -1)
+                languageCode = LanguageCode.he;
+
+            string contactUsTemplateFileName = (languageCode == LanguageCode.en ? "ContactUs-en.html" : "ContactUs-he.html");
+            string contactUsTemplateFilePath = GetWebsiteServerRootPhysicalPath() + @"EmailTemplates\" + contactUsTemplateFileName;
+
+            string templateFileContent = File.ReadAllText(contactUsTemplateFilePath);
+
+            // Get the appropriate html template from email templates folder and send the email to the configured address.
             Dictionary<string, string> emailTemplateKeyValues = new Dictionary<string, string>();
             emailTemplateKeyValues.Add("fullname", fullName);
-            emailTemplateKeyValues.Add("emailAddress", emailAddress);
+            emailTemplateKeyValues.Add("email", emailAddress);
             emailTemplateKeyValues.Add("description", message);
             emailTemplateKeyValues.Add("fromUrl", fromUrl);
 
-            string toMailMessage = "vadim@messiahsolutions.com";
-            string fromMailMessage = "vadim@messiahsolutions.com";
-            //Environment.CurrentDirectory;
+            string toMailMessage = ConfigurationManager.AppSettings["ContactUsEmailToRecipients"];
+            string fromMailMessage = ConfigurationManager.AppSettings["SMTP_DefaultFromMessage"];
 
-            EmailHelperSender("test", emailTemplateKeyValues, toMailMessage, fromMailMessage, "test subject");
-
-            
-            
-
-
+            EmailHelperSender(templateFileContent, emailTemplateKeyValues, toMailMessage, fromMailMessage, "New Contact-US Form From website!");
         }
 
         private static void EmailHelperSender( string emailTemplateContentAsBodyMessage, 
@@ -58,7 +65,14 @@ namespace MessiahSolutionsComFrontEnd
 
             MailMessage mailMessage = new MailMessage(emailAddressFrom, emailAddressTo, emailSubject, emailTemplateContentAsBodyMessage);
 
+            mailMessage.IsBodyHtml = true;
+
             client.Send(mailMessage);
+        }
+
+        private static string GetWebsiteServerRootPhysicalPath()
+        {
+            return HttpContext.Current.Server.MapPath("~/");
         }
     }
 }

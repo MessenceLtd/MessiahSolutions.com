@@ -1132,8 +1132,10 @@ $document.ready(function () {
 			// Required by MailChimp
 			$form.attr('novalidate', 'true');
 			$email.attr('name', 'EMAIL');
-
-			$form.submit(function (e) {
+			
+			$form.submit(function (e)
+			{
+				debugger;
 				var data = {},
 					url = $form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
 					dataArray = $form.serializeArray();
@@ -1183,7 +1185,9 @@ $document.ready(function () {
 			var $form = $(form),
 				$output = $("#" + plugins.campaignMonitor.attr("data-form-output"));
 
-			$form.submit(function (e) {
+			$form.submit(function (e)
+			{
+				debugger;
 				var data = {},
 					url = $form.attr('action'),
 					dataArray = $form.serializeArray();
@@ -1230,153 +1234,165 @@ $document.ready(function () {
 	 * RD Mailform
 	 * @version      3.2.0
 	 */
-	if (plugins.rdMailForm.length) {
-		var i, j, k,
-			msg = {
-				'MF000': 'Successfully sent!',
-				'MF001': 'Recipients are not set!',
-				'MF002': 'Form will not work locally!',
-				'MF003': 'Please, define email field in your form!',
-				'MF004': 'Please, define type of your form!',
-				'MF254': 'Something went wrong with PHPMailer!',
-				'MF255': 'Aw, snap! Something went wrong.'
-			};
+	//if (plugins.rdMailForm.length) {
+	//	var i, j, k,
+	//		msg = {
+	//			'MF000': 'Successfully sent!',
+	//			'MF001': 'Recipients are not set!',
+	//			'MF002': 'Form will not work locally!',
+	//			'MF003': 'Please, define email field in your form!',
+	//			'MF004': 'Please, define type of your form!',
+	//			'MF254': 'Something went wrong with PHPMailer!',
+	//			'MF255': 'Aw, snap! Something went wrong.'
+	//		};
 
-		for (i = 0; i < plugins.rdMailForm.length; i++) {
-			var $form = $(plugins.rdMailForm[i]),
-				formHasCaptcha = false;
+	//	for (i = 0; i < plugins.rdMailForm.length; i++) {
+	//		var $form = $(plugins.rdMailForm[i]),
+	//			formHasCaptcha = false;
 
-			$form.attr('novalidate', 'novalidate').ajaxForm({
-				data: {
-					"form-type": $form.attr("data-form-type") || "contact",
-					"counter": i
-				},
-				beforeSubmit: function (arr, $form, options) {
-					if (isNoviBuilder)
-						return;
+	//		var formData = JSON.stringify($form.serializeArray());
+	//		debugger;
+	//		$form.attr('novalidate', 'novalidate').ajaxForm({
+	//			type: "POST",
+	//			dataType: "json",
+	//			contentType: "application/json",
+	//			//encode: true,
+	//			data: {
+	//				"form-type": $form.attr("data-form-type") || "contact",
+	//				"counter": i
+	//			},
+	//			//data: { formData }, 
+	//			beforeSubmit: function (arr, $form, options) {
+	//				if (isNoviBuilder)
+	//					return;
+					
+	//				var form = $form,//$(plugins.rdMailForm[this.extraData.counter]),
+	//					inputs = form.find("[data-constraints]"),
+	//					output = $("#" + form.attr("data-form-output")),
+	//					captcha = form.find('.recaptcha'),
+	//					captchaFlag = true;
 
-					var form = $(plugins.rdMailForm[this.extraData.counter]),
-						inputs = form.find("[data-constraints]"),
-						output = $("#" + form.attr("data-form-output")),
-						captcha = form.find('.recaptcha'),
-						captchaFlag = true;
+	//				output.removeClass("active error success");
 
-					output.removeClass("active error success");
+	//				if (isValidated(inputs, captcha)) {
 
-					if (isValidated(inputs, captcha)) {
+	//					// veify reCaptcha
+	//					if (captcha.length) {
+	//						var captchaToken = captcha.find('.g-recaptcha-response').val(),
+	//							captchaMsg = {
+	//								'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
+	//								'CPT002': 'Something wrong with google reCaptcha'
+	//							};
 
-						// veify reCaptcha
-						if (captcha.length) {
-							var captchaToken = captcha.find('.g-recaptcha-response').val(),
-								captchaMsg = {
-									'CPT001': 'Please, setup you "site key" and "secret key" of reCaptcha',
-									'CPT002': 'Something wrong with google reCaptcha'
-								};
+	//						formHasCaptcha = true;
 
-							formHasCaptcha = true;
+	//						$.ajax({
+	//							method: "POST",
+	//							url: "bat/reCaptcha.php",
+	//							data: {'g-recaptcha-response': captchaToken},
+	//							async: false
+	//						})
+	//							.done(function (responceCode) {
+	//								if (responceCode !== 'CPT000') {
+	//									if (output.hasClass("snackbars")) {
+	//										output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
 
-							$.ajax({
-								method: "POST",
-								url: "bat/reCaptcha.php",
-								data: {'g-recaptcha-response': captchaToken},
-								async: false
-							})
-								.done(function (responceCode) {
-									if (responceCode !== 'CPT000') {
-										if (output.hasClass("snackbars")) {
-											output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + captchaMsg[responceCode] + '</span></p>')
+	//										setTimeout(function () {
+	//											output.removeClass("active");
+	//										}, 3500);
 
-											setTimeout(function () {
-												output.removeClass("active");
-											}, 3500);
+	//										captchaFlag = false;
+	//									} else {
+	//										output.html(captchaMsg[responceCode]);
+	//									}
 
-											captchaFlag = false;
-										} else {
-											output.html(captchaMsg[responceCode]);
-										}
+	//									output.addClass("active");
+	//								}
+	//							});
+	//					}
 
-										output.addClass("active");
-									}
-								});
-						}
+	//					if (!captchaFlag) {
+	//						return false;
+	//					}
 
-						if (!captchaFlag) {
-							return false;
-						}
+	//					form.addClass('form-in-process');
 
-						form.addClass('form-in-process');
+	//					if (output.hasClass("snackbars")) {
+	//						output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
+	//						output.addClass("active");
+	//					}
+	//				} else {
+	//					return false;
+	//				}
+	//			},
+	//			error: function (result) {
+	//				if (isNoviBuilder)
+	//					return;
 
-						if (output.hasClass("snackbars")) {
-							output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
-							output.addClass("active");
-						}
-					} else {
-						return false;
-					}
-				},
-				error: function (result) {
-					if (isNoviBuilder)
-						return;
+	//				var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
+	//					form = $(plugins.rdMailForm[this.extraData.counter]);
 
-					var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
-						form = $(plugins.rdMailForm[this.extraData.counter]);
+	//				output.text(msg[result]);
+	//				form.removeClass('form-in-process');
 
-					output.text(msg[result]);
-					form.removeClass('form-in-process');
+	//				if (formHasCaptcha) {
+	//					grecaptcha.reset();
+	//				}
+	//			},
+	//			success: function (result) {
+	//				if (isNoviBuilder)
+	//					return;
 
-					if (formHasCaptcha) {
-						grecaptcha.reset();
-					}
-				},
-				success: function (result) {
-					if (isNoviBuilder)
-						return;
+					
+	//				var form = $(plugins.rdMailForm[this.extraData.counter]),
+	//					output = $("#" + form.attr("data-form-output")),
+	//					select = form.find('select');
 
-					var form = $(plugins.rdMailForm[this.extraData.counter]),
-						output = $("#" + form.attr("data-form-output")),
-						select = form.find('select');
+	//				form.addClass('success').removeClass('form-in-process');
 
-					form
-						.addClass('success')
-						.removeClass('form-in-process');
+	//				if (formHasCaptcha) {
+	//					grecaptcha.reset();
+	//				}
+					
+	//				result = result.length === 5 ? result : 'MF255';
+	//				output.text(msg[result]);
 
-					if (formHasCaptcha) {
-						grecaptcha.reset();
-					}
+	//				if (result === "MF000")
+	//				{
+	//					if (output.hasClass("snackbars"))
+	//					{
+	//						output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
+	//					}
+	//					else
+	//					{
+	//						output.addClass("active success");
+	//					}
+	//				}
+	//				else
+	//				{
+	//					if (output.hasClass("snackbars")) {
+	//						output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
+	//					} else {
+	//						output.addClass("active error");
+	//					}
+	//				}
 
-					result = result.length === 5 ? result : 'MF255';
-					output.text(msg[result]);
+	//				form.clearForm();
 
-					if (result === "MF000") {
-						if (output.hasClass("snackbars")) {
-							output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + msg[result] + '</span></p>');
-						} else {
-							output.addClass("active success");
-						}
-					} else {
-						if (output.hasClass("snackbars")) {
-							output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
-						} else {
-							output.addClass("active error");
-						}
-					}
+	//				if (select.length) {
+	//					select.select2("val", "");
+	//				}
 
-					form.clearForm();
+	//				form.find('input, textarea').trigger('blur');
 
-					if (select.length) {
-						select.select2("val", "");
-					}
-
-					form.find('input, textarea').trigger('blur');
-
-					setTimeout(function () {
-						output.removeClass("active error success");
-						form.removeClass('success');
-					}, 3500);
-				}
-			});
-		}
-	}
+	//				setTimeout(function () {
+	//					output.removeClass("active error success");
+	//					//form.removeClass('success');
+	//				}, 3500);
+	//			}
+	//		});
+	//	}
+	//}
 
 	/**
 	 * Custom Toggles
@@ -2212,3 +2228,123 @@ $document.ready(function () {
 	}
 
 });
+
+
+var errorMessages = {
+	'MF000': 'Successfully sent!',
+	'MF001': 'Recipients are not set!',
+	'MF002': 'Form will not work locally!',
+	'MF003': 'Please, define email field in your form!',
+	'MF004': 'Please, define type of your form!',
+	'MF254': 'Something went wrong with PHPMailer!',
+	'MF255': 'Aw, snap! Something went wrong.'
+};
+
+$(document).ready(function () {
+
+	if ($("#MailLayoutContactUsForm").length > 0)
+	{
+
+		$("#MailLayoutContactUsForm").submit(function (e) {
+			e.preventDefault();
+
+			var name = $("#name").val();
+			//$form = $(this);
+			var $form = $("#MailLayoutContactUsForm");
+			var dataString = getFormData($form);
+			var $action = $form.attr('action');
+			//var dataString = { $form.'name=' + name };
+			debugger;
+
+
+			var form = $form,//$(plugins.rdMailForm[this.extraData.counter]),
+				inputs = form.find("[data-constraints]"),
+				output = $("#" + form.attr("data-form-output")),
+				captcha = form.find('.recaptcha'),
+				captchaFlag = true;
+
+			output.removeClass("active error success");
+			form.addClass('form-in-process');
+			if (output.hasClass("snackbars")) {
+				output.html('<p><span class="icon text-middle fa fa-circle-o-notch fa-spin icon-xxs"></span><span>Sending</span></p>');
+				output.addClass("active");
+			}
+
+			$.ajax({
+				type: "POST",
+				url: $action,
+				dataType: "json",
+				data: dataString,
+				contentType: "application/json",
+				encode: true
+			})
+				.done(function (data) {
+					//console.log('sucess/done result : ' + data);
+					//var form = $(plugins.rdMailForm[this.extraData.counter]),
+					//    output = $("#" + form.attr("data-form-output")),
+					//    select = form.find('select');
+
+					form.addClass('success').removeClass('form-in-process');
+
+					//if (formHasCaptcha) {
+					//    grecaptcha.reset();
+					//}
+
+					var result = data.length === 5 ? data : 'MF255';
+					output.text(errorMessages[result]);
+
+					if (result === "MF000") {
+						if (output.hasClass("snackbars")) {
+							output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + errorMessages[result] + '</span></p>');
+						}
+						else {
+							output.addClass("active success");
+						}
+					}
+					else {
+						if (output.hasClass("snackbars")) {
+							output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
+						} else {
+							output.addClass("active error");
+						}
+					}
+
+					form.clearForm();
+
+					//if (select.length) {
+					//	select.select2("val", "");
+					//}
+
+					form.find('input, textarea').trigger('blur');
+
+					setTimeout(function () {
+						output.removeClass("active error success");
+						//form.removeClass('success');
+					}, 3500);
+
+				})
+				.fail(function (data) {
+					var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
+						form = $(plugins.rdMailForm[this.extraData.counter]);
+
+					output.text(msg[result]);
+					form.removeClass('form-in-process');
+
+					//if (formHasCaptcha) {
+					//    grecaptcha.reset();
+					//}
+				});
+		});
+	}
+});
+
+function getFormData($form) {
+	var unindexed_array = $form.serializeArray();
+	var indexed_array = {};
+
+	$.map(unindexed_array, function (n, i) {
+		indexed_array[n['name']] = n['value'];
+	});
+
+	return JSON.stringify(indexed_array);
+}

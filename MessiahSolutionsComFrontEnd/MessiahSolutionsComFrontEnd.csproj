@@ -348,6 +348,7 @@
     <Content Include="css\style.css" />
     <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EmailTemplates\ContactUs-he.html" />
     <Content Include="EmailTemplates\ContactUs-en.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -3496,6 +3497,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactUsRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -3523,7 +3525,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Models\" />
     <Folder Include="Media\clxbe03j\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\ContactUsProcessor\" />
   </ItemGroup>
   <ItemGroup>
@@ -3663,6 +3664,9 @@
     <Content Include="Views\Services.cshtml" />
     <Content Include="Views\TestimonialDetails.cshtml" />
     <Content Include="Views\Testimonials.cshtml" />
+    <Content Include="Views\ErrorPage404.cshtml" />
+    <Content Include="Views\ErrorPage500.cshtml" />
+    <Content Include="Views\Brand.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

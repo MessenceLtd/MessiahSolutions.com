@@ -6,10 +6,10 @@
 }
 <!-- comment out the following line if you want to remove the root node name from the top navigation -->
 @*<a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
-@foreach (var item in selection)
-{
-    <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
-}*@
+    @foreach (var item in selection)
+    {
+        <a class="nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+    }*@
 
 <div class="rd-navbar-brand">
     <a class="brand-name" href="@site.Url()">
@@ -26,6 +26,17 @@
         {
             <li class="@(item.IsAncestorOrSelf(Model) ? "active" : null)">
                 <a href="@item.Url()">@item.Name</a>
+
+                @if (item.Children.Where(x => x.IsVisible()).Count() > 0)
+                {
+                    <ul class="rd-navbar-dropdown">
+                        @foreach (var childLevel2 in item.Children.Where(x => x.IsVisible()))
+                        {
+                            <li class="@(childLevel2.IsAncestorOrSelf(Model) ? "active" : null)"><a href="@childLevel2.Url()">@childLevel2.Name</a></li>
+                        }
+                    </ul>
+                }
+
             </li>
         }
     </ul>

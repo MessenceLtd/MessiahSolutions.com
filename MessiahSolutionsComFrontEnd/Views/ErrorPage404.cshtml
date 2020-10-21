@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ErrorPage404>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+}
+
+<div class="section-md bg-gray-dark text-center">
+    <div class="container">
+        <h4 class="text-regular">@Model.Value("errorTitleContent")</h4>
+        <p class="text-large">@Model.Value("errorCodeContent")</p>
+        <p>@Model.Value("errorContentDescription")</p>
+        <br /><br />
+        <div class="section-single__element"><a class="button button-primary" href="@home.Url()">@Model.Value("backToHomePageLinkText")</a></div>
+        <br /><br />
+    </div>
+</div>
+

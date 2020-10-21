@@ -8,18 +8,26 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using Umbraco.Web;
 
 namespace MessiahSolutionsComFrontEnd
 {
+    //public class Global : UmbracoApplication
     public class Global : HttpApplication
     {
-        void Application_Start(object sender, EventArgs e)
-        {
-            // Code that runs on application startup
-            AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
+        //override void Application_Start(object sender, EventArgs e)
+        //{
+        //    // Code that runs on application startup
+        //    AreaRegistration.RegisterAllAreas();
+        //    GlobalConfiguration.Configure(WebApiConfig.Register);
+        //    RouteConfig.RegisterRoutes(RouteTable.Routes);
+        //    BundleConfig.RegisterBundles(BundleTable.Bundles);
+        //}
+
+        //protected override void OnApplicationError(object sender, EventArgs evargs)
+        //{
+        //    base.OnApplicationError(sender, evargs);
+        //}
+
     }
 }
