@@ -1,0 +1,268 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.AboutUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
+    var aboutUsIntroductionLargeSideImageUrl = Model.Value<IPublishedContent>("aboutUsIntroductionLargeSideImage").Url();
+    var featuredPeopleTitleLinkUrl = Model.Value<IPublishedContent>("featuredPeopleTitleLink").Url();
+
+    var servicesLink = Model.Value<IPublishedContent>("servicesLink").Url();
+    var ourHistoryTitleLink = Model.Value<IPublishedContent>("ourHistoryTitleLink").Url();
+    var featuredProjectsTitleLink = Model.Value<IPublishedContent>("featuredProjectsTitleLink").Url();
+}
+
+
+<!-- About us introduction section -->
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-8 col-xl-5">
+
+                <h3 class="little-smaller">@Model.Value("aboutUsIntroductionTitle")</h3>
+                <div class="divider divider-default" style="width:100%;max-width:100%;"></div>
+                <p>
+                    @*Web design is the art and practice of planning and projecting ideas and experiences with visual and textual content. It plays a vital role in creating an appealing website and is the key component of a stunning design, which helps in attracting more potential customers.*@
+                    @Model.Value("aboutUsIntroductionSecondParagraph")
+                </p>
+                <!-- Quote minimal-->
+
+                <p>
+                    @*Our expert team provides high-quality web design services, which can be used in creating your own website or customizing one of our website templates. Press a button below to order this service now!*@
+                    @Model.Value("aboutUsIntroductionThirdParagraph")
+                </p>
+                <p>
+                    @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+                </p>
+                <a class="button button-primary" href="#">order now</a>
+            </div>
+            <div class="col-md-9 col-lg-5 text-center">
+                <img src="@aboutUsIntroductionLargeSideImageUrl" alt="" width="720" height="459" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Services-->
+<section class="section section-lg bg-gray-lighter text-center">
+    <div class="container-wide">
+        <div class="text-center">
+            <a href="@servicesLink" class="animated-title-divider">
+                <h3>
+                    @Model.GetProperty("servicesTitle").Value()
+                </h3>
+                <div class="divider divider-default"></div>
+            </a>
+        </div>
+        <div class="row row-50 justify-content-sm-center offset-custom-2">
+
+            @if (Model.Services != null)
+            {
+                var animatedCssClass = "";
+                foreach (var service in Model.Services)
+                {
+                    animatedCssClass = "mdi-" + service.GetProperty("serviceImageType").Value();
+
+                    <div class="col-sm-10 col-lg-4 col-xl-3">
+                        @*<div class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary">*@
+                        <a href="@service.Url()" class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary wrapper" title="@service.GetProperty("serviceTitle").Value()">
+                            <div class="thumbnail-classic-icon unit-left"><span class="icon mdi @animatedCssClass"></span></div>
+                            <div class="thumbnail-classic-caption unit-body">
+                                <h6 class="thumbnail-classic-title">
+                                    @service.GetProperty("serviceTitle").Value()
+                                </h6>
+                                <hr class="divider divider-default divider-sm" />
+                                <p class="thumbnail-classic-text">
+                                    @service.GetProperty("serviceDescription").Value()
+                                </p>
+                            </div>
+                        </a>
+                        @*</div>*@
+                    </div>
+
+                }
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Team-->
+<section class="section section-lg bg-default text-center">
+    <div class="container container-wide">
+        <div class="text-center">
+            <a href="@featuredPeopleTitleLinkUrl" class="animated-title-divider">
+                <h3>
+                    @Model.GetProperty("featuredEmployeesTitle").Value()
+                </h3>
+                <div class="divider divider-default"></div>
+            </a>
+        </div>
+        <!-- Owl Carousel-->
+        <div class="owl-carousel owl-carousel-team" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3"
+             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="30"
+             data-mouse-drag="true" data-dots="true">
+
+            @if (Model.FeaturedPeople != null)
+            {
+                var personImageUrl = "";
+                var personContactEmail = "";
+
+                foreach (var person in Model.FeaturedPeople)
+                {
+                    personImageUrl = person.Value<IPublishedContent>("photo")?.Url ?? "";
+                    personContactEmail = person.Value("email")?.ToString() ?? "";
+                    if (!string.IsNullOrEmpty(personContactEmail))
+                    {
+                        personContactEmail = "mailto:" + personContactEmail;
+                    }
+
+                    <div class="team-classic">
+                        <div class="team-classic-image">
+                            <figure>
+                                <img src="@personImageUrl" alt="" width="270" height="270" />
+                            </figure>
+                            <div class="team-classic-image-caption">
+                                <ul class="list-inline list-team">
+                                    @if (person.Value("facebookUsername") != null && !string.IsNullOrEmpty(person.Value("facebookUsername").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" target="_blank" href="@person.Value("facebookUsername").ToString()"></a></li>
+                                    }
+                                    @if (person.Value("twitterUsername") != null && !string.IsNullOrEmpty(person.Value("twitterUsername").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" target="_blank" href="@person.Value("twitterUsername")"></a></li>
+                                    }
+                                    @if (person.Value("instagramUsername") != null && !string.IsNullOrEmpty(person.Value("instagramUsername").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" target="_blank" href="@person.Value("instagramUsername")"></a></li>
+                                    }
+                                    @if (person.Value("linkedInUsername") != null && !string.IsNullOrEmpty(person.Value("linkedInUsername").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" target="_blank" href="@person.Value("linkedInUsername")"></a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-classic-caption">
+                            <h5><a class="team-classic-title" href="@person.Url()">@person.Value("fullName")</a></h5>
+                            <p class="team-classic-job-position">@person.Value("jobTitle")</p>
+                            <a class="button button-xs button-default-outline" target="_blank" href="@personContactEmail">get in touch</a>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        <a class="button button-primary" href="@featuredPeopleTitleLinkUrl">@Model.Value("viewAllTeamMembersBottomLinkText")</a>
+    </div>
+</section>
+
+<!-- Our history timeline -->
+<section class="section section-lg bg-gray-lighter text-center">
+    <div class="container container-wide">
+        <div class="row justify-content-sm-center">
+            <div class="col-lg-9 col-xl-8 col-xxl-6">
+
+                <a href="@ourHistoryTitleLink" class="animated-title-divider longer2">
+                    <h3>
+                        @Model.Value("ourHistoryTitle")
+                    </h3>
+                    <div class="divider divider-default"></div>
+                </a>
+                <p>
+                    @Model.Value("ourHistoryIntroductionDescription")
+                </p>
+                <div class="time-line-vertical">
+
+                    @{
+
+                        var historyTimelineEntryImageUrl = "";
+                        var historyTimelineFormattedDateTime = "";
+
+                        foreach (var historyTimelineEntry in Model.Value<IEnumerable<IPublishedContent>>("featuredHistoryTimelineMilestonesEntries"))
+                        {
+
+                            historyTimelineFormattedDateTime = ((DateTime)historyTimelineEntry.Value("historyTimelineMilestoneEntryDate")).ToString("MMMM, yyyy");
+                            historyTimelineEntryImageUrl = historyTimelineEntry.Value<IPublishedContent>("historyTimelineMilestoneEntryImage")?.Url() ?? "";
+
+                            <div class="time-line-vertical-element time-line-vertical-element-offset">
+                                <div class="unit flex-md-row unit-spacing-xxl flex-column">
+                                    <div class="unit-left">
+                                        <div class="time-line-time">
+                                            <time class="wow fadeInLeft" data-wow-delay=".6s" datetime="2017">@historyTimelineFormattedDateTime</time>
+                                        </div>
+                                    </div>
+                                    <div class="unit-body">
+                                        <div class="time-line-content wow fadeInRight" data-wow-delay=".6s">
+                                            <h5>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryTitle")
+                                            </h5>
+                                            <img src="@historyTimelineEntryImageUrl" alt="" width="570" height="380" />
+                                            <p>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryFooterDescription")
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+        <a class="button button-primary" href="@ourHistoryTitleLink">@Model.Value("featuredHistoryTimelineBottomReadMoreLinkText")</a>
+    </div>
+</section>
+
+<!-- Projects -->
+<section class="section section-lg bg-gray-darker text-center">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center">
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                
+                <a href="@featuredProjectsTitleLink" class="animated-title-divider longer2">
+                    <h3>@Model.Value("featuredProjectsTitle")</h3>
+                    <div class="divider divider-secondary"></div>
+                </a>
+                
+                <p>
+                    @Model.Value("featuredProjectsIntroductionDescription")
+                </p>
+            </div>
+        </div>
+        <div class="row row-50" data-lightgallery="group">
+
+            @{
+
+                var projectImageUrl = "";
+
+                foreach (var project in Model.Value<IEnumerable<IPublishedContent>>("featuredProjectsList"))
+                {
+
+                    projectImageUrl = project.Value<IPublishedContent>("projectThumbnailImage")?.Url() ?? "";
+
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a class="gallery-item titled-gallery-item" href="@projectImageUrl" data-lightgallery="item">
+                            <div class="gallery-item-image">
+                                <figure>
+                                    <img src="@projectImageUrl" alt="" width="570" height="380" />
+                                </figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="titled-gallery-caption text-center"><a href="@project.Url()">@project.Value("projectTitle")</a></div>
+                    </div>
+
+                }
+            }
+
+        </div>
+    </div>
+    @*<a class="button button-primary" href="@featuredProjectsTitleLink">@Model.Value("viewAllProjectsLinkText")</a>*@
+</section>
+

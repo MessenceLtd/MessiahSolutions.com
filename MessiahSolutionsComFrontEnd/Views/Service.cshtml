@@ -1,5 +1,274 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Service>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
+    var serviceDetailsLargeSideImageUrl = Model.Value<IPublishedContent>("serviceDetailsLargeSideImage")?.Url ?? "";
+
+    var servicesUmbracoNode = Model.Parent<IPublishedContent>();
+    var ourAdvantagesTitleLink = servicesUmbracoNode.Value<IPublishedContent>("ourAdvantagesTitleLink").Url();
+    var frequentlyAskedQuestionsPageLink = servicesUmbracoNode.Value<IPublishedContent>("frequentlyAskedQuestionsPageLink").Url();
+    var frequentlyAskedQuestionsImageUrl = servicesUmbracoNode.Value<IPublishedContent>("frequentlyAskedQuestionsSideImage").Url();
+
+    var faqCustomForCurrentService = Model.Value<IEnumerable<IPublishedContent>>("featuredServiceDetailsSpecificCustomFAQList");
+    var faqListToShow = (faqCustomForCurrentService != null && faqCustomForCurrentService.Count() > 0) ?
+            faqCustomForCurrentService : servicesUmbracoNode.Value<IEnumerable<IPublishedContent>>("featuredServicesFAQList");
+
+
 }
+
+
+<!-- about this service-->
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-8 col-xl-4">
+
+                <h3>@Model.Value("serviceTitle")</h3>
+                <div class="divider divider-default" style="width:100%;max-width:100%;"></div>
+                <p>
+                    @*Web design is the art and practice of planning and projecting ideas and experiences with visual and textual content. It plays a vital role in creating an appealing website and is the key component of a stunning design, which helps in attracting more potential customers.*@
+                    @Model.Value("serviceDetailsIntroductionDescription")
+                </p>
+                <!-- Quote minimal-->
+                <article class="quote-minimal">
+                    <p class="quote-minimal-text">
+                        @*Web design is used to create well thought-out websites, which attract more customers.*@
+                        @Model.Value("serviceDetailsIntroductionQuotedText")
+                    </p>
+                </article>
+
+                <p>
+                    @*Our expert team provides high-quality web design services, which can be used in creating your own website or customizing one of our website templates. Press a button below to order this service now!*@
+                    @Model.Value("serviceDescription")
+                </p>
+                <p>
+                    @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+                </p>
+                <a class="button button-primary" href="#">order now</a>
+            </div>
+            <div class="col-xl-5 text-center">
+                <div class="image-position-01">
+                    <div class="blick-wrap">
+                        <img class="image-wrap" src="/images/ipad-01-1360x1233.png" alt="" width="1360" height="1233" />
+                        <div class="blick-overlay" data-blick-overlay="ipad"></div>
+                        <div class="blick-content"><img src="@serviceDetailsLargeSideImageUrl" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service featured advantages -->
+<section class="section section-lg text-center bg-gray-darker">
+    <div class="container-wide">
+        @*<h3>Our Advantages</h3>
+            <div class="divider divider-default"></div>*@
+        <a href="@ourAdvantagesTitleLink" class="animated-title-divider longer">
+            <h3>@servicesUmbracoNode.Value("ourAdvantagesTitle")</h3>
+            <div class="divider divider-default"></div>
+        </a>
+
+        <div class="row row-50 justify-content-sm-center text-left">
+
+            @foreach (var advantage in servicesUmbracoNode.Value<IEnumerable<IPublishedContent>>("featuredOurAdvantages"))
+            {
+
+                <div class="ArticleWrapper col-sm-10 col-md-6 col-xl-3">
+                    <a class="ArticleWrapper" href="@advantage.Url()">
+                        <article class="box-minimal box-minimal-border">
+                            <div class="box-minimal-icon mdi @advantage.Value("thumbnailImageCSSClass")"></div>
+                            <p class="big box-minimal-title">@advantage.Value("advantageTitle")</p>
+                            @*<hr>*@
+                            <div class="box-minimal-text">
+                                @advantage.Value("advantageDescription")
+                            </div>
+                            <div class="read-more">
+                                @*<a href="@advantage.Url()">Read More</a>*@
+                                <label>Read more</label>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            }
+
+            @*<div class="col-sm-10 col-md-6 col-xl-3">
+                    <article class="box-minimal box-minimal-border">
+                        <div class="box-minimal-icon mdi mdi-thumb-up-outline"></div>
+                        <p class="big box-minimal-title">Individual Approach</p>
+                        <hr>
+                        <div class="box-minimal-text">We use an individual approach to each client and we never offer you a set of standard decisions for your business.</div>
+                    </article>
+                </div>
+                <div class="col-sm-10 col-md-6 col-xl-3">
+                    <article class="box-minimal box-minimal-border">
+                        <div class="box-minimal-icon mdi mdi-account-multiple"></div>
+                        <p class="big box-minimal-title">Qualified Employers</p>
+                        <hr>
+                        <div class="box-minimal-text">Effective is a team of designers, developers, marketing experts and managers who are ready to work for a personalized IT solution.</div>
+                    </article>
+                </div>
+                <div class="col-sm-10 col-md-6 col-xl-3">
+                    <article class="box-minimal box-minimal-border">
+                        <div class="box-minimal-icon mdi mdi-headset"></div>
+                        <p class="big box-minimal-title">24/7 Online Support</p>
+                        <hr>
+                        <div class="box-minimal-text">Our online support is available 24 hours a day to answer your every question and help you solve any issue you may have with our products and services.</div>
+                    </article>
+                </div>
+                <div class="col-sm-10 col-md-6 col-xl-3">
+                    <article class="box-minimal box-minimal-border">
+                        <div class="box-minimal-icon mdi mdi-credit-card"></div>
+                        <p class="big box-minimal-title">Various Payment Methods</p>
+                        <hr>
+                        <div class="box-minimal-text">We provide a variety of payment methods that include Paypal, Visa/Mastercard/American Express and lots of others, which can be customized.</div>
+                    </article>
+                </div>*@
+        </div>
+    </div>
+</section>
+
+<!-- Frequently asked questions -->
+<section class="section section-lg bg-default">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-9 col-lg-5 col-xxl-5">
+                @*<h3>Frequently Asked Questions</h3>*@
+                <a href="@frequentlyAskedQuestionsPageLink" class="animated-title-divider longer2">
+                    <h3 class="little-smaller">@servicesUmbracoNode.Value("frequentlyAskedQuestionsTitle")</h3>
+                    <div class="divider divider-default"></div>
+                </a>
+
+
+                <div class="panel-group panel-group-custom panel-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
+
+                    @{
+                        var counterForGeneratedIds = 0;
+                        string panelHeadingId, headingLinkDataParent, headingLinkHref, headingLinkAriaControls = "";
+                        string panelCollapsedId , panelCollapsedAriaLabelledBy = "";
+
+                        foreach (var faqItem in faqListToShow)
+                        {
+                            counterForGeneratedIds++;
+                            panelHeadingId = "accordion1Heading"+ counterForGeneratedIds;
+                            headingLinkDataParent = "#accordion1";
+                            headingLinkHref = "#accordion1Collapse" + counterForGeneratedIds;
+                            headingLinkAriaControls = "accordion1Collapse" + counterForGeneratedIds;
+                            panelCollapsedId = "accordion1Collapse" + counterForGeneratedIds;
+                            panelCollapsedAriaLabelledBy = "accordion1Heading" + counterForGeneratedIds;
+
+                            <div class="panel panel-custom panel-corporate">
+                                <div class="panel-heading" id="@panelHeadingId" role="tab">
+                                    <div class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="@headingLinkDataParent" href="@headingLinkHref" aria-controls="@headingLinkAriaControls">
+                                            @faqItem.Value("questionTitle")
+                                            <div class="panel-arrow"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-collapse collapse" role="tabpanel" id="@panelCollapsedId" aria-labelledby="@panelCollapsedAriaLabelledBy">
+                                    <div class="panel-body">
+                                        <p>
+                                            @faqItem.Value("answerDetails")
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+
+                <!-- Bootstrap collapse-->
+                <!--<div class="panel-group panel-group-custom panel-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">-->
+                <!-- Bootstrap panel-->
+                <!--<div class="panel panel-custom panel-corporate">
+                    <div class="panel-heading" id="accordion1Heading1" role="tab">
+                        <div class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1Collapse1" aria-controls="accordion1Collapse1" aria-expanded="true">
+                                Do you work mostly on-site or remote?
+                                <div class="panel-arrow"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-collapse collapse show" id="accordion1Collapse1" role="tabpanel" aria-labelledby="accordion1Heading1">
+                        <div class="panel-body">
+                            <p>
+                                We assign you with three experts to ensure your technology is always working hard on your behalf. Part of your Effective Care Team includes an On-Site IT Manager. He or she is responsible for blueprinting your system and continuing to collaborate, with you, as your company grows (as well as maintaining or upgrading your physical network.) After all, technology is moving mind-numbingly fast. It’s our job to guarantee your company is always on the leading edge of technological leveraging.
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- Bootstrap panel-->
+                <!--<div class="panel panel-custom panel-corporate">
+                    <div class="panel-heading" id="accordion1Heading2" role="tab">
+                        <div class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1Collapse2" aria-controls="accordion1Collapse2">
+                                What industries do you specialize in?
+                                <div class="panel-arrow"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-collapse collapse" id="accordion1Collapse2" role="tabpanel" aria-labelledby="accordion1Heading2">
+                        <div class="panel-body">
+                            <p>
+                                We’ve worked with a wide range of companies throughout the USA and Europe. The industries we’ve worked include (but certainly aren’t limited to): Legal Services, Media & Entertainment, Investment Banking, E-Commerce, Postal Services, Non-Profit, Publishing, State & Local Government, Advertising, Branding & Marketing, Medical etc.
+                            </p>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- Bootstrap panel-->
+                <!--<div class="panel panel-custom panel-corporate">
+                    <div class="panel-heading" id="accordion1Heading3" role="tab">
+                        <div class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1Collapse3" aria-controls="accordion1Collapse3">
+                                How can I utilize your Business IT Solutions?
+                                <div class="panel-arrow"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel-collapse collapse" id="accordion1Collapse3" role="tabpanel" aria-labelledby="accordion1Heading3">
+                        <div class="panel-body">
+                            <p>We've created comprehensive packages that fulfill all of your Business IT needs. And depending on the size of your company, you can choose the package that has the amount of Help Desk, On-Site Management hours, On-Cloud Data Storage and expert consultation as you want... or your budget allows.</p>
+                        </div>
+                    </div>
+                </div>-->
+                <!-- Bootstrap panel-->
+                <!--<div class="panel panel-custom panel-corporate">
+                        <div class="panel-heading" id="accordion1Heading4" role="tab">
+                            <div class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion1" href="#accordion1Collapse4" aria-controls="accordion1Collapse4">
+                                    Will I benefit from professional Business IT?
+                                    <div class="panel-arrow"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="panel-collapse collapse" id="accordion1Collapse4" role="tabpanel" aria-labelledby="accordion1Heading4">
+                            <div class="panel-body">
+                                <p>The real answer is... Every business benefits from receiving our IT Solutions. If you want to compete, especially while we're still in the midst of a sluggish economy, your company requires the best possible foundation to become the undisputed leader in your marketplace.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+
+
+            </div>
+            <div class="col-md-9 col-lg-5 col-xxl-4">
+                <figure class="image-default">
+                    <img src="@frequentlyAskedQuestionsImageUrl" alt="" width="570" height="600" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOT! Contact Us now! -->
+<!--<section class="section section-xs text-center bg-gray-dark">
+    <div class="container-wide">
+        <div class="box-cta-thin">
+            <p class="big"><span class="label-cta label-cta-primary">Hot!</span><strong>Effective </strong>&nbsp;<span>is your choice in the world of IT companies.&nbsp;</span><a class="link-bold" href="contacts.html">Contact us now!</a></p>
+        </div>
+    </div>
+</section>-->
