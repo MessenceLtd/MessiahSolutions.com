@@ -4,6 +4,8 @@
     Layout = "master.cshtml";
     var home = Model.Root();
 
+
+    var aboutUsIntroductionLearnMoreLinkOurHistoryUrl = Model.Value<IPublishedContent>("aboutUsIntroductionLearnMoreLinkOurHistory").Url();
     var aboutUsIntroductionLargeSideImageUrl = Model.Value<IPublishedContent>("aboutUsIntroductionLargeSideImage").Url();
     var featuredPeopleTitleLinkUrl = Model.Value<IPublishedContent>("featuredPeopleTitleLink").Url();
 
@@ -22,19 +24,15 @@
                 <h3 class="little-smaller">@Model.Value("aboutUsIntroductionTitle")</h3>
                 <div class="divider divider-default" style="width:100%;max-width:100%;"></div>
                 <p>
-                    @*Web design is the art and practice of planning and projecting ideas and experiences with visual and textual content. It plays a vital role in creating an appealing website and is the key component of a stunning design, which helps in attracting more potential customers.*@
                     @Model.Value("aboutUsIntroductionSecondParagraph")
                 </p>
-                <!-- Quote minimal-->
-
                 <p>
-                    @*Our expert team provides high-quality web design services, which can be used in creating your own website or customizing one of our website templates. Press a button below to order this service now!*@
                     @Model.Value("aboutUsIntroductionThirdParagraph")
                 </p>
                 <p>
                     @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
                 </p>
-                <a class="button button-primary" href="#">order now</a>
+                <a class="button button-primary" href="@aboutUsIntroductionLearnMoreLinkOurHistoryUrl">@Model.Value("aboutUsIntroductionLearnMoreLinkText")</a>
             </div>
             <div class="col-md-9 col-lg-5 text-center">
                 <img src="@aboutUsIntroductionLargeSideImageUrl" alt="" width="720" height="459" />
@@ -65,7 +63,6 @@
                     animatedCssClass = "mdi-" + service.GetProperty("serviceImageType").Value();
 
                     <div class="col-sm-10 col-lg-4 col-xl-3">
-                        @*<div class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary">*@
                         <a href="@service.Url()" class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary wrapper" title="@service.GetProperty("serviceTitle").Value()">
                             <div class="thumbnail-classic-icon unit-left"><span class="icon mdi @animatedCssClass"></span></div>
                             <div class="thumbnail-classic-caption unit-body">
@@ -78,7 +75,6 @@
                                 </p>
                             </div>
                         </a>
-                        @*</div>*@
                     </div>
 
                 }
@@ -102,7 +98,7 @@
         </div>
         <!-- Owl Carousel-->
         <div class="owl-carousel owl-carousel-team" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3"
-             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="30"
+             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="0"
              data-mouse-drag="true" data-dots="true">
 
             @if (Model.FeaturedPeople != null)

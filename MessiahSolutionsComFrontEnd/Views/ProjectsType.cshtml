@@ -1,0 +1,255 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ProjectsType>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
+    var projectsTypeTitleGeneralWebsiteLinkUrl = Model.Value<IPublishedContent>("projectsTypeTitleGeneralWebsiteLink").Url();
+    var ourAdvantagesTitleLink = Model.Value<IPublishedContent>("ourAdvantagesTitleLink").Url();
+
+    //var ourAdvantagesTitleLink = Model.Value<IPublishedContent>("ourAdvantagesTitleLink").Url();
+    var frequentlyAskedQuestionsPageLink = Model.Value<IPublishedContent>("frequentlyAskedQuestionsPageLink").Url();
+    var frequentlyAskedQuestionsImageUrl = Model.Value<IPublishedContent>("frequentlyAskedQuestionsSideImage").Url();
+
+    var faqListToShow = Model.Value<IEnumerable<IPublishedContent>>("featuredProjectsTypeFAQList");
+
+}
+
+
+<!-- a few words about the project type -->
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center justify-content-xl-end flex-xl-row-reverse justify-content-xxl-end">
+            <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-5">
+                <div class="box-range-content">
+                    <a href="@projectsTypeTitleGeneralWebsiteLinkUrl" class="animated-title-divider longer2">
+                        <h3>@Model.Value("projectsTypeTitle")</h3>
+                        <div class="divider divider-default"></div>
+                    </a>
+                    <p class="heading-5">
+                        @Model.Value("projectsTypeTitleIntroductionFirstParagraph")
+                    </p>
+                    <p class="text-spacing-sm">
+                        @Model.Value("projectsTypeTitleIntroductionSecondParagraph")
+                    </p>
+                    <a class="button button-primary" href="@projectsTypeTitleGeneralWebsiteLinkUrl">@Model.Value("projectsTypeTitleGeneralWebsiteLinkText")</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 col-xl-6 col-xxl-6 jp-video-init">
+                <div class="build-video">
+                    <div class="build-video-inner">
+                        <img class="image-wrap" src="/images/block-video-870x500.png" alt="" width="870" height="500" />
+                    </div>
+                    <div class="build-video-element">
+                        <div class="jp-video jp-video-single">
+                            <div class="jp-type-playlist">
+                                <!-- Hidden playlist for script-->
+                                <ul class="jp-player-list">
+                                    <li class="jp-player-list-item" data-jp-m4v="/video/video.mp4" data-jp-title="local video" data-jp-poster="/images/video-poster.jpg"></li>
+                                </ul>
+                                <!-- container in which our video will be played-->
+                                <div class="jp-jplayer"></div>
+                                <!-- main containers for our controls-->
+                                <div class="jp-gui">
+                                    <div class="jp-interface">
+                                        <div class="jp-controls-holder">
+                                            <!-- play and pause buttons--><a class="jp-play" href="javascript:;" tabindex="1">play</a><a class="jp-pause" href="javascript:;" tabindex="1">pause</a><span class="separator sep-1"></span>
+                                            <!-- progress bar-->
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"><span></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-time-wrapper">
+                                                <!-- time notifications-->
+                                                <div class="jp-current-time"></div><span class="time-sep">/</span>
+                                                <div class="jp-duration"></div>
+                                            </div><span class="separator sep-2"></span>
+                                            <!-- mute / unmute toggle--><a class="jp-mute" href="javascript:;" tabindex="1" title="mute">mute</a><a class="jp-unmute" href="javascript:;" tabindex="1" title="unmute">unmute</a>
+                                            <!-- volume bar-->
+                                            <div class="jp-volume-bar">
+                                                <div class="jp-volume-bar-value"><span class="handle"></span></div>
+                                            </div><span class="separator sep-2"></span>
+                                            <!-- full screen toggle--><a class="jp-full-screen" href="javascript:;" tabindex="1" title="full screen">full screen</a><a class="jp-restore-screen" href="javascript:;" tabindex="1" title="restore screen">restore screen</a>
+                                        </div>
+                                        <!-- end jp-controls-holder-->
+                                    </div>
+                                    <!-- end jp-interface-->
+                                </div>
+                                <!-- end jp-gui-->
+                                <!-- unsupported message-->
+                                <div class="jp-playlist">
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                </div>
+                                <div class="jp-no-solution"><span>Update Required</span>Here's a message which will appear if the video isn't supported. A Flash alternative can be used here if you fancy it.</div>
+                                <!-- end jp_container_1-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@if (Model.Children().Where(x => x.IsVisible()).Count() > 0)
+{
+    int counterForFlippedSideCSSClass = -1;
+    var filpedSideCssClass = "";
+    var innerContentCSSClassFlipFixes = "";
+    var imageUrlProjectThumbnail = "";
+    var imageUrlProjectLargeImage = "";
+    var bgGrayBackGroundForBetterVisibility = "";
+
+    foreach (var projectNodeDetails in Model.Children().Where(x => x.IsVisible()))
+    {
+        counterForFlippedSideCSSClass++;
+        if (counterForFlippedSideCSSClass % 2 == 0)
+        {
+            filpedSideCssClass = "section-md-reverse";
+            innerContentCSSClassFlipFixes = "justify-content-lg-end justify-content-xl-end";
+            bgGrayBackGroundForBetterVisibility = "bg-gray-lighter";
+        }
+        else
+        {
+            filpedSideCssClass = "";
+            innerContentCSSClassFlipFixes = "justify-content-lg-start justify-content-xl-between";
+            bgGrayBackGroundForBetterVisibility = "";
+        }
+
+        imageUrlProjectThumbnail = projectNodeDetails.Value<IPublishedContent>("projectThumbnailImage")?.Url() ?? "";
+        imageUrlProjectLargeImage = projectNodeDetails.Value<IPublishedContent>("projectLargeImage")?.Url() ?? "";
+
+        <section class="section section-wrap section-wrap-equal @filpedSideCssClass @bgGrayBackGroundForBetterVisibility">
+            <div class="section-wrap-inner">
+                <div class="container container-bigger">
+                    <div class="row row-ten justify-content-md-center @innerContentCSSClassFlipFixes">
+                        <div class="col-sm-8 col-md-4 col-lg-4">
+                            <div class="section-lg">
+                                <a href="@projectNodeDetails.Url()" class="animated-title-divider longer2">
+                                    <h3 class="little-smaller">@projectNodeDetails.Value("projectTitle")</h3>
+                                    <div class="divider divider-default"></div>
+                                </a>
+                                <p>
+                                    @projectNodeDetails.Value("projectDescription")
+                                </p>
+                                <div class="text-center form-button">
+                                    <a class="button button-primary" href="@projectNodeDetails.Url()">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrap-aside section-wrap-image">
+
+                    <a href="@imageUrlProjectLargeImage" data-lightgallery="item">
+                        <img src="@imageUrlProjectThumbnail" alt="@projectNodeDetails.Value("projectTitle")" title="@projectNodeDetails.Value("projectTitle")" width="960" height="660" />
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    }
+}
+
+
+<!-- Featured advantages -->
+<section class="section section-lg text-center bg-gray-darker">
+    <div class="container-wide">
+
+        <a href="@ourAdvantagesTitleLink" class="animated-title-divider longer">
+            <h3>@Model.Value("ourAdvantagesTitle")</h3>
+            <div class="divider divider-default"></div>
+        </a>
+
+        <div class="row row-50 justify-content-sm-center text-left">
+
+            @foreach (var advantage in Model.Value<IEnumerable<IPublishedContent>>("featuredOurAdvantages"))
+            {
+
+                <div class="ArticleWrapper col-sm-10 col-md-6 col-xl-3">
+                    <a class="ArticleWrapper" href="@advantage.Url()">
+                        <article class="box-minimal box-minimal-border">
+                            <div class="box-minimal-icon mdi @advantage.Value("thumbnailImageCSSClass")"></div>
+                            <p class="big box-minimal-title">@advantage.Value("advantageTitle")</p>
+                            @*<hr>*@
+                            <div class="box-minimal-text">
+                                @advantage.Value("advantageDescription")
+                            </div>
+                            <div class="read-more">
+                                @*<a href="@advantage.Url()">Read More</a>*@
+                                <label>@Umbraco.GetDictionaryValue("read more")</label>
+                            </div>
+                        </article>
+                    </a>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+<!-- Frequently asked questions -->
+<section class="section section-lg bg-gray-lighter bg-default">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-9 col-lg-5 col-xxl-5">
+                @*<h3>Frequently Asked Questions</h3>*@
+                <a href="@frequentlyAskedQuestionsPageLink" class="animated-title-divider longer2">
+                    <h3 class="little-smaller">@Model.Value("frequentlyAskedQuestionsTitle")</h3>
+                    <div class="divider divider-default"></div>
+                </a>
+
+                <div class="panel-group panel-group-custom panel-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
+
+                    @{
+                        var counterForGeneratedIds = 0;
+                        string panelHeadingId, headingLinkDataParent, headingLinkHref, headingLinkAriaControls = "";
+                        string panelCollapsedId, panelCollapsedAriaLabelledBy = "";
+
+                        foreach (var faqItem in faqListToShow)
+                        {
+                            counterForGeneratedIds++;
+                            panelHeadingId = "accordion1Heading" + counterForGeneratedIds;
+                            headingLinkDataParent = "#accordion1";
+                            headingLinkHref = "#accordion1Collapse" + counterForGeneratedIds;
+                            headingLinkAriaControls = "accordion1Collapse" + counterForGeneratedIds;
+                            panelCollapsedId = "accordion1Collapse" + counterForGeneratedIds;
+                            panelCollapsedAriaLabelledBy = "accordion1Heading" + counterForGeneratedIds;
+
+                            <div class="panel panel-custom panel-corporate">
+                                <div class="panel-heading" id="@panelHeadingId" role="tab">
+                                    <div class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="@headingLinkDataParent" href="@headingLinkHref" aria-controls="@headingLinkAriaControls">
+                                            @faqItem.Value("questionTitle")
+                                            <div class="panel-arrow"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="panel-collapse collapse" role="tabpanel" id="@panelCollapsedId" aria-labelledby="@panelCollapsedAriaLabelledBy">
+                                    <div class="panel-body">
+                                        <p>
+                                            @faqItem.Value("answerDetails")
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+
+            </div>
+            <div class="col-md-9 col-lg-5 col-xxl-4">
+                <figure class="image-default">
+                    <img src="@frequentlyAskedQuestionsImageUrl" alt="" width="570" height="600" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+

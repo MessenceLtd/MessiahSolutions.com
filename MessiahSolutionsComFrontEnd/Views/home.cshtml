@@ -10,55 +10,29 @@
     var HomePageLinkToServices = Model.ServicesLink.Url;
     var HomePageLinkToProjects = Model.OurProjectsLink.Url;
     var HomePageLinkToOurTeam = Model.OurTeamLink.Url;
+
+    // Prepare the project Type Codes array from the featured projects parent items (ProjectsType nodes)
+    // Will be used for the filtering in desktop / mobile view
+    Dictionary<string,string> projectsTypeCodesAndTitle = new Dictionary<string, string>();
+    string parentProjectTypeCode = "";
+    string parentProjectTypeTitle = "";
+
+    foreach (var project in Model.Value<IEnumerable<IPublishedContent>>("FeaturedProjects"))
+    {
+        parentProjectTypeCode = project.Parent.Value("projectTypeUniqueEnglishCode").ToString();
+        parentProjectTypeTitle = project.Parent.Value("projectsTypeTitle").ToString();
+
+        if (!projectsTypeCodesAndTitle.ContainsKey(parentProjectTypeCode))
+        {
+            projectsTypeCodesAndTitle.Add(parentProjectTypeCode, parentProjectTypeTitle);
+        }
+    }
+
 }
 
-@*<section class="section section--full-height background-image-full overlay overlay--dark section--content-center section--thick-border"
-               style="background-image: url('@backgroundImage')">
-        <div class="section__hero-content">
-            <h1>@Model.HeroHeader</h1>
-            <p class="section__description">@Model.HeroDescription</p>
-            @if (Model.HeroCtalink != null)
-            {
-            <a class="button button--border--solid" href="@Model.HeroCtalink.Url">
-                @Model.HeroCtacaption
-            </a>
-            }
-        </div>
-    </section>*@
-
-@*<section class="section section">
-        @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
-    </section>*@
-
-
-@*<section class="section section--themed">
-
-        <div class="container">
-            <div class="row">
-
-                <div class="ta-center">
-                    <h2>@Model.FooterHeader</h2>
-                    <p class="section__description mw-640 ma-h-auto">@Model.FooterDescription</p>
-
-                    <a class="button button--border--light_solid" href="@Model.FooterCtalink.Url">
-                        @Model.FooterCtacaption
-                    </a>
-
-                </div>
-
-            </div>
-        </div>
-
-    </section>*@
-
-
-@*Starting dummy content for homepage Imported from template*@
-
-<!-- Inspirational technologies-->
+<!-- Inspirational technologies -->
 <section class="section bg-gray-darker text-center">
     <div class="section-xl" style="background-image: url('@backgroundImage')">
-        <!-- 27.07.2020 06:29 backup changed from template settings: <div class="section-xl bg-vide" data-vide-bg="mp4: video/office-day, poster: video/office-day" data-vide-options="posterType: jpg, position: 0% 50%"> -->
-        <!-- 27.07.2020 06:30 reference for umbraco <div class="section-xl bg-vide" style="background-image: url('@backgroundImage')">  -->
         <div class="container container-wide">
             <div class="row row-50 justify-content-md-center">
                 <div class="col-md-10 col-xl-9">
@@ -79,7 +53,7 @@
         <div class="text-center">
             <a href="@HomePageLinkToServices" class="animated-title-divider">
                 <h3>
-                    @Model.GetProperty("servicesTitle").Value()
+                    @Model.Value("servicesTitle")
                 </h3>
                 <div class="divider divider-default"></div>
             </a>
@@ -89,71 +63,27 @@
             @if (Model.Services != null)
             {
                 var animatedCssClass = "";
-                foreach (var service in Model.Services)
+                foreach (var service in Model.Value<IEnumerable<IPublishedContent>>("Services"))
                 {
-                    animatedCssClass = "mdi-" + service.GetProperty("serviceImageType").Value();
+                    animatedCssClass = "mdi-" + service.Value("serviceImageType");
 
                     <div class="col-sm-10 col-lg-4 col-xl-3">
-                        @*<div class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary">*@
                         <a href="@service.Url()" class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary wrapper" title="@service.GetProperty("serviceTitle").Value()">
                             <div class="thumbnail-classic-icon unit-left"><span class="icon mdi @animatedCssClass"></span></div>
                             <div class="thumbnail-classic-caption unit-body">
                                 <h6 class="thumbnail-classic-title">
-                                    @service.GetProperty("serviceTitle").Value()
+                                    @service.Value("serviceTitle")
                                 </h6>
                                 <hr class="divider divider-default divider-sm" />
                                 <p class="thumbnail-classic-text">
-                                    @service.GetProperty("serviceDescription").Value()
+                                    @service.Value("serviceDescription")
                                 </p>
                             </div>
                         </a>
-                        @*</div>*@
                     </div>
 
                 }
             }
-
-            @*<div class="col-sm-10 col-lg-4 col-xl-3">
-                    <div class="thumbnail-classic unit flex-md-row flex-lg-column flex-column thumbnail-classic-primary">
-                        <div class="thumbnail-classic-icon unit-left"><span class="icon mdi mdi-cellphone-android"></span></div>
-                        <div class="thumbnail-classic-caption unit-body">
-                            <h6 class="thumbnail-classic-title">Mobile Apps Development</h6>
-                            <hr class="divider divider-default divider-sm" />
-                            <p class="thumbnail-classic-text">At Effective, we work for our customers every day to deliver the best mobile applications for any purposes. We work both with individual and corporate customers.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 col-lg-4 col-xl-3">
-                    <div class="thumbnail-classic unit flex-md-row flex-lg-column flex-column thumbnail-classic-primary">
-                        <div class="thumbnail-classic-icon unit-left"><span class="icon mdi mdi-television-guide"></span></div>
-                        <div class="thumbnail-classic-caption unit-body">
-                            <h6 class="thumbnail-classic-title">Website Design</h6>
-                            <hr class="divider divider-default divider-sm" />
-                            <p class="thumbnail-classic-text">Our expert team can design a website of any complexity, from a landing page to a corporate multipage website. Everything depends on what you are looking for.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 col-lg-4 col-xl-3">
-                    <div class="thumbnail-classic unit flex-md-row flex-lg-column flex-column thumbnail-classic-primary">
-                        <div class="thumbnail-classic-icon unit-left"><span class="icon mdi mdi-headset"></span></div>
-                        <div class="thumbnail-classic-caption unit-body">
-                            <h6 class="thumbnail-classic-title">IT Consulting</h6>
-                            <hr class="divider divider-default divider-sm" />
-                            <p class="thumbnail-classic-text">Our team is glad to provide you with professional IT consulting services 24/7. We have been helping lots of companies since our establishment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-10 col-lg-4 col-xl-3">
-                    <div class="thumbnail-classic unit flex-md-row flex-lg-column flex-column thumbnail-classic-primary">
-                        <div class="thumbnail-classic-icon unit-left"><span class="icon mdi mdi-web"></span></div>
-                        <div class="thumbnail-classic-caption unit-body">
-                            <h6 class="thumbnail-classic-title">Internet Marketing</h6>
-                            <hr class="divider divider-default divider-sm" />
-                            <p class="thumbnail-classic-text">In the modern world of rapid web development, internet marketing plays a vital role in your company’s promotion. We are happy to assist you with it.</p>
-                        </div>
-                    </div>
-                </div>*@
-
 
         </div>
     </div>
@@ -165,7 +95,7 @@
     <div class="text-center">
         <a href="@HomePageLinkToProjects" class="animated-title-divider">
             <h3>
-                @Model.GetProperty("ourProjectsTitle").Value()
+                @Model.Value("ourProjectsTitle")
             </h3>
             <div class="divider divider-default"></div>
         </a>
@@ -176,17 +106,24 @@
         <div class="col-xl-12">
             <ul class="isotope-filters isotope-filters-horizontal">
                 <li class="block-top-level">
-                    <p class="big">Choose your category:</p>
+                    <p class="big">@Umbraco.GetDictionaryValue("Choose your project category")</p>
                     <!-- Isotope Filters-->
                     <button class="isotope-filters-toggle button button-xs button-primary"
                             data-custom-toggle=".isotope-filters-list"
                             data-custom-toggle-hide-on-blur="true">
-                        Filter<span class="caret"></span>
+                        @Umbraco.GetDictionaryValue("Filter projects")<span class="caret"></span>
                     </button>
                     <ul class="isotope-filters-list">
                         <li><a class="active" data-isotope-filter="*" data-isotope-group="gallery-01" href="#">All Categories</a></li>
-                        <li><a data-isotope-filter="type 1" data-isotope-group="gallery-01" href="#">Type 1</a></li>
-                        <li><a data-isotope-filter="type 2" data-isotope-group="gallery-01" href="#">Type 2</a></li>
+
+                        @foreach (var projetTypeCode in projectsTypeCodesAndTitle.Keys)
+                        {
+                            <li><a data-isotope-filter="@projetTypeCode" data-isotope-group="gallery-01" href="#">@projectsTypeCodesAndTitle[projetTypeCode]</a></li>
+                        }
+                        @*<li><a data-isotope-filter="type 1" data-isotope-group="gallery-01" href="#">Type 1</a></li>
+        <li><a data-isotope-filter="type 2" data-isotope-group="gallery-01" href="#">Type 2</a></li>*@
+
+
                     </ul>
                 </li>
             </ul>
@@ -200,107 +137,26 @@
                     {
                         var projectImageUrl = "";
 
-                        foreach (var project in Model.FeaturedProjects)
+                        foreach (var project in Model.Value<IEnumerable<IPublishedContent>>("FeaturedProjects"))
                         {
-
-                            projectImageUrl = project.Value<IPublishedContent>("projectThumbnailImage")?.Url ?? "";
-
-                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter='@project.GetProperty("projectType").Value()'>
+                            projectImageUrl = project.Value<IPublishedContent>("projectThumbnailImage")?.Url() ?? "";
+                            
+                            <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter='@project.Parent.Value("projectTypeUniqueEnglishCode")'>
                                 <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
                                     <div class="gallery-item-image">
                                         <figure>
-                                            @*<img src="/images/title-inside-gallery-01-640x430.jpg" alt="" width="640" height="430" />*@
                                             <img src="@projectImageUrl" alt="" width="640" height="430" />
                                         </figure>
                                         <div class="title-inside-gallery-caption">
-                                            <a class="title-inside-gallery-title" href="@project.Url()">@project.GetProperty("projectTitle").Value()</a>
-                                            <p class="title-inside-gallery-text">@project.GetProperty("projectDescription").Value()</p>
+                                            <a class="title-inside-gallery-title" href="@project.Url()">@project.Value("projectTitle")</a>
+                                            <p class="title-inside-gallery-text">@project.Value("projectDescription")</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         }
-
                     }
 
-                    @*<div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 1">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-01-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Eric Howard</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 1">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-02-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Basketball Team</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 1">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-03-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Political Candidate</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 2">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-04-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Industrial Company</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 2">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-05-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Construction Company</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="type 2">
-                            <div class="gallery-item title-inside-gallery-item gallery-item-fullwidth">
-                                <div class="gallery-item-image">
-                                    <figure>
-                                        <img src="/images/title-inside-gallery-06-640x430.jpg" alt="" width="640" height="430" />
-                                    </figure>
-                                    <div class="title-inside-gallery-caption">
-                                        <a class="title-inside-gallery-title" href="single-project.html">Boxing Club</a>
-                                        <p class="title-inside-gallery-text">Our qualified team is ready to design, develop, and support your website.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
                 </div>
             </div>
         </div>
@@ -313,14 +169,14 @@
         <div class="text-center">
             <a href="@HomePageLinkToOurTeam" class="animated-title-divider">
                 <h3>
-                    @Model.GetProperty("ourTeamTitle").Value()
+                    @Model.Value("ourTeamTitle")
                 </h3>
                 <div class="divider divider-default"></div>
             </a>
         </div>
         <!-- Owl Carousel-->
         <div class="owl-carousel owl-carousel-team" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" 
-             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="30" 
+             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="0" 
              data-mouse-drag="true" data-dots="true">
 
             @if (Model.FeaturedPeople != null)
@@ -328,10 +184,10 @@
                 var personImageUrl = "";
                 var personContactEmail = "";
 
-                foreach (var person in Model.FeaturedPeople)
+                foreach (var person in Model.Value<IEnumerable<IPublishedContent>>("FeaturedPeople"))
                 {
-                    personImageUrl = person.Value<IPublishedContent>("photo")?.Url ?? "";
-                    personContactEmail = person.GetProperty("email").Value()?.ToString() ?? "";
+                    personImageUrl = person.Value<IPublishedContent>("photo")?.Url() ?? "";
+                    personContactEmail = person.Value("email")?.ToString() ?? "";
                     if (!string.IsNullOrEmpty(personContactEmail)) {
                         personContactEmail = "mailto:" + personContactEmail;
                     }
@@ -343,28 +199,28 @@
                             </figure>
                             <div class="team-classic-image-caption">
                                 <ul class="list-inline list-team">
-                                    @if (person.GetProperty("facebookUsername").Value() != null && !string.IsNullOrEmpty(person.GetProperty("facebookUsername").Value().ToString()))
+                                    @if (person.Value("facebookUsername") != null && !string.IsNullOrEmpty(person.Value("facebookUsername").ToString()))
                                     {
-                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" target="_blank" href="@person.GetProperty("facebookUsername").Value().ToString()"></a></li>
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" target="_blank" href="@person.Value("facebookUsername")"></a></li>
                                     }
-                                    @if (person.GetProperty("twitterUsername").Value() != null && !string.IsNullOrEmpty(person.GetProperty("twitterUsername").Value().ToString()))
+                                    @if (person.Value("twitterUsername") != null && !string.IsNullOrEmpty(person.Value("twitterUsername").ToString()))
                                     {
-                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" target="_blank" href="@person.GetProperty("twitterUsername").Value()"></a></li>
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" target="_blank" href="@person.Value("twitterUsername")"></a></li>
                                     }
-                                    @if (person.GetProperty("instagramUsername").Value() != null && !string.IsNullOrEmpty(person.GetProperty("instagramUsername").Value().ToString()))
+                                    @if (person.Value("instagramUsername") != null && !string.IsNullOrEmpty(person.Value("instagramUsername").ToString()))
                                     {
-                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" target="_blank" href="@person.GetProperty("instagramUsername").Value()"></a></li>
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" target="_blank" href="@person.Value("instagramUsername")"></a></li>
                                     }
-                                    @if (person.GetProperty("linkedInUsername").Value() != null && !string.IsNullOrEmpty(person.GetProperty("linkedInUsername").Value().ToString()))
+                                    @if (person.Value("linkedInUsername") != null && !string.IsNullOrEmpty(person.Value("linkedInUsername").ToString()))
                                     {
-                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" target="_blank" href="@person.GetProperty("linkedInUsername").Value()"></a></li>
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" target="_blank" href="@person.Value("linkedInUsername")"></a></li>
                                     }
                                 </ul>
                             </div>
                         </div>
                         <div class="team-classic-caption">
-                            <h5><a class="team-classic-title" href="@person.Url()">@person.GetProperty("fullName").Value()</a></h5>
-                            <p class="team-classic-job-position">@person.GetProperty("jobTitle").Value()</p>
+                            <h5><a class="team-classic-title" href="@person.Url()">@person.Value("fullName")</a></h5>
+                            <p class="team-classic-job-position">@person.Value("jobTitle")</p>
                             <a class="button button-xs button-default-outline" target="_blank" href="@personContactEmail">get in touch</a>
                         </div>
                     </div>
@@ -373,127 +229,7 @@
 
         </div>
 
-        @*<div class="owl-carousel owl-carousel-team" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3" data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-01-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-google-plus" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Sandra Ferguson</a></h5>
-                    <p class="team-classic-job-position">Senior Manager</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-02-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-google-plus" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Ronald Chen</a></h5>
-                    <p class="team-classic-job-position">Marketer</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-03-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-google-plus" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Frances Watson</a></h5>
-                    <p class="team-classic-job-position">Support Operator</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-04-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-google-plus" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Joe Myers</a></h5>
-                    <p class="team-classic-job-position">Developer</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-05-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Deborah Stewart</a></h5>
-                    <p class="team-classic-job-position">Manager</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-            <div class="team-classic">
-                <div class="team-classic-image">
-                    <figure>
-                        <img src="/images/team-06-270x270.jpg" alt="" width="270" height="270" />
-                    </figure>
-                    <div class="team-classic-image-caption">
-                        <ul class="list-inline list-team">
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" href="#"></a></li>
-                            <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" href="#"></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="team-classic-caption">
-                    <h5><a class="team-classic-title" href="about-me.html">Patrick Douglas</a></h5>
-                    <p class="team-classic-job-position">Designer</p><a class="button button-xs button-default-outline" href="about-me.html">get in touch</a>
-                </div>
-            </div>
-        </div>*@
-        <a class="button button-primary" href="@HomePageLinkToOurTeam">@Model.GetProperty("viewAllTeamBottomLinkText").Value()</a>
+        <a class="button button-primary" href="@HomePageLinkToOurTeam">@Model.Value("viewAllTeamBottomLinkText")</a>
     </div>
 </section>
 

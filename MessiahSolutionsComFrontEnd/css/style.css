@@ -3546,44 +3546,51 @@ textarea.form-input {
     height: auto;
     max-width: none;
     min-width: 101.5%; }
-  .gallery-item .caption {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    transition: .33s all ease-in-out;
-    pointer-events: none;
-    background: rgba(0, 0, 0, 0.7); }
+    .gallery-item .caption 
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: .33s all ease-in-out;
+        pointer-events: none;
+        /*background: rgba(0, 0, 0, 0.7);*/
+        background: rgba(0, 0, 0, 0.8);
+    }
     .gallery-item .caption > * {
       pointer-events: auto;
       position: relative;
       z-index: 2; }
     .gallery-item .caption:before {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      transform-origin: 0 100%;
-      transform: rotate(45deg);
-      content: "";
-      display: inline-block;
-      width: 100px;
-      height: 160px;
-      background-color: #10aea1; }
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform-origin: 0 100%;
+        transform: rotate(45deg);
+        content: "";
+        display: inline-block;
+        width: 100px;
+        height: 160px;
+        /*background-color: #10aea1;*/
+        background-color: #0F4B7F;
+    }
     .gallery-item .caption:after {
-      position: absolute;
-      bottom: 0;
-      right: 10px;
-      content: '\f504';
-      font-family: "Material Design Icons";
-      font-size: 36px;
-      color: #fff; }
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        /*content: '\f504';*/
+        content: '\f149';
+        font-family: "Material Design Icons";
+        font-size: 36px;
+        color: #fff;
+    }
   .gallery-item .caption-title,
   .gallery-item .caption-text {
     color: #fff; }
@@ -3595,12 +3602,14 @@ textarea.form-input {
     letter-spacing: 0.1em;
     font-family: "Lato", Helvetica, Arial, sans-serif;
     font-weight: 700; }
-  .gallery-item .caption-text {
-    max-width: 100%;
-    margin-top: 25px;
-    padding: 0 15px;
-    color: #fff;
-    opacity: .6; }
+    .gallery-item .caption-text {
+        max-width: 100%;
+        margin-top: 25px;
+        padding: 0 15px;
+        color: #fff;
+        /*opacity: .6; */
+        opacity: 1;
+    }
 
 .titled-gallery-item .caption {
   background: transparent; }
@@ -3688,21 +3697,38 @@ textarea.form-input {
     transform: scale3d(0.7, 0.7, 0); }
   .desktop .gallery-item .caption-text {
     max-width: 340px; }
-  .desktop .gallery-item:hover figure {
-    transform: scale3d(1.05, 1.05, 1.05); }
-  .desktop .gallery-item:hover .title-inside-gallery-title {
-    opacity: 1;
-    visibility: visible; }
-  .desktop .gallery-item:hover .caption {
-    opacity: 1; }
-    .desktop .gallery-item:hover .caption:before {
-      transform: rotate(45deg); }
-    .desktop .gallery-item:hover .caption:after {
-      transform: translateX(0);
-      opacity: 1; }
-  .desktop .gallery-item:hover .caption-title,
-  .desktop .gallery-item:hover .caption-text {
-    transform: scale3d(1, 1, 1); }
+    .desktop .gallery-item:hover figure,
+    .desktop .gallery-item:focus-within figure {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+    .desktop .gallery-item:hover .title-inside-gallery-title,
+    .desktop .gallery-item:focus-within .title-inside-gallery-title {
+        opacity: 1;
+        visibility: visible;
+    }
+    .desktop .gallery-item:hover .caption,
+    .desktop .gallery-item:focus-within .caption {
+        opacity: 1;
+    }
+    .desktop .gallery-item:hover .caption:before,
+    .desktop .gallery-item:focus-within .caption:before 
+    {
+            transform: rotate(45deg);
+    }
+    .desktop .gallery-item:hover .caption:after,
+    .desktop .gallery-item:focus-within .caption:after 
+    {
+            transform: translateX(0);
+            opacity: 1;
+    }
+    .desktop .gallery-item:hover .caption-title,
+    .desktop .gallery-item:hover .caption-text,
+    .desktop .gallery-item:focus-within .caption-title,
+    .desktop .gallery-item:focus-within .caption-text 
+    {
+        transform: scale3d(1, 1, 1);
+    }
+
   .desktop .titled-gallery-caption {
     font-size: 24px; }
   .desktop .titled-gallery-item .caption {
@@ -3714,7 +3740,7 @@ textarea.form-input {
       top: 50%;
       right: auto;
       bottom: auto;
-      content: '\f504';
+      content: '\f149';
       font-family: "Material Design Icons";
       color: #fff;
       z-index: 2;
@@ -3811,8 +3837,11 @@ textarea.form-input {
 .page a.icon-darker:hover {
   color: #0F4B7F; }
 
-.page a.icon-white:hover {
-  color: #ffec17; }
+.page a.icon-white:hover,
+.page a.icon-white:focus
+{
+    color: #ffec17;
+}
 
 .page a.icon-gray-1:hover {
   color: #10aea1; }
@@ -7016,11 +7045,22 @@ textarea.form-input {
   .team-classic-caption * + .list-inline {
     margin-top: 15px; }
 
-.team-classic-title {
+.team-classic-title 
+{
   color: #1f2323;
-  font-weight: 400; }
-  .team-classic-title:hover {
-    color: #0F4B7F; }
+  font-weight: 400; 
+}
+
+.team-classic-title:hover,
+.team-classic-title:focus 
+{
+    color: #0F4B7F;
+}
+
+.team-classic-title:focus 
+{
+    text-decoration:underline;
+}
 
 .team-classic-job-position {
   font-size: 18px;
@@ -7063,11 +7103,17 @@ textarea.form-input {
   transform: rotate3d(1, 0, 0, 90deg);
   transform-origin: 0 100%; }
 
-.desktop .team-classic {
-  perspective: 1200px; }
-  .desktop .team-classic:hover .team-classic-image-caption {
+.desktop .team-classic 
+{
+  perspective: 1200px; 
+}
+
+.desktop .team-classic:hover .team-classic-image-caption,
+.desktop .team-classic:focus-within .team-classic-image-caption 
+{
     opacity: 1;
-    transform: rotate3d(1, 0, 0, 0deg); }
+    transform: rotate3d(1, 0, 0, 0deg);
+}
 
 /*
 *
@@ -12102,19 +12148,29 @@ html:not(.lt-ie10) .not-animated {
         transition: .4s; 
         visibility:hidden;
       }
-      .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active, .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover, .desktop
-      .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active, .desktop
-      .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover {
-        color: #0F4B7F;
-        background-color: transparent; }
-        .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active:after, .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover:after, .desktop
-        .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active:after, .desktop
-        .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover:after {
-            left: 0;
-            width: 100%;
-            visibility: visible;
-            height: 1px;
+        .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active,
+        .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover,
+        .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:focus,
+        .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active,
+        .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover,
+        .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:focus 
+        {
+            color: #0F4B7F;
+            background-color: transparent;
         }
+
+            .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active:after,
+            .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover:after,
+            .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list a:focus:after,
+            .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a.active:after,
+            .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:hover:after,
+            .desktop .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list a:focus:after 
+            {
+                left: 0;
+                width: 100%;
+                visibility: visible;
+                height: 1px;
+            }
     .desktop .isotope-filters-horizontal:not(.isotope-filter-collapse-lg) .isotope-filters-list.isotope-filters-list-buttons, .desktop
     .isotope-filters-vertical:not(.isotope-filter-collapse-lg) .isotope-filters-list.isotope-filters-list-buttons {
       margin-bottom: -10px;
@@ -12270,7 +12326,9 @@ html:not(.lt-ie10) .not-animated {
 
 .owl-carousel .owl-stage {
   position: relative;
-  -ms-touch-action: pan-Y; }
+  -ms-touch-action: pan-Y; 
+  margin:0 auto;
+}
 
 .owl-carousel .owl-stage:after {
   content: ".";

@@ -1,5 +1,65 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.OurHistory>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+    
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
 }
+
+
+<!-- Our history timeline -->
+<section class="section section-lg bg-gray-lighter text-center">
+    <div class="container container-wide">
+        <div class="row justify-content-sm-center">
+            <div class="col-lg-9 col-xl-8 col-xxl-6">
+
+                <h3>
+                    @Model.Value("ourHistoryTimelineTitle")
+                </h3>
+                <div class="divider divider-default disabled-static-fullwidth"></div>
+                <p>
+                    @Model.Value("ourHistoryTimelineDescription")
+                </p>
+                <div class="time-line-vertical">
+
+                    @{
+
+                        var historyTimelineEntryImageUrl = "";
+                        var historyTimelineFormattedDateTime = "";
+
+                        foreach (var historyTimelineEntry in Model.Value<IEnumerable<IPublishedContent>>("historyTimelineMilestonesEntries"))
+                        {
+
+                            historyTimelineFormattedDateTime = ((DateTime)historyTimelineEntry.Value("historyTimelineMilestoneEntryDate")).ToString("MMMM, yyyy");
+                            historyTimelineEntryImageUrl = historyTimelineEntry.Value<IPublishedContent>("historyTimelineMilestoneEntryImage")?.Url() ?? "";
+
+                            <div class="time-line-vertical-element time-line-vertical-element-offset">
+                                <div class="unit flex-md-row unit-spacing-xxl flex-column">
+                                    <div class="unit-left">
+                                        <div class="time-line-time">
+                                            <time class="wow fadeInLeft" data-wow-delay=".6s" datetime="2017">@historyTimelineFormattedDateTime</time>
+                                        </div>
+                                    </div>
+                                    <div class="unit-body">
+                                        <div class="time-line-content wow fadeInRight" data-wow-delay=".6s">
+                                            <h5>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryTitle")
+                                            </h5>
+                                            <img src="@historyTimelineEntryImageUrl" alt="" width="570" height="380" />
+                                            <p>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryFooterDescription")
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

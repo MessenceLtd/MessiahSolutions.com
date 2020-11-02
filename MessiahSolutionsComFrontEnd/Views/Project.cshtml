@@ -1,5 +1,218 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Project>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
 }
+
+
+<!-- about this project-->
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-7 col-xxl-6">
+                <h3>@Model.Value("projectDetailsPageTitle")</h3>
+                <div class="divider divider-default"></div>
+                <div class="box-2-columns">
+                    <p class="heading-5">@Html.Raw(Model.Value("projectDetailsPageDescriptionIntroduction"))</p>
+                    <p class="text-spacing-sm">@Html.Raw(Model.Value("projectDetailsPageDescriptionParagraph2"))</p>
+                    <p class="text-spacing-sm">@Html.Raw(Model.Value("projectDetailsPageDescriptionParagraph3"))</p>
+                    @if (Model.Value("projectDetailsPageDescriptionParagraph4") != null)
+                    {
+                        <p class="text-spacing-sm">@Html.Raw(Model.Value("projectDetailsPageDescriptionParagraph4"))</p>
+                    }
+                    @if (Model.Value("projectDetailsPageDescriptionParagraph5").ToString().Length > 0)
+                    {
+                        <p class="text-spacing-sm">@Html.Raw(Model.Value("projectDetailsPageDescriptionParagraph5"))</p>
+                    }
+                    @if (Model.Value("projectDetailsPageDescriptionParagraph6").ToString().Length > 0)
+                    {
+                        <p class="text-spacing-sm">@Html.Raw(Model.Value("projectDetailsPageDescriptionParagraph6"))</p>
+                    }
+                </div>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-lg">
+
+                    @if (Model.Value("projectDetailsPageAgencyTitleText").ToString().Length > 0)
+                    {
+                        <li>
+                            <p><b class="text-gray-darker">@Model.Value("projectDetailsPageAgencyTitleText")</b></p>
+                            <p><a class="link-text-color" href='@Model.Value("projectDetailsPageAgencyTitleLinkUrl")'>@Model.Value("projectDetailsPageAgencyTitleLinkText")</a></p>
+                        </li>
+                    }
+
+                    @if (Model.Value("projectsDetailsPageServicesTitle").ToString().Length > 0)
+                    {
+                        <li>
+                            <p><b class="text-gray-darker">@Model.Value("projectsDetailsPageServicesTitle")</b></p>
+                            <p>@Model.Value("projectsDetailsPageServicesList")</p>
+                        </li>
+                    }
+
+                    @if (Model.Value("projectDetailsPageSideBriefTitle").ToString().Length > 0)
+                    {
+                        <li>
+                            <p><b class="text-gray-darker">@Model.Value("projectDetailsPageSideBriefTitle")</b></p>
+                            <p>@Html.Raw(Model.Value("projectDetailsPageSideBriefDescription"))</p>
+                        </li>
+                    }
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@{
+
+    int counterForFlipedContent = 0;
+    string flippedContentCssClass = "";
+
+    foreach (var projectMilestone in Model.Value<IEnumerable<IPublishedElement>>("projectMilestones"))
+    {
+        counterForFlipedContent++;
+        if (counterForFlipedContent % 2 == 0)
+        {
+            flippedContentCssClass = "flex-md-row-reverse";
+        }
+        else
+        {
+            flippedContentCssClass = "";
+        }
+
+        <section class="section section-lg text-center text-md-left bg-gray-lighter">
+            <div class="container container-bigger">
+                <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between @flippedContentCssClass">
+                    <div class="col-md-4 col-xxl-3">
+                        <h3>@projectMilestone.Value("projectMilestoneTitle")</h3>
+                        <div class="divider divider-default"></div>
+                        <p class="heading-5">@projectMilestone.Value("projecMilestoneQuotedIntroDescription")</p>
+                        <p class="text-spacing-sm">
+                            @projectMilestone.Value("projectMilestoneDescription")
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+
+                        @if (projectMilestone.Value("projectDetailsMilestoneImage") != null)
+                        {
+                            var typedMultiMediaPicker = projectMilestone.Value<IEnumerable<IPublishedContent>>("projectDetailsMilestoneImage");
+
+                            if (typedMultiMediaPicker.Count() > 0 && typedMultiMediaPicker.Count() == 1)
+                            {
+                                string imageUrl = typedMultiMediaPicker.ToList()[0].Url();
+
+                                <img src="@imageUrl" alt="" width="870" height="580" />
+                            }
+                            else
+                            {
+                                <div class="swiper-container swiper-slider swiper-slider_height-1" data-loop="false" data-autoplay="3500" data-simulate-touch="true">
+                                    <div class="swiper-wrapper">
+
+                                        @foreach (var item in typedMultiMediaPicker)
+                                        {
+                                            <div class="swiper-slide" data-slide-bg="@item.Url()">
+                                                <div class="swiper-slide-caption">
+                                                    <div class="section-md"></div>
+                                                </div>
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <!-- Swiper controls -->
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>
+                            }
+                        }
+
+                        @*<img src="/images/single-project-1-870x580.jpg" alt="" width="870" height="580" />*@
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+<!-- UX Research -->
+<!--<section class="section section-lg text-center text-md-left bg-gray-lighter">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-4 col-xxl-3">
+                <h3>UX Research</h3>
+                <div class="divider divider-default"></div>
+                <p class="heading-5">UX research helped us find commonalities across our target audience before designing this template.</p>
+                <p class="text-spacing-sm">As you probably know, UX research encompasses a variety of investigative methods used to add context and insight to the design process. We used the expertise of our UX designers to create a model of how the designed template should look.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="/images/single-project-1-870x580.jpg" alt="" width="870" height="580" />
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- UI Design-->
+<!--<section class="section section-lg text-center text-md-left bg-gray-lighter">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between flex-md-row-reverse">
+            <div class="col-md-5 col-xxl-4">
+                <h3>UI Design</h3>
+                <div class="divider divider-default"></div>
+                <p class="heading-5">Next stage of this project was designing the UI, a vast part of the design, with which people would interact closely (menus, buttons, tabs, accordions etc.)</p>
+                <p class="text-spacing-sm">Creating UI for Eric Howard was a challenging and multi-faceted task. That’s why we needed to draw in lots of talented designers who helped us with extended research of necessary interface elements, their possible interpretation by users, and smooth integration of the most used components, such as sliders, breadcrumbs, buttons, text fields etc.</p>
+            </div>
+            <div class="col-md-5">
+                <div class="image-position-01">
+                    <div class="blick-wrap">
+                        <img class="image-wrap" src="/images/ipad-01-1360x1233.png" alt="" width="1360" height="1233">
+                        <div class="blick-overlay" data-blick-overlay="ipad"></div>
+                        <div class="blick-content">
+                            <img src="/images/single-project-2-652x361.jpg" alt="" width="652" height="361" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- Development -->
+<!--<section class="section section-lg text-center text-md-left bg-gray-lighter">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-4 col-xxl-3">
+                <h3>Development</h3>
+                <div class="divider divider-default"></div>
+                <p class="heading-5">At the final stage of this project, our developers implemented all ideas of our designers into this HTML template.</p>
+                <p class="text-spacing-sm">During the development of Eric Howard, our experts tried to improve the template even more and provide it with modern functionality of Bootstrap Framework. It helped us to make the template install and launch very quickly.</p>
+            </div>
+            <div class="col-md-6">-->
+<!-- Swiper-->
+<!--<div class="swiper-container swiper-slider swiper-slider_height-1" data-loop="true" data-autoplay="3500" data-simulate-touch="false">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" data-slide-bg="/images/single-project-2-870x580.jpg">
+            <div class="swiper-slide-caption">
+                <div class="section-md"></div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-slide-bg="/images/single-project-3-870x580.jpg">
+            <div class="swiper-slide-caption">
+                <div class="section-md"></div>
+            </div>
+        </div>
+        <div class="swiper-slide" data-slide-bg="/images/single-project-4-870x580.jpg">
+            <div class="swiper-slide-caption">
+                <div class="section-md"></div>
+            </div>
+        </div>
+    </div>-->
+<!-- Swiper controls-->
+<!--<div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->

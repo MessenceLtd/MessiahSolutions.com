@@ -682,6 +682,7 @@
     <Content Include="App_Data\packages\createdPackages.config" />
     <Content Include="App_Data\packages\installedPackages.config" />
     <Content Include="PrivateAppSettings.config" />
+    <Content Include="PrivateConnectionStrings.config" />
     <None Include="Properties\PublishProfiles\LocalFolderPublish-IISPUBLISH-dev.MessiahSolutions.com.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="PurchasedWebTemplate\404-page.html" />
@@ -3669,6 +3670,8 @@
     <Content Include="Views\Brand.cshtml" />
     <Content Include="Views\FrequentlyAskedQuestions.cshtml" />
     <Content Include="Views\AboutUs.cshtml" />
+    <Content Include="Views\OurHistory.cshtml" />
+    <Content Include="Views\ProjectsType.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
