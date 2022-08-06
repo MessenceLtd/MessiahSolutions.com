@@ -1,0 +1,194 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.AboutUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+
+
+    var aboutUsIntroductionLearnMoreLinkOurHistoryUrl = Model.Value<IPublishedContent>("aboutUsIntroductionLearnMoreLinkOurHistory").Url();
+    var aboutUsIntroductionLargeSideImageUrl = Model.Value<IPublishedContent>("aboutUsIntroductionLargeSideImage").Url();
+    //var featuredPeopleTitleLinkUrl = Model.Value<IPublishedContent>("featuredPeopleTitleLink").Url();
+
+    var servicesLink = Model.Value<IPublishedContent>("servicesLink").Url();
+    var ourHistoryTitleLink = Model.Value<IPublishedContent>("ourHistoryTitleLink").Url();
+    var featuredProjectsTitleLink = Model.Value<IPublishedContent>("featuredProjectsTitleLink").Url();
+}
+
+
+<!-- About us introduction section -->
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-8 col-xl-5">
+
+                <h3 class="little-smaller">@Model.Value("aboutUsIntroductionTitle")</h3>
+                <div class="divider divider-default" style="width:100%;max-width:100%;"></div>
+                <p>
+                    @Model.Value("aboutUsIntroductionSecondParagraph")
+                </p>
+                <p>
+                    @Model.Value("aboutUsIntroductionThirdParagraph")
+                </p>
+                <p>
+                    @Html.Raw(Model.Value("bodyText"))
+                </p>
+                <a class="button button-primary" href="@aboutUsIntroductionLearnMoreLinkOurHistoryUrl">@Model.Value("aboutUsIntroductionLearnMoreLinkText")</a>
+            </div>
+            <div class="col-md-9 col-lg-5 text-center">
+                <img src="@aboutUsIntroductionLargeSideImageUrl" alt="" width="720" height="459" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Services-->
+<section class="section section-lg bg-gray-lighter text-center">
+    <div class="container-wide">
+        <div class="text-center">
+            <a href="@servicesLink" class="animated-title-divider">
+                <h3>
+                    @Model.GetProperty("servicesTitle").Value()
+                </h3>
+                <div class="divider divider-default"></div>
+            </a>
+        </div>
+        <div class="row row-50 justify-content-sm-center offset-custom-2">
+
+            @if (Model.Services != null)
+            {
+                var animatedCssClass = "";
+                foreach (var service in Model.Services)
+                {
+                    animatedCssClass = "mdi-" + service.GetProperty("serviceImageType").Value();
+
+                    <div class="col-sm-10 col-lg-4 col-xl-3">
+                        <a href="@service.Url()" class="thumbnail-classic flex-md-row flex-lg-column flex-column thumbnail-classic-primary wrapper" title="@service.GetProperty("serviceTitle").Value()">
+                            <div class="thumbnail-classic-icon unit-left"><span class="icon mdi @animatedCssClass"></span></div>
+                            <div class="thumbnail-classic-caption unit-body">
+                                <h6 class="thumbnail-classic-title">
+                                    @service.GetProperty("serviceTitle").Value()
+                                </h6>
+                                <hr class="divider divider-default divider-sm" />
+                                <p class="thumbnail-classic-text">
+                                    @service.GetProperty("serviceDescription").Value()
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+
+                }
+            }
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Our history timeline -->
+<section class="section section-lg bg-gray-lighter text-center">
+    <div class="container container-wide">
+        <div class="row justify-content-sm-center">
+            <div class="col-lg-9 col-xl-8 col-xxl-6">
+
+                <a href="@ourHistoryTitleLink" class="animated-title-divider longer2">
+                    <h3>
+                        @Model.Value("ourHistoryTitle")
+                    </h3>
+                    <div class="divider divider-default"></div>
+                </a>
+                <p>
+                    @Model.Value("ourHistoryIntroductionDescription")
+                </p>
+                <div class="time-line-vertical">
+
+                    @{
+
+                        var historyTimelineEntryImageUrl = "";
+                        var historyTimelineFormattedDateTime = "";
+
+                        foreach (var historyTimelineEntry in Model.Value<IEnumerable<IPublishedContent>>("featuredHistoryTimelineMilestonesEntries"))
+                        {
+
+                            historyTimelineFormattedDateTime = ((DateTime)historyTimelineEntry.Value("historyTimelineMilestoneEntryDate")).ToString("MMMM, yyyy");
+                            historyTimelineEntryImageUrl = historyTimelineEntry.Value<IPublishedContent>("historyTimelineMilestoneEntryImage")?.Url() ?? "";
+
+                            <div class="time-line-vertical-element time-line-vertical-element-offset">
+                                <div class="unit flex-md-row unit-spacing-xxl flex-column">
+                                    <div class="unit-left">
+                                        <div class="time-line-time">
+                                            <time class="wow fadeInLeft" data-wow-delay=".6s" datetime="2017">@historyTimelineFormattedDateTime</time>
+                                        </div>
+                                    </div>
+                                    <div class="unit-body">
+                                        <div class="time-line-content wow fadeInRight" data-wow-delay=".6s">
+                                            <h5>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryTitle")
+                                            </h5>
+                                            <img src="@historyTimelineEntryImageUrl" alt="" width="570" height="380" />
+                                            <p>
+                                                @historyTimelineEntry.Value("historyTimelineMilestoneEntryFooterDescription")
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+        <a class="button button-primary" href="@ourHistoryTitleLink">@Model.Value("featuredHistoryTimelineBottomReadMoreLinkText")</a>
+    </div>
+</section>
+
+<!-- Projects -->
+<!--<section class="section section-lg bg-gray-darker text-center">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center">
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                
+                <a href="@featuredProjectsTitleLink" class="animated-title-divider longer2">
+                    <h3>@Model.Value("featuredProjectsTitle")</h3>
+                    <div class="divider divider-secondary"></div>
+                </a>
+                
+                <p>
+                    @Model.Value("featuredProjectsIntroductionDescription")
+                </p>
+            </div>
+        </div>
+        <div class="row row-50" data-lightgallery="group">
+
+            @{
+
+                var projectImageUrl = "";
+
+                foreach (var project in Model.Value<IEnumerable<IPublishedContent>>("featuredProjectsList"))
+                {
+
+                    projectImageUrl = project.Value<IPublishedContent>("projectThumbnailImage")?.Url() ?? "";
+
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <a class="gallery-item titled-gallery-item" href="@projectImageUrl" data-lightgallery="item">
+                            <div class="gallery-item-image">
+                                <figure>
+                                    <img src="@projectImageUrl" alt="" width="570" height="380" />
+                                </figure>
+                                <div class="caption">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="titled-gallery-caption text-center"><a href="@project.Url()">@project.Value("projectTitle")</a></div>
+                    </div>
+
+                }
+            }
+
+        </div>
+    </div>-->
+    @*<a class="button button-primary" href="@featuredProjectsTitleLink">@Model.Value("viewAllProjectsLinkText")</a>*@
+<!--</section>-->
+

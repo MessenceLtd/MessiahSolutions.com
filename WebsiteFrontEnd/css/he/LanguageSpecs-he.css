@@ -1,0 +1,144 @@
+﻿html , body  {
+    direction: rtl;
+    text-align:right;
+}
+
+@media (min-width: 1024px) {
+    .rd-navbar-brand {
+        float: right;
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+
+    .rd-navbar-inner {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+}
+
+.rd-navbar-centered .rd-navbar-static .rd-navbar-brand .brand-name
+{
+    margin-left: -14px;
+}
+
+.rd-navbar-static .rd-navbar-search .rd-search-form-submit
+{
+    left:16px;
+    right:auto;
+}
+
+.rd-search .form-label {
+    /*top: 30px;*/
+    /*left: 25px;*/
+    left: auto;
+    right:25px;
+}
+
+.rd-search .form-input
+{
+
+}
+
+.rd-navbar-static .rd-navbar-search .rd-search
+{
+    right:-30px;
+}
+
+.rd-navbar-centered .rd-navbar-nav
+{
+    text-align:right;
+}
+
+.languagesWrapper .languages li{
+    direction:ltr;
+}
+
+.languagesWrapper .languages a label {
+    position: relative;
+    top:2px;
+}
+
+.rd-navbar-submenu-toggle
+{
+    display:none;
+}
+
+li.rd-navbar--has-dropdown ul.rd-navbar-dropdown li{
+    text-align:right;
+}
+
+li.rd-navbar--has-dropdown ul.rd-navbar-dropdown {
+    right: 0;
+    left: auto;
+}
+
+.rd-navbar-static .rd-navbar-dropdown li > a:before {
+    content: '\f14b';
+    margin-left:0px;
+    position:relative;
+    left:4px;
+}
+
+.rd-navbar-static .rd-navbar-dropdown > li > a
+{
+    padding-right:0px;
+}
+
+section.OurAdvantages .row.justify-content-xl-end {
+    justify-content: flex-start !important;
+}
+
+.breadcrumbs-custom-path li:after {
+    content: '\f14b';
+}
+
+@media (min-width: 576px) 
+{
+    .breadcrumbs-custom-path > li:after {
+        right: auto;
+        left: -26px;
+    }
+
+    .breadcrumbs-custom-path > li:not(:last-child) {
+        margin-right: 0px;
+        margin-left: 30px;
+    }
+}
+
+
+.list-marked {
+    padding-left: inherit;
+    padding-right:25p;
+    text-align: right;
+}
+
+.list-marked > li:before {
+    left: auto;
+    right: 0px;
+    content: '\f237';
+}
+
+@media (min-width: 1200px) {
+    .list-marked-primary > li {
+        padding-right: 35px;
+        padding-left: 0px;
+    }
+}
+
+.rd-mailform{
+    text-align:right;
+}
+
+.rd-mailform input {
+    text-align: right;
+}
+
+.rd-mailform .form-label {
+    left: auto;
+    right: 25px;
+}
+
+.counter-wrap .heading-3 
+{
+    direction:ltr;
+}

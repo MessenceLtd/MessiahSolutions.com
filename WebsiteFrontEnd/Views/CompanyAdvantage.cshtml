@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.CompanyAdvantage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+    var advantageImageUrl = Model.Value<IPublishedContent>("advantageIntroPhoto")?.Url ?? "";
+    var contactUsLinkUrl = Model.Value<IPublishedContent>("contactUsLink").Url();
+}
+
+<section class="section section-lg bg-default">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center">
+            <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-7">
+                <div class="box-range-content">
+
+                    <h3>@Model.Value("advantageTitle")</h3>
+                    <div class="divider divider-default disabled-static-fullwidth"></div>
+
+                    <p class="heading-5">
+                        @Model.Value("longAdvantageDescription")
+                    </p>
+                    
+                    <a class="button button-primary" href="@contactUsLinkUrl">@Model.Value("contactUsLinkText")</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 col-xl-5 col-xxl-5 justify-content-md-center" style="text-align:center">
+                <img class="image-wrap" src="@advantageImageUrl" alt="" />
+            </div>
+        </div>
+    </div>
+</section>

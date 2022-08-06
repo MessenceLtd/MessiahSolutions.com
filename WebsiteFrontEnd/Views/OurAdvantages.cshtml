@@ -1,0 +1,85 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.OurAdvantages>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+
+    Layout = "master.cshtml";
+    var home = Model.Root();
+    var advantageImageUrl = Model.Value<IPublishedContent>("introPhoto")?.Url ?? "";
+    var contactUsLinkUrl = Model.Value<IPublishedContent>("contactUsLink").Url();
+}
+
+
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center">
+            <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-7">
+                <div class="box-range-content">
+
+                    <h3>@Model.Value("introTitle")</h3>
+                    <div class="divider divider-default disabled-static-fullwidth"></div>
+
+                    <p class="heading-5">
+                        @Model.Value("introDescription")
+                    </p>
+
+                    <a class="button button-primary" href="@contactUsLinkUrl">@Model.Value("contactUsLinkText")</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 col-xl-5 col-xxl-5">
+                <img class="image-wrap" src="@advantageImageUrl" alt="" width="870" height="500" />
+            </div>
+        </div>
+    </div>
+</section>
+
+@if (Model.Children().Where(x => x.IsVisible()).Count() > 0)
+{
+    int counterForFlippedSideCSSClass = -1;
+    var filpedSideCssClass = "";
+    var innerContentCSSClassFlipFixes = "";
+    var imageUrlAdvantageThumbnail = "";
+
+    foreach (var serviceNodeDetails in Model.Children().Where(x => x.IsVisible()))
+    {
+        counterForFlippedSideCSSClass++;
+        if (counterForFlippedSideCSSClass % 2 == 0)
+        {
+            filpedSideCssClass = "section-md-reverse";
+            innerContentCSSClassFlipFixes = "justify-content-lg-end justify-content-xl-end";
+        }
+        else
+        {
+            filpedSideCssClass = "";
+            innerContentCSSClassFlipFixes = "justify-content-lg-start justify-content-xl-between";
+        }
+        imageUrlAdvantageThumbnail = serviceNodeDetails.Value<IPublishedContent>("advantageThumbnailImage")?.Url ?? "";
+
+        <section class="section section-wrap section-wrap-equal @filpedSideCssClass">
+            <div class="section-wrap-inner">
+                <div class="container container-bigger">
+                    <div class="row row-ten justify-content-md-center @innerContentCSSClassFlipFixes">
+                        <div class="col-sm-8 col-md-4 col-lg-4">
+                            <div class="section-lg">
+                                <a href="@serviceNodeDetails.Url()" class="animated-title-divider longer2">
+                                    <h3 class="little-smaller">@serviceNodeDetails.Value("advantageTitle")</h3>
+                                    <div class="divider divider-default"></div>
+                                </a>
+                                <p>
+                                    @serviceNodeDetails.Value("advantageDescription")
+                                </p>
+                                <div class="text-center form-button">
+                                    <a class="button button-primary" href="@serviceNodeDetails.Url()">learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-wrap-aside section-wrap-image">
+                    <img src="@imageUrlAdvantageThumbnail" alt="@serviceNodeDetails.Value("advantageTitle")" title="@serviceNodeDetails.Value("advantageTitle")" width="960" height="660" />
+                </div>
+            </div>
+        </section>
+    }
+}
+
+<br />

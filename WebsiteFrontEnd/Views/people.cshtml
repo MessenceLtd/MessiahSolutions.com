@@ -1,0 +1,104 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.People>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{ Layout = "master.cshtml";
+                var home = Model.Root();
+                //var HomePageLinkToOurTeam = home.OurTeamLink.Url;
+                var HomePageLinkToOurTeam = "";
+                var introPhotoImageUrl = Model.Value<IPublishedContent>("introPhoto")?.Url ?? "";
+                var introLinkToAboutUs = Model.Value<IPublishedContent>("introLinkToAboutUs").Url(); }
+
+
+<section class="section section-lg text-center text-md-left bg-default">
+    <div class="container container-wide">
+        <div class="row row-50 justify-content-md-center">
+            <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-7">
+                <div class="box-range-content">
+
+                    <h3>@Model.Value("introTitle")</h3>
+                    <div class="divider divider-default disabled-static-fullwidth"></div>
+
+                    <p>
+                        @Html.Raw(Model.Value("introDescription").ToString().Replace("\n", "<br/>"))
+                    </p>
+
+                    <a class="button button-primary" href="@introLinkToAboutUs">@Model.Value("introLinkText")</a>
+                </div>
+            </div>
+            <div class="col-md-9 col-lg-8 col-xl-5 col-xxl-5">
+                <img class="image-wrap" src="@introPhotoImageUrl" alt="" width="870" height="500" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Team-->
+<section class="section section-lg bg-default text-center">
+    <div class="container container-wide">
+        <div class="text-center">
+            <a href="@HomePageLinkToOurTeam" class="animated-title-divider">
+                <h3>
+                    @Model.Value("featuredPeopleTitle")
+                </h3>
+                <div class="divider divider-default"></div>
+            </a>
+        </div>
+        <!-- Owl Carousel-->
+        <div class="owl-carousel owl-carousel-team" data-autoplay="true" data-items="1" data-md-items="2" data-lg-items="3"
+             data-xl-items="4" data-xxl-items="6" data-stage-padding="0" data-loop="false" data-margin="0"
+             data-mouse-drag="true" data-dots="true">
+
+            @if (Model.Value<IEnumerable<IPublishedContent>>("featuredPeople") != null)
+            {
+                var personImageUrl = "";
+                var personContactEmail = "";
+
+                foreach (var person in Model.Value<IEnumerable<IPublishedContent>>("featuredPeople"))
+                {
+                    personImageUrl = person.Value<IPublishedContent>("employeeImage")?.Url() ?? "";
+                    personContactEmail = person.Value("emailAddress")?.ToString() ?? "";
+                    if (!string.IsNullOrEmpty(personContactEmail))
+                    {
+                        personContactEmail = "mailto:" + personContactEmail;
+                    }
+
+                    <div class="team-classic">
+                        <div class="team-classic-image">
+                            <figure>
+                                <img src="@personImageUrl" alt="" width="270" height="270" />
+                            </figure>
+                            <div class="team-classic-image-caption">
+                                <ul class="list-inline list-team">
+                                    @if (person.Value("socialLinkLinkedIn") != null && !string.IsNullOrEmpty(person.Value("socialLinkLinkedIn").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-linkedin" target="_blank" href="@person.Value("socialLinkLinkedIn")"></a></li>
+                                    }
+                                    @if (person.Value("socialLinkFacebook") != null && !string.IsNullOrEmpty(person.Value("socialLinkFacebook").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-facebook" target="_blank" href="@person.Value("socialLinkFacebook")"></a></li>
+                                    }
+                                    @if (person.Value("socialLinkTwitter") != null && !string.IsNullOrEmpty(person.Value("socialLinkTwitter").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-twitter" target="_blank" href="@person.Value("socialLinkTwitter")"></a></li>
+                                    }
+                                    @if (person.Value("socialLinkInstagram") != null && !string.IsNullOrEmpty(person.Value("socialLinkInstagram").ToString()))
+                                    {
+                                        <li><a class="icon icon-sm-bigger icon-white mdi mdi-instagram" target="_blank" href="@person.Value("socialLinkInstagram")"></a></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="team-classic-caption">
+                            <h5><a class="team-classic-title" href="@person.Url()">@person.Value("personNameAndTitle")</a></h5>
+                            <p class="team-classic-job-position">@person.Value("jobTitle")</p>
+                            <a class="button button-xs button-default-outline" target="_blank" href="@personContactEmail">get in touch</a>
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        <a class="button button-primary" href="@introLinkToAboutUs">@Model.Value("introLinkText")</a>
+    </div>
+</section>

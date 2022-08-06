@@ -1,0 +1,116 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = Model.Root();
+}
+
+
+<section class="section section-lg bg-default ContactUs">
+    <div class="container container-bigger">
+        <div class="row row-ten row-50 justify-content-md-center justify-content-xl-between">
+            <div class="col-md-9 col-lg-6">
+                <h3>@Model.Value("contactUsTitle")</h3>
+                <hr class="divider divider-left divider-default">
+                <p class="big MainContactUsForm-Intro">
+                    @Html.Raw(Model.Value("contactUsIntroText").ToString().Replace("\n", "<br/>"))
+                </p>
+                <p class="big hidden MainContactUsForm-Success">
+                    @Html.Raw(Model.Value("contactUsSuccessTest").ToString().Replace("\n", "<br/>"))
+                </p>
+                <br /><br />
+
+                <!-- Contactus Mailform -->
+                <form class="rd-mailform" id="MainContactUsForm" data-form-output="form-output-global" data-form-type="contact" method="post" 
+                      action="/api/ContactUs/ProcessFullContactUsEmail" enctype="application/x-www-form-urlencoded">
+                    <div class="row row-20">
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="form-1-name">First name</label>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-name" type="text" name="firstname"><span class="form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="form-1-last-name">Last name</label>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-last-name" type="text" name="lastname"><span class="form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="form-1-email">E-mail</label>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-email" type="email" name="Email"><span class="form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="form-1-phone">Phone</label>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-phone" type="text" name="Phone"><span class="form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-wrap form-wrap-validation">
+                                <label class="form-label-outside" for="form-1-message">Message</label>
+                                <textarea class="form-input form-control-has-validation form-control-last-child" id="form-1-message" name="Message"></textarea><span class="form-validation"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 offset-custom-1">
+                            <div class="form-button">
+                                <button class="button button-primary" type="submit">send message</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <script type="text/javascript">
+
+                    
+
+                </script>
+
+            </div>
+            <div class="col-md-9 col-lg-4 col-xl-3">
+                <div class="column-aside">
+                    <div class="row">
+                        <div class="col-sm-10 col-md-6 col-lg-12">
+                            <h6>Address</h6>
+                            <hr class="divider-thin">
+                            <article class="box-inline">
+                                <span>
+                                    @Html.Raw(Model.Value("businessAddress").ToString().Replace("\n", "<br/>"))
+                                </span>
+                            </article>
+                        </div>
+                        <div class="col-sm-10 col-md-6 col-lg-12">
+                            <h6>Phone</h6>
+                            <hr class="divider-thin">
+                            <article class="box-inline">
+                                <span>
+                                    @Html.Raw(Model.Value("businessPhone").ToString().Replace("\n", "<br/>"))
+                                </span>
+                            </article>
+                        </div>
+                        <div class="col-sm-10 col-md-6 col-lg-12">
+                            <h6>E-mail</h6>
+                            <hr class="divider-thin">
+                            <article class="box-inline">
+                                <span>
+                                    <a href='mailto:@Model.Value("businessEmail")'>@Model.Value("businessEmail")</a>
+                                </span>
+                            </article>
+                        </div>
+                        <div class="col-sm-10 col-md-6 col-lg-12">
+                            <h6>Opening hours</h6>
+                            <hr class="divider-thin">
+                            <article class="box-inline">
+                                <span>
+                                    @Html.Raw(Model.Value("businessHours").ToString().Replace("\n", "<br/>"))
+                                </span>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

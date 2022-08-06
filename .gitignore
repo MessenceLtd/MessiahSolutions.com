@@ -1,18 +1,25 @@
-/MessiahSolutionsComFrontEnd/bin/
-/MessiahSolutionsComFrontEnd/obj/
 
-/MessiahSolutionsComFrontEnd/App_Data/cache/
-/MessiahSolutionsComFrontEnd/App_Data/Logs/
-/MessiahSolutionsComFrontEnd/App_Data/temp/
-/MessiahSolutionsComFrontEnd/App_Data/models/models.hash
-/MessiahSolutionsComFrontEnd/App_Data/models/all.dll.path
+/Messence.BL/bin/
+/Messence.BL/obj/
+/Messence.DAL/bin/
+/Messence.DAL/obj/
+/Messence.Shared/bin/
+/Messence.Shared/obj/
+
+
+/WebsiteFrontEnd/bin/
+/WebsiteFrontEnd/obj/
+
+/WebsiteFrontEnd/App_Data/
 
 
 /.vs/
-/IISPUBLISH-dev.MessiahSolutions.com/
 /packages/
-/MessiahSolutionsComFrontEnd/PrivateAppSettings.config
-/MessiahSolutionsComFrontEnd/PrivateConnectionStrings.config
-/MessiahSolutionsComFrontEnd/MessiahSolutionsComFrontEnd.csproj.user
-/MessiahSolutionsComFrontEnd/Properties/PublishProfiles/PublishPlan-MessiahSolutions.com.pubxml.user
+/WebsiteFrontEnd/PrivateAppSettings.config
+/WebsiteFrontEnd/PrivateAppSettings.Release.config
+/WebsiteFrontEnd/PrivateConnectionStrings.config
+/WebsiteFrontEnd/PrivateConnectionStrings.Release.config
+/WebsiteFrontEnd/WebsiteFrontEnd.csproj.user
+/WebsiteFrontEnd/Properties/PublishProfiles/PublishPlan-MessiahSolutions.com.pubxml.user
 
+/WebsiteFrontEnd/Umbraco/
