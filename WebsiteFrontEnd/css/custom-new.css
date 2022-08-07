@@ -527,3 +527,30 @@ nav a.brand-name img.logo-default.mobile {
         display: none;
     }
 }
+
+.content-flip-area {
+    float: left;
+    width: 50%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.section-md-reverse .content-flip-area {
+    float: right;
+}
+
+@media (max-width: 1024px) {
+
+    .content-flip-area {
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 1600px) {
+    
+    .container-bigger {
+        max-width: 90%;
+    }
+
+}

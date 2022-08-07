@@ -1,6 +1,6 @@
-﻿html , body  {
+﻿html, body, .row {
     direction: rtl;
-    text-align:right;
+    text-align: right;
 }
 
 @media (min-width: 1024px) {
@@ -141,4 +141,151 @@ section.OurAdvantages .row.justify-content-xl-end {
 .counter-wrap .heading-3 
 {
     direction:ltr;
+}
+
+@media (max-width: 1024px) {
+
+    .rd-navbar-fixed .languagesWrapper
+    {
+        right:auto;
+        left:0px;
+    }
+}
+
+.rd-navbar-fixed .rd-navbar-nav-wrap {
+    left:auto;
+    right:0px;
+    top:-8px;
+}
+
+
+@media (max-width: 1024px) {
+
+    .rd-navbar-nav-wrap:not(.active)
+    {
+        display:none;
+    }
+
+}
+
+.list-marked > li
+{
+    padding-left:initial;
+    padding-right:25px;
+}
+
+.breadcrumbs-custom-path li:not(:last-child)
+{
+    margin-right:auto;
+    margin-left:32px;
+}
+
+.breadcrumbs-custom-path li:after
+{
+    right:auto;
+    left:-26px;
+}
+
+@media (min-width: 1200px) {
+    
+    .justify-content-xl-end {
+        -webkit-box-pack: start !important;
+        justify-content: flex-start !important;
+    }
+
+    .justify-content-xl-between {
+        -webkit-box-pack: justify !important;
+        justify-content: flex-end !important;
+    }
+}
+
+.box-range-content
+{
+    text-align:right;
+}
+
+.content-flip-area {
+    float: left;
+    width: 50%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.section-md-reverse .content-flip-area {
+    float: right;
+}
+
+@media (max-width: 1024px) {
+
+    .content-flip-area {
+        width:100%;
+    }
+}
+
+.ArticleWrapper .box-minimal{
+    text-align:right;
+}
+
+.panel-group.panel-group-custom .panel-title a{
+    text-align:right;
+}
+
+@media (min-width: 768px) 
+{
+    .panel-corporate .panel-body {
+        padding-right: 82px;
+        padding-left:150px;
+        text-align:right;
+    }
+}
+
+.thumbnail-classic-caption {
+    text-align:center;
+}
+
+.thumbnail-classic-caption p {
+    text-align: right;
+}
+
+.counter-wrap
+{
+    text-align:center;
+}
+
+.box-inline{
+    direction:rtl;
+    text-align:right;
+}
+
+.time-line-vertical:before
+{
+    right:8px;
+    left:auto;
+}
+
+.time-line-vertical-element:before
+{
+    left:auto;
+    right:3px;
+}
+
+.time-line-vertical-element
+{
+    padding-left:unset;
+    padding-right:35px;
+    text-align:right;
+    direction:rtl;
+}
+
+@media (min-width: 768px) {
+    .time-line-vertical-element:last-child .unit-body:after {
+        left: auto;
+        right: -80px;
+    }
+
+    .time-line-vertical-element .unit-body:before {
+        
+        left: auto;
+        right: -86px;
+    }
 }
