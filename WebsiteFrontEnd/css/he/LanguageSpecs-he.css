@@ -92,8 +92,7 @@ section.OurAdvantages .row.justify-content-xl-end {
     content: '\f14b';
 }
 
-@media (min-width: 576px) 
-{
+@media (min-width: 576px) {
     .breadcrumbs-custom-path > li:after {
         right: auto;
         left: -26px;
@@ -177,13 +176,13 @@ section.OurAdvantages .row.justify-content-xl-end {
 .breadcrumbs-custom-path li:not(:last-child)
 {
     margin-right:auto;
-    margin-left:32px;
+    margin-left:10px;
 }
 
 .breadcrumbs-custom-path li:after
 {
     right:auto;
-    left:-26px;
+    left:-16px;
 }
 
 @media (min-width: 1200px) {
@@ -247,9 +246,8 @@ section.OurAdvantages .row.justify-content-xl-end {
     text-align: right;
 }
 
-.counter-wrap
-{
-    text-align:center;
+.counter-wrap, .counter-wrap p{
+    text-align: center;
 }
 
 .box-inline{
@@ -288,4 +286,30 @@ section.OurAdvantages .row.justify-content-xl-end {
         left: auto;
         right: -86px;
     }
+}
+
+h6{
+    text-align:right;
+}
+
+p {
+    text-align: right;
+}
+
+@media (max-width: 1024px) 
+{ 
+    section .container-wide article div.read-more {
+        left: 15px;
+        right: auto;
+    }
+}
+
+.team-classic-job-position
+{
+    text-align: center;
+}
+
+.thumbnail-classic-title
+{
+    text-align:center;
 }

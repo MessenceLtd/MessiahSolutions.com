@@ -742,6 +742,7 @@
     <Content Include="Views\OurHistory.cshtml" />
     <Content Include="Views\ProjectsType.cshtml" />
     <Content Include="Views\ContactUs.cshtml" />
+    <Content Include="Views\GeneralContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

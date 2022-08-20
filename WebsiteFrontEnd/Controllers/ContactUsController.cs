@@ -24,8 +24,6 @@ namespace MessenceComFrontEnd.Controllers
 
             try
             {
-                bool test = ModelState.IsValid;
-
                 string _requestFromUrl = this.Request.Headers.Referrer.AbsoluteUri;
                 string _fullName = contactUsModel.FullName;
                 string _email = contactUsModel.Email;
@@ -38,16 +36,16 @@ namespace MessenceComFrontEnd.Controllers
                         WebsiteOperationsTools.SendContactUsEmailDetails(
                                                 _requestFromUrl, _fullName, _email, null, _messageDetails);
 
-                        response = Content<string>(HttpStatusCode.OK, "MF255");
+                        response = Content<string>(HttpStatusCode.OK, "MF000");
                     }
                     catch (Exception exc)
                     {
-                        response = Content<string>(HttpStatusCode.OK, "MF000");
+                        response = Content<string>(HttpStatusCode.OK, "MF255");
                     }
                 }
                 else
                 {
-                    response = Content<string>(HttpStatusCode.OK, "MF000");
+                    response = Content<string>(HttpStatusCode.OK, "MF255");
                 }
             }
             catch (Exception exc)
@@ -66,8 +64,6 @@ namespace MessenceComFrontEnd.Controllers
 
             try
             {
-                bool test = ModelState.IsValid;
-
                 string _requestFromUrl = this.Request.Headers.Referrer.AbsoluteUri;
                 string _fullName = string.Empty;
                 if (string.IsNullOrEmpty(contactUsModel.FullName) && !string.IsNullOrEmpty(contactUsModel.FirstName))
@@ -90,31 +86,24 @@ namespace MessenceComFrontEnd.Controllers
                         WebsiteOperationsTools.SendContactUsEmailDetails(
                                                 _requestFromUrl, _fullName, _email, _phone, _messageDetails);
 
-                        response = Content<string>(HttpStatusCode.OK, "MF255");
+                        response = Content<string>(HttpStatusCode.OK, "MF000");
                     }
                     catch (Exception exc)
                     {
-                        response = Content<string>(HttpStatusCode.OK, "MF000");
+                        response = Content<string>(HttpStatusCode.OK, "MF255");
                     }
                 }
                 else
                 {
-                    response = Content<string>(HttpStatusCode.OK, "MF000");
+                    response = Content<string>(HttpStatusCode.OK, "MF255");
                 }
             }
             catch (Exception exc)
             {
                 response = Content<string>(HttpStatusCode.BadRequest, "Error.. " + exc.Message);
-                //response.Content = new StringContent("An error occured! Please try again later.");
             }
 
-            //response.Content = new StringContent("hello", Encoding.Unicode);
-            //response.Headers.CacheControl = new CacheControlHeaderValue()
-            //{
-            //    MaxAge = TimeSpan.FromMinutes(20)
-            //};
             return response;
-            //return new[] { "Table", "Chair", "Desk", "Computer", "Beer fridge" };
         }
 
         private bool ValidateContactUs(string requestFromUrl, string fullName, string email, string phone, string messageDetails)

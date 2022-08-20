@@ -16,42 +16,44 @@
                     @Html.Raw(Model.Value("contactUsIntroText").ToString().Replace("\n", "<br/>"))
                 </p>
                 <p class="big hidden MainContactUsForm-Success">
-                    @Html.Raw(Model.Value("contactUsSuccessTest").ToString().Replace("\n", "<br/>"))
+                    @Html.Raw(Model.Value("contactUsSuccessText").ToString().Replace("\n", "<br/>"))
                 </p>
-                <br /><br />
-
+                <p class="big hidden MainContactUsForm-Error">
+                    @Html.Raw(Model.Value("contactUsErrorText").ToString().Replace("\n", "<br/>"))
+                </p>
+                <br />
                 <!-- Contactus Mailform -->
-                <form class="rd-mailform" id="MainContactUsForm" data-form-output="form-output-global" data-form-type="contact" method="post" 
+                <form class="rd-mailform" id="MainContactUsForm" data-form-output="form-output-global" data-form-type="contact" method="post"
                       action="/api/ContactUs/ProcessFullContactUsEmail" enctype="application/x-www-form-urlencoded">
                     <div class="row row-20">
                         <div class="col-md-6">
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label-outside" for="form-1-name">@Umbraco.GetDictionaryValue("First name")</label>
-                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-name" type="text" name="firstname"><span class="form-validation"></span>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-name" type="text" name="firstname" required><span class="form-validation"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label-outside" for="form-1-last-name">@Umbraco.GetDictionaryValue("Last name")</label>
-                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-last-name" type="text" name="lastname"><span class="form-validation"></span>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-last-name" type="text" name="lastname" required><span class="form-validation"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label-outside" for="form-1-email">@Umbraco.GetDictionaryValue("E-mail")</label>
-                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-email" type="email" name="Email"><span class="form-validation"></span>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-email" type="email" name="Email" required><span class="form-validation"></span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label-outside" for="form-1-phone">@Umbraco.GetDictionaryValue("Phone")</label>
-                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-phone" type="text" name="Phone"><span class="form-validation"></span>
+                                <input class="form-input form-control-has-validation form-control-last-child" id="form-1-phone" type="text" name="Phone" required><span class="form-validation"></span>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-wrap form-wrap-validation">
                                 <label class="form-label-outside" for="form-1-message">@Umbraco.GetDictionaryValue("Message")</label>
-                                <textarea class="form-input form-control-has-validation form-control-last-child" id="form-1-message" name="Message"></textarea><span class="form-validation"></span>
+                                <textarea class="form-input form-control-has-validation form-control-last-child" id="form-1-message" name="Message" required></textarea><span class="form-validation"></span>
                             </div>
                         </div>
                         <div class="col-sm-12 offset-custom-1">
@@ -64,7 +66,7 @@
 
                 <script type="text/javascript">
 
-                    
+
 
                 </script>
 

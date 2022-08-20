@@ -1,5 +1,23 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.GeneralContent>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = null;
+    Layout = "master.cshtml";
+    var home = Model.Root();
 }
+
+<section class="section section-lg bg-default">
+    <div class="container container-wide">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="GeneralContent">
+                    <h3>@Model.Value("contentTitle")</h3>
+                    <div class="divider divider-default disabled-static-fullwidth"></div>
+
+                    <p class="heading-5">
+                        @Model.Value("contentLongText")
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

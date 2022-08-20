@@ -24,13 +24,13 @@
                 <h3 class="little-smaller">@Model.Value("aboutUsIntroductionTitle")</h3>
                 <div class="divider divider-default" style="width:100%;max-width:100%;"></div>
                 <p>
-                    @Model.Value("aboutUsIntroductionSecondParagraph")
+                    @Html.Raw(Model.Value("aboutUsIntroductionSecondParagraph").ToString().Replace("\n" , "<br/>"))
                 </p>
                 <p>
-                    @Model.Value("aboutUsIntroductionThirdParagraph")
+                    @Html.Raw(Model.Value("aboutUsIntroductionThirdParagraph").ToString().Replace("\n", "<br/>"))
                 </p>
                 <p>
-                    @Html.Raw(Model.Value("bodyText"))
+                    @Html.Raw(Model.Value("bodyText")?.ToString().Replace("\n", "<br/>"))
                 </p>
                 <a class="button button-primary" href="@aboutUsIntroductionLearnMoreLinkOurHistoryUrl">@Model.Value("aboutUsIntroductionLearnMoreLinkText")</a>
             </div>

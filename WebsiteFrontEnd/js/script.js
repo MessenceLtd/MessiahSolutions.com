@@ -566,7 +566,7 @@ $document.ready(function () {
 			}
 		];
 
-		if (window.location.href.indexOf('/he/')) {
+		if (window.location.href.indexOf('/he/') > -1) {
 			regularConstraintsMessages[0].newMessage = 'שדה חובה.';
 			regularConstraintsMessages[1].newMessage = 'האימייל לא תקין';
         }
@@ -2088,14 +2088,13 @@ $(document).ready(function () {
 			e.preventDefault();
 
 			var name = $("#name").val();
-			//$form = $(this);
+			
 			var $form = $("#MailLayoutContactUsForm");
 			var dataString = getFormData($form);
 			var $action = $form.attr('action');
-			//var dataString = { $form.'name=' + name };
 
 
-			var form = $form,//$(plugins.rdMailForm[this.extraData.counter]),
+			var form = $form,
 				inputs = form.find("[data-constraints]"),
 				output = $("#" + form.attr("data-form-output")),
 				captcha = form.find('.recaptcha'),
@@ -2117,60 +2116,47 @@ $(document).ready(function () {
 				encode: true
 			})
 				.done(function (data) {
-					//console.log('sucess/done result : ' + data);
-					//var form = $(plugins.rdMailForm[this.extraData.counter]),
-					//    output = $("#" + form.attr("data-form-output")),
-					//    select = form.find('select');
-
-					form.addClass('success').removeClass('form-in-process');
-
-					//if (formHasCaptcha) {
-					//    grecaptcha.reset();
-					//}
-
+					
 					var result = data.length === 5 ? data : 'MF255';
 					output.text(errorMessages[result]);
 
+					form.addClass("hidden");
+
 					if (result === "MF000") {
-						if (output.hasClass("snackbars")) {
-							output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + errorMessages[result] + '</span></p>');
-						}
-						else {
-							output.addClass("active success");
-						}
+						
+						form.addClass('success').removeClass('form-in-process');
+						$('.MailLayoutContactUsFormWrapper').addClass("success");
+
+						$('.MailLayoutContactUsFormWrapper .success-message').show()
+						$('.MailLayoutContactUsFormWrapper .error-message').hide()
 					}
 					else {
-						if (output.hasClass("snackbars")) {
-							output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
-						} else {
-							output.addClass("active error");
-						}
+						
+						form.addClass('error').removeClass('form-in-process');
+						$('.MailLayoutContactUsFormWrapper').addClass("error");
+
+						$('.MailLayoutContactUsFormWrapper .success-message').hide()
+						$('.MailLayoutContactUsFormWrapper .error-message').show()
 					}
 
 					form.clearForm();
-
-					//if (select.length) {
-					//	select.select2("val", "");
-					//}
 
 					form.find('input, textarea').trigger('blur');
 
 					setTimeout(function () {
 						output.removeClass("active error success");
-						//form.removeClass('success');
 					}, 3500);
 
 				})
 				.fail(function (data) {
-					var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
-						form = $(plugins.rdMailForm[this.extraData.counter]);
 
-					output.text(msg[result]);
+					form.addClass("hidden");
+					$('.MailLayoutContactUsFormWrapper').addClass("error");
+					$('.MailLayoutContactUsFormWrapper .success-message').hide()
+					$('.MailLayoutContactUsFormWrapper .error-message').show()
+
 					form.removeClass('form-in-process');
 
-					//if (formHasCaptcha) {
-					//    grecaptcha.reset();
-					//}
 				});
 		});
 	}
@@ -2182,7 +2168,6 @@ $(document).ready(function () {
 
 			var name = $("#name").val();
 
-			//$form = $(this);
 			var $form = $("#MainContactUsForm");
 			var dataString = getFormData($form);
 			var $action = $form.attr('action');
@@ -2209,64 +2194,40 @@ $(document).ready(function () {
 				encode: true
 			})
 				.done(function (data) {
-					//console.log('sucess/done result : ' + data);
-					//var form = $(plugins.rdMailForm[this.extraData.counter]),
-					//    output = $("#" + form.attr("data-form-output")),
-					//    select = form.find('select');
 
 					form.addClass('success').removeClass('form-in-process');
-
-					//if (formHasCaptcha) {
-					//    grecaptcha.reset();
-					//}
 
 					var result = data.length === 5 ? data : 'MF255';
 					output.text(errorMessages[result]);
 
+					$('.MainContactUsForm-Intro').hide();
+
 					if (result === "MF000") {
-						if (output.hasClass("snackbars")) {
-							output.html('<p><span class="icon text-middle mdi mdi-check icon-xxs"></span><span>' + errorMessages[result] + '</span></p>');
-						}
-						else {
-							output.addClass("active success");
-						}
+
+						$('.MainContactUsForm-Success').show();
+						$('.MainContactUsForm-Error').hide();
+
 					}
 					else {
 
-						$('.MainContactUsForm-Intro').hide();
-						$('.MainContactUsForm-Success').show();
-
-						if (output.hasClass("snackbars")) {
-							output.html(' <p class="snackbars-left"><span class="icon icon-xxs mdi mdi-alert-outline text-middle"></span><span>' + msg[result] + '</span></p>');
-						} else {
-							output.addClass("active error");
-						}
+						form.addClass("hidden");
+						$('.MainContactUsForm-Success').hide();
+						$('.MainContactUsForm-Error').show();
 					}
 
 					form.clearForm();
 
-					//if (select.length) {
-					//	select.select2("val", "");
-					//}
-
-					form.find('input, textarea').trigger('blur');
-
-					setTimeout(function () {
-						output.removeClass("active error success");
-						//form.removeClass('success');
-					}, 3500);
-
 				})
 				.fail(function (data) {
-					var output = $("#" + $(plugins.rdMailForm[this.extraData.counter]).attr("data-form-output")),
-						form = $(plugins.rdMailForm[this.extraData.counter]);
-
-					output.text(msg[result]);
+					
 					form.removeClass('form-in-process');
+					form.clearForm();
 
-					//if (formHasCaptcha) {
-					//    grecaptcha.reset();
-					//}
+					form.addClass("hidden");
+					$('.MainContactUsForm-Intro').hide();
+					$('.MainContactUsForm-Success').hide();
+					$('.MainContactUsForm-Error').show();
+
 				});
 		});
 	}

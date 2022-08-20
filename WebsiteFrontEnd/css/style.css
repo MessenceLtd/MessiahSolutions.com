@@ -183,14 +183,14 @@ body {
 * Links
 */
 a {
-    /*color: #1cd8c9; old annoying template color*/
+    /*color: #c0dffc; old annoying template color*/
     color: #0F4B7F;
     text-decoration: none;
     /*transition: .25s;*/
 }
 
     a:hover, a:focus {
-        /*color: #1cd8c9; old annoying template color*/
+        /*color: #c0dffc; old annoying template color*/
         color: #0F4B7F;
         text-decoration: none;
         outline: none;
@@ -894,7 +894,7 @@ section {
     color: #fff; }
 .context-dark .titled-gallery-caption a, .bg-gray-dark .titled-gallery-caption a, .bg-gray-darker .titled-gallery-caption a, .bg-additional-gray-darker .bg-additional-item .titled-gallery-caption a, .bg-image .titled-gallery-caption a, .bg-additional-image .bg-additional-item .titled-gallery-caption a, .bg-accent .titled-gallery-caption a, .breadcrumbs-custom-light .titled-gallery-caption a {
     /*color: #ffec17;*/
-    color: rgb(28, 216, 201);
+    color: #c0dffc;
 }
     .context-dark .titled-gallery-caption a:hover, .bg-gray-dark .titled-gallery-caption a:hover, .bg-gray-darker .titled-gallery-caption a:hover, .bg-additional-gray-darker .bg-additional-item .titled-gallery-caption a:hover, .bg-image .titled-gallery-caption a:hover, .bg-additional-image .bg-additional-item .titled-gallery-caption a:hover, .bg-accent .titled-gallery-caption a:hover, .breadcrumbs-custom-light .titled-gallery-caption a:hover {
       color: #fff; }
@@ -3034,7 +3034,7 @@ input:-webkit-autofill ~ .form-validation {
     font-weight: 300;
     line-height: 24px;
     color: #1f2323;
-    background-color: #d9d9d9;
+    background-color: #c0dffc;
     background-image: none;
     border: 0px solid #f6f6f6;
     border-radius: 35px;
@@ -6756,13 +6756,13 @@ textarea.form-input {
         font-style: normal;
         line-height: 1;
         /*color: #0F4B7F; */
-        color: rgb(28, 216, 201);
+        color: #c0dffc;
     }
 
 .quote-modern-cite {
     font-weight: 400;
     /*color: #0F4B7F; */
-    color: rgb(28, 216, 201);
+    color: #c0dffc;
 }
 
 .quote-modern-small {
@@ -7846,7 +7846,7 @@ textarea.form-input {
   .bg-gray-darker.page-footer .list-marked-primary > li a, .bg-additional-gray-darker .page-footer.bg-additional-item .list-marked-primary > li a, .bg-image.page-footer .list-marked-primary > li a, .bg-additional-image .page-footer.bg-additional-item .list-marked-primary > li a, .bg-gray-darker.page-footer .list-marked-primary > li a:focus, .bg-additional-gray-darker .page-footer.bg-additional-item .list-marked-primary > li a:focus, .bg-image.page-footer .list-marked-primary > li a:focus, .bg-additional-image .page-footer.bg-additional-item .list-marked-primary > li a:focus, .bg-gray-darker.page-footer .list-marked-primary > li a:active, .bg-additional-gray-darker .page-footer.bg-additional-item .list-marked-primary > li a:active, .bg-image.page-footer .list-marked-primary > li a:active, .bg-additional-image .page-footer.bg-additional-item .list-marked-primary > li a:active 
   {
     /*color: #0F4B7F;*/ 
-    color: rgb(28, 216, 201);
+    color: #c0dffc;
   }
 
     .bg-gray-darker.page-footer .list-marked-primary > li a:hover,
@@ -9517,7 +9517,7 @@ h3 + .divider {
 
 .divider-secondary {
     /*background: #10aea1; */
-    background: #1cd8c9;
+    background: #c0dffc;
 }
 
 .divider-thin {
@@ -12504,7 +12504,7 @@ html:not(.lt-ie10) .not-animated {
   border-color: #ededed; }
     .owl-carousel.owl-dots-secondary .owl-dot:hover, .owl-carousel.owl-dots-secondary .owl-dot.active {
         /*background-color: #10aea1; */
-        background-color: rgb(28, 216, 201);
+        background-color: #c0dffc;
     }
 
 .owl-carousel.owl-carousel-light-dots .owl-dot {
@@ -14498,7 +14498,7 @@ ol ol {
         /*color: #fff;*/
         color: #000;
         /*background-color: #10aea1;*/
-        background-color: #1cd8c9;
+        background-color: #c0dffc;
         text-decoration: none;
     }
   .ui-to-top.active {
@@ -18090,4 +18090,29 @@ html[dir='rtl'] .lg-css3.lg-slide.lg-use-css3 .lg-item.lg-current {
   position: relative;
   z-index: 1; }
 
-/*# sourceMappingURL=style.css.map */
+.breadcrumbs-custom-title {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px;
+}
+
+.breadcrumbs-custom-path a {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    white-space:nowrap;
+}
+
+@media (max-width: 768px) {
+
+    .breadcrumbs-custom-title {
+        border-radius: 0.5rem;
+    }
+
+    .breadcrumbs-custom-path a {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 8px 8px 8px 8px;
+        border-radius: 5px;
+    }
+
+}
+
