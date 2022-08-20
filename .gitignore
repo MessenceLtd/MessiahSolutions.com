@@ -20,6 +20,8 @@
 /WebsiteFrontEnd/PrivateConnectionStrings.config
 /WebsiteFrontEnd/PrivateConnectionStrings.Release.config
 /WebsiteFrontEnd/WebsiteFrontEnd.csproj.user
-/WebsiteFrontEnd/Properties/PublishProfiles/PublishPlan-MessiahSolutions.com.pubxml.user
 
 /WebsiteFrontEnd/Umbraco/
+
+/WebsiteFrontEnd/Properties/PublishProfiles/
+/WebsiteFrontEnd/MessenceComFrontEnd.csproj.user
